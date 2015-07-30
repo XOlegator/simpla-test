@@ -57,7 +57,30 @@ $(function() {
   				
 		});
 	
-	} 
+	}
+	
+	<!-- Начало вставки от Олега от 30.07.2015 -->
+	
+	$('input#startExportOrders').on('click', function() {
+		do_export_orders_retailCRM();    
+	});
+  
+	function do_export_orders_retailCRM()	{
+		// Инициируем запрос на сервер для формирования выгрузки заказов в RetailCRM
+		$.ajax({
+ 		  url: "ajax/export_orders_retailCRM.php",
+ 			 	data: {},
+ 			 	dataType: 'json',
+  			success: function(data) {
+  			  $("#resultExportOrdersRetailCRM").append(data);
+  			},
+				error: function(xhr, status, errorThrown) {
+					alert(errorThrown + '\n' + xhr.responseText);
+        }
+		});	
+	}
+	
+	<!-- Конец вставки Олега от 30.07.2015 -->
 	
 });
 {/literal}
@@ -90,4 +113,12 @@ $(function() {
 	<input class="button_green" id="start" type="button" name="" value="Экспортировать" />	
 	{/if}
 </div>
- 
+<hr>
+<div>
+	<h1>Экспорт заказов в RetailCRM</h1>
+	{if $message_error != 'no_permission'}
+	<div id='progressbar'></div>
+	<input class="button_green" id="startExportOrders" type="button" name="" value="Экспортировать" />
+  <div id="resultExportOrdersRetailCRM"></div>	
+	{/if}
+</div>
