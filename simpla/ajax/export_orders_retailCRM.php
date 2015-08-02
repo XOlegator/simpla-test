@@ -1,5 +1,5 @@
 <?php
-
+  define("KEYRETAIL", "QItLioI0x8g7h2CWqkNNC6Ifg7jeD8dd");
   require_once($_SERVER['DOCUMENT_ROOT'] . '/api/Simpla.php');
   // Подключим библиотеку API RetailCRM
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/retailcrm/api-client-php/lib/RetailCrm/Exception/CurlException.php');
@@ -185,7 +185,7 @@
   $export_orders = new ExportOrdersRetailCRM();
   $data = $export_orders->fetch(); // Получили массив из всех заказов и их клиентов
   
-  $clientRetailCRM = new \RetailCrm\ApiClient('https://demo.retailcrm.ru', 'QItLioI0x8g7h2CWqkNNC6Ifg7jeD8dd', 'simpla-test-local');
+  $clientRetailCRM = new \RetailCrm\ApiClient('https://demo.retailcrm.ru', KEYRETAIL, 'simpla-test-local');
   // Массив данных разбит на пакеты - не более 50 записей в каждом пакете
   // Пройдём по всему массиву клиентов и отправим каждый пакет
   foreach($data as $pack) {
