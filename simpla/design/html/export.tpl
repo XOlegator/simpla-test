@@ -69,8 +69,6 @@ $(function() {
 		// Инициируем запрос на сервер для формирования выгрузки заказов в RetailCRM
 		$.ajax({
  		  url: "ajax/export_orders_retailCRM.php",
- 			 	data: {},
- 			 	dataType: 'json',
   			success: function(data) {
   			  $("#resultExportOrdersRetailCRM").append(data);
   			},
@@ -117,8 +115,17 @@ $(function() {
 <div>
 	<h1>Экспорт заказов в RetailCRM</h1>
 	{if $message_error != 'no_permission'}
-	<div id='progressbar'></div>
+	<div style="clear: both; height: 28px;"></div>
 	<input class="button_green" id="startExportOrders" type="button" name="" value="Экспортировать" />
   <div id="resultExportOrdersRetailCRM"></div>	
+	{/if}
+</div>
+<hr>
+<div>
+	<h1>Экспорт товаров в ICML для RetailCRM</h1>
+	{if $message_error != 'no_permission'}
+	<div style="clear: both; height: 28px;"></div>
+	<input class="button_green" id="startExportGoods" type="button" name="" value="Экспортировать" />
+  <div id="resultExportGoodsRetailCRM"></div>	
 	{/if}
 </div>
