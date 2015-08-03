@@ -61,7 +61,7 @@ $(function() {
 	
 	<!-- Начало вставки от Олега от 30.07.2015 -->
 	
-	$('input#startExportOrders').on('click', function() {
+	$('#startExportOrders').on('click', function() {
 		do_export_orders_retailCRM();    
 	});
   
@@ -71,6 +71,23 @@ $(function() {
  		  url: "ajax/export_orders_retailCRM.php",
   			success: function(data) {
   			  $("#resultExportOrdersRetailCRM").append(data);
+  			},
+				error: function(xhr, status, errorThrown) {
+					alert(errorThrown + '\n' + xhr.responseText);
+        }
+		});	
+	}
+	
+	$('#startExportGoods').on('click', function() {
+		do_export_goods_retailCRM();    
+	});
+  
+	function do_export_goods_retailCRM()	{
+		// Инициируем запрос на сервер для формирования выгрузки товаров в файл ICML для RetailCRM
+		$.ajax({
+ 		  url: "ajax/export_to_ICML_retailCRM.php",
+  			success: function(data) {
+  			  $("#resultExportGoodsRetailCRM").append(data);
   			},
 				error: function(xhr, status, errorThrown) {
 					alert(errorThrown + '\n' + xhr.responseText);

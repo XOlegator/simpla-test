@@ -9,6 +9,9 @@
   require_once($_SERVER['DOCUMENT_ROOT'] . '/vendor/retailcrm/api-client-php/lib/RetailCrm/ApiClient.php');
   
   class ExportOrdersRetailCRM extends Simpla {
+    /*
+      Функция fetch() формирует массив из всех клиентов и заказов ИМ Simpla    
+    */
     public function fetch() {
       if(!$this->managers->access('export')) return false;
       $countOrders = $this->orders->count_orders();
@@ -25,7 +28,12 @@
                 "initialPrice" => $item->price,
                 "productId"    => $item->id,
                 "productName"  => $item->product_name,
-                "quantity"     => $item->amount
+                "quantity"     => $item->amount,
+                //"properties"   => array (
+                //  "code"  => $item->variant_id,
+                //  "name"  => $item->variant_name,
+                //  "value" => $item->variant_id
+                //)
               );
             }
           }
@@ -121,9 +129,11 @@
             'legalName'       => $p->name, // Имя в Simpla формируется в свободной форме
             'legalAddress'    => $p->address,
             'customerId'      => (intval($p->user_id) == 0) ? 'order' . $p->id : $p->user_id, // Код клиента (по данным Simpla)
+            //'customerId'      => ($this->getCustomerIdFromRetailCRM($p->id)) ? $this->getCustomerIdFromRetailCRM($p->id) : '', // Код клиента (по данным RetailCRM)
             'paymentType'     => $payment,
             'paymentStatus'   => $paymentStatus,
             'status'          => $orderStatus,
+            'orderType'       => 'eshop-individual', // Тип заказа - обязательное поле. В нашем случае тип всегдя один - заказ от физ. лица через ИМ
             'orderMethod'     => 'shopping-cart', // Только один способ заказа - через корзину
             'items'           => $items, // Массив товаров из заказа
             'delivery'        => array(
@@ -173,6 +183,43 @@
       return $result;
 
     }
+    /*
+      Функция возвращает код клиента из базы RetailCRM на вход передаётся id заказа по базе Simpla    
+    */
+    /*public function getCustomerIdFromRetailCRM($orderIdSimpla) {
+      try {
+        $order = $this->orders->get_order(intval($orderIdSimpla)); // Нашли заказ в Simpla
+        $customerIdSimpla = $order->user_id; // Определили код клиента данного заказа по базе Simpla
+        if($customerIdSimpla == 0) {
+          // Код клиента 0 зарезервирован для экспресс клиентов, т.е. клиентов без регистрации
+          // Генерируем виртуальный id клиента
+          $customerId = 'order' . $orderIdSimpla;
+          return $customerId;
+        } else { // Клиент был зарегистрирован в Simpla
+          $clientRetailCRM = new \RetailCrm\ApiClient('https://demo.retailcrm.ru', KEYRETAIL, 'simpla-test-local');
+          try {
+            $customerRetailCRM = $clientRetailCRM->customersGet($customerIdSimpla);
+            if ($customerRetailCRM->isSuccessful() && 201 === $customerRetailCRM->getStatusCode()) {
+              $customerId = $customerRetailCRM->id;
+            } else {
+              echo sprintf(
+                "Ошибка при поиске клиента: [Статус HTTP-ответа %s] %s", 
+                $response1->getStatusCode(),
+                $response1->getErrorMsg()
+              );
+              return false;
+            }
+          } catch (\RetailCrm\Exception\CurlException $e) {
+            echo "Сетевые проблемы. Ошибка подключения к retailCRM: " . $e->getMessage();
+            return false;
+          }
+        }
+      } catch {
+        print_r("Не удалось найти заказ по id = " . $orderIdSimpla);
+        return false;
+      }
+      return $customerId;
+    }*/
   }
 
   // Требуется пройтись по всем заказам, собрать из них необходимые данные.
@@ -199,6 +246,16 @@
       $status = 'Все клиенты успешно выгружены в RetaiCRM.' . '<br>';
       // Переходим к выгрузке заказов
       try {
+        /*
+        // Пройдёмся по всем заказам и добавим в них id клиентов, которые были созданы на предыдущем этапе
+        foreach($pack['orders'] as $index => $order) {
+          $currentIdOrderSimpla = $pack['orders'][$index]['externalId'];
+          if($export_orders->getCustomerIdFromRetailCRM($currentIdOrderSimpla)) {
+            $pack['orders'][$index]['customerId'] = $export_orders->getCustomerIdFromRetailCRM($currentIdOrderSimpla);
+          }  
+        }
+        print_r($pack['orders']);
+        */
         $response2 = $clientRetailCRM->ordersUpload($pack['orders'], 'simpla-test-local');
       } catch (\RetailCrm\Exception\CurlException $e) {
         echo "Сетевые проблемы. Ошибка подключения к retailCRM: " . $e->getMessage();
@@ -220,6 +277,7 @@
             $response2->getStatusCode(),
             $response2->getErrorMsg()
         );
+        print_r($pack['orders']);
     
         // получить детализацию ошибок
         if (isset($response2['errors'])) {
