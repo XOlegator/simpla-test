@@ -1,5 +1,6 @@
 <?php
   define("KEYRETAIL", "QItLioI0x8g7h2CWqkNNC6Ifg7jeD8dd"); // Прописываем собственный ключ для доступа к API RetailCRM
+  define("SITERETAIL", "https://demo.retailcrm.ru"); // Прописываем свой URL к RetailCRM
   
   $path_parts = pathinfo($_SERVER['SCRIPT_FILENAME']); // определяем директорию скрипта (полезно для запуска из cron'а)
   chdir($path_parts['dirname']); // задаем директорию выполнение скрипта
@@ -293,7 +294,7 @@
   // API /api/orders/upload
 
   $export_orders = new ExportOrdersRetailCRM();
-  $clientRetailCRM = new \RetailCrm\ApiClient('https://demo.retailcrm.ru', KEYRETAIL, 'simpla-test-local');
+  $clientRetailCRM = new \RetailCrm\ApiClient(SITERETAIL, KEYRETAIL, 'simpla-test-local');
   // Если есть непустой файл history.log, то значит полная выгрузка уже производилась. Повторять полную выгрузку нельзя.
   $checkFile = '../../vendor/integration/log/history.log';
   if(file_exists($checkFile)) {

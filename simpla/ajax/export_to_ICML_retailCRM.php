@@ -124,8 +124,8 @@
   $file->loadXML($xml->asXML());
 
   $file->saveXML();
-  if($file->save("../../bitrix/catalog_export/intarocrm.xml")) {
-    echo 'Создан файл /bitrix/catalog_export/intarocrm.xml";
+  if($file->save("../../vendor/integration/icml.xml")) {
+    echo 'Создан файл /vendor/integration/icml.xml";
   } else {
     echo 'Файл XML не создан';
   }
