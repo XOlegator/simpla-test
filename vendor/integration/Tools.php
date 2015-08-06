@@ -38,6 +38,10 @@ class Tools
                 $path = $logDir . "orders-error.log";
                 error_log($format . " " . $message, 3, $path);
                 break;
+            case 'icml':
+                $path = $logDir . "icml.log";
+                error_log($format . " " . $message, 3, $path);
+                break;
             case 'history':
                 $path = $logDir . "history-error.log";
                 error_log($format . " " . $message, 3, $path);

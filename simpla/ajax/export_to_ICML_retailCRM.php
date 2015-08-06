@@ -1,8 +1,11 @@
-<?php  
+<?php
+  define("URLSIMPLA", "http://simpla-test.local"); // URL сайта интернет-магазина. Необходим для 
   $path_parts = pathinfo($_SERVER['SCRIPT_FILENAME']); // определяем директорию скрипта (полезно для запуска из cron'а)
   chdir($path_parts['dirname']); // задаем директорию выполнение скрипта
   
   require_once('../../api/Simpla.php');
+  // Подключаем общие инструменты
+  require_once('../../vendor/integration/Tools.php');
   
   class ExportICMLRetailCRM extends Simpla {
     /*
@@ -21,8 +24,10 @@
           }
           $items .= '<category id="' . $category->id . '"' . $parentId . '>' . $category->name . '</category>' . "\n";
         }
+        Tools::logger('Сформирован список категорий товаров' . "\n", 'icml');
         return $items;
       } else { // Ниодной категории не зарегистрировано
+        Tools::logger('Нет ни одной категории товаров' . "\n", 'icml');
         return '';
       }
   
@@ -46,7 +51,7 @@
             foreach($this->variants->get_variants(array('product_id' => $product->id)) as $variant) {
               // Получим путь к первой картинке товара
               if(!empty($this->products->get_images(array('product_id' => $product->id)))) {
-                $image = $_SERVER['SERVER_NAME'] . '/files/originals/' . $this->products->get_images(array('product_id' => $product->id))[0]->filename;
+                $image = URLSIMPLA . '/files/originals/' . $this->products->get_images(array('product_id' => $product->id))[0]->filename;
                 $image = '<picture>' . $image . '</picture>';
               } else {
                 $image = '';
@@ -73,7 +78,7 @@
               }
               // Сформируем весь блок offer
               $items .= '<offer id="var' . $variant->id . '" productId="' . $product->id . '" quantity="' . $variant->stock . '"> 
-                        <url>' . $_SERVER['SERVER_NAME'] . '/products/' . $product->url . '</url> 
+                        <url>' . URLSIMPLA . '/products/' . $product->url . '</url> 
                         <price>' . $variant->price . '</price>
                         ' . $category . ' 
                         ' . $image . ' 
@@ -87,8 +92,10 @@
             }
           }
         }
+        Tools::logger('Сформирован список товаров' . "\n", 'icml');
         return $items;
-      } else { // Ниодной категории не зарегистрировано
+      } else { // Ниодного товара не зарегистрировано
+        Tools::logger('Нет ни одного товара' . "\n", 'icml');
         return '';
       }
   
@@ -125,8 +132,10 @@
 
   $file->saveXML();
   if($file->save("../../vendor/integration/icml.xml")) {
-    echo 'Создан файл /vendor/integration/icml.xml";
+    echo "Создан файл /vendor/integration/icml.xml";
+    Tools::logger('Сгенерирован новый ICML-файл: /vendor/integration/icml.xml' . "\n", 'icml');
   } else {
     echo 'Файл XML не создан';
+    Tools::logger('Не удалось сохранить ICML-файл: /vendor/integration/icml.xml' . "\n", 'icml');
   }
   
