@@ -2,7 +2,8 @@
 
 class Tools
 {
-    public static function getDate($log){
+    public static function getDate($log)
+    {
         if (file_exists($log)) {
             return file_get_contents($log);
         } else {
@@ -10,7 +11,8 @@ class Tools
         }
     }
 
-    public static function logger($message, $type, $errors = null){
+    public static function logger($message, $type, $errors = null)
+    {
         $format = "[" . date('Y-m-d H:i:s') . "]";
         if (!is_null($errors) && is_array($errors)) {
             $message .= ":\n";
@@ -20,7 +22,7 @@ class Tools
         } else {
             $message .= "\n";
         }
-        $logDir = '../../vendor/integration/log/'; 
+        $logDir = '../../integration/log/'; 
         switch ($type) {
             case 'connect':
                 $path = $logDir. "connect-error.log";
@@ -52,5 +54,14 @@ class Tools
                 break;
         }
 
+    }
+    
+    public static function config($configFile)
+    {
+        if (file_exists($configFile)) {
+            return include($configFile);
+        } else {
+            return null;
+        }
     }
 }
