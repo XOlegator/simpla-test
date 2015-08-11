@@ -11,8 +11,6 @@ $config = Tools::config('../../integration/config.php');
 
 $simpla = new Simpla();
 
-if (!$simpla->managers->access('export')) return false; // Проверка прав доступа при запуске скрипта из админки Simpla
-
 $export = new ExportICMLRetailCRM($config);
 $domObject = $export->generate();
 // Приводим объект к читабельному виду XML

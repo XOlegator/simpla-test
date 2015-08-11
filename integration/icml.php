@@ -134,6 +134,8 @@ class ExportICMLRetailCRM extends Simpla
     */
     public function generate()
     {
+        if (!$this->managers->access('export')) return false; // Проверка прав доступа при запуске скрипта из админки Simpla
+        
         // Создаём шаблон XML-документа
         $domObject = new DOMDocument('1.0', 'utf-8');
         $domElementCatalog = $domObject->createElement('yml_catalog');
