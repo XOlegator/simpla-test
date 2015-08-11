@@ -1,52 +1,44 @@
 <?php
 
 return array(
-    'urlSimpla' => 'http://simpla-test.local',
-    'urlRetail' => 'https://demo.retailcrm.ru',
-    'keyRetail' => 'QItLioI0x8g7h2CWqkNNC6Ifg7jeD8dd',
-    'logDirectory' => '../integration/log',
-    /*
-        Соответствие кодов типов доставок из базы Simpla и RetailCRM: array(<Код типа доставки Simpla> => <Код типа доставки RetailCRM>)
-        В базе Simpla коды типов доставок числовые; в базе RetailCRM коды типов доставок строковые.
-    */
+    'urlSimpla' => 'http://simpla-test.local',         // URL интернет-магазина - необходимо для запуска скриптов из консоли сервера
+    'urlRetail' => 'https://demo.retailcrm.ru',        // URL RetailCRM, в которую будут выгружаться данные
+    'keyRetail' => 'QItLioI0x8g7h2CWqkNNC6Ifg7jeD8dd', // Персональный ключ RetailCRM для доступа к API 
+    'logDirectory' => '../../integration/log/',            // Каталог для логов работы скриптов выгрузок
+
+    //Соответствие кодов типов доставок из базы Simpla и RetailCRM: array(<Код типа доставки Simpla> => <Код типа доставки RetailCRM>)
     'deliveryType' => array (
-        1 => 'courier',
-        2 => 'self-delivery',
+        '1' => 'courier',       // Доставка курьером
+        '2' => 'self-delivery', // Самовывоз
     ),
-    /*
-        Соответствие кодов типов оплат из базы Simpla и RetailCRM: array(<Код типа оплаты Simpla> => <Код типа оплаты RetailCRM>)
-        В базе Simpla коды типов оплат числовые; в базе RetailCRM коды типов оплат строковые.
-    */
+
+    //Соответствие кодов типов оплат из базы Simpla и RetailCRM: array(<Код типа оплаты Simpla> => <Код типа оплаты RetailCRM>)
     'paymentType' => array (
-        1 => 'bank-transfer',
-        2 => 'web',
-        3 => 'robokassa',
-        4 => 'paypal',
-        5 => 'interkassa',
-        6 => 'liqpay',
-        7 => 'pay2pay',
-        8 => 'qiwi',
-        9 => 'yad',
-        10 => 'bank-card',
-        11 => 'terminal',
-        12 => 'mobile'
+        '1'  => 'bank-transfer', // Банковский перевод (квитанция с реквизитами)
+        '2'  => 'web',           // WebMoney WMZ
+        '3'  => 'robokassa',     // Робокасса
+        '4'  => 'paypal',        // PayPal
+        '5'  => 'interkassa',    // Интеркасса
+        '6'  => 'liqpay',        // Liqpay
+        '7'  => 'pay2pay',       // Pay2Pay
+        '8'  => 'qiwi',          // QIWI
+        '9'  => 'yad',           // Яндекс.Деньги
+        '10' => 'bank-card',     // Банковская карта
+        '11' => 'terminal',      // Терминал
+        '12' => 'mobile'         // Мобильный телефон
     ),
-    /*
-        Соответствие кодов статусов оплат из базы Simpla и RetailCRM: array(<Код статуса оплаты Simpla> => <Код статуса оплаты RetailCRM>)
-        В базе Simpla коды статусов оплат числовые; в базе RetailCRM коды статусов оплат строковые.
-    */
+
+    // Соответствие кодов статусов оплат из базы Simpla и RetailCRM: array(<Код статуса оплаты Simpla> => <Код статуса оплаты RetailCRM>)
     'paymentStatus' => array (
-        0 => 'not-paid',
-        1 => 'paid'
+        '0' => 'not-paid', // Не оплачен
+        '1' => 'paid'      // Оплачен
     ),
-    /*
-        Соответствие кодов статусов заказов из базы Simpla и RetailCRM: array(<Код статуса заказа Simpla> => <Код статуса заказа RetailCRM>)
-        В базе Simpla коды статусов заказов числовые; в базе RetailCRM коды статусов заказов строковые.
-    */
+
+    // Соответствие кодов статусов заказов из базы Simpla и RetailCRM: array(<Код статуса заказа Simpla> => <Код статуса заказа RetailCRM>)
     'orderStatus' => array (
-        0 => 'new',
-        1 => '123456',
-        2 => 'complete',
-        3 => 'cancel-other'
-    ),
+        '0' => 'new',         // Новый
+        '1' => '123456',      // Принят
+        '2' => 'complete',    // Выполнен
+        '3' => 'cancel-other' // Удалён
+    )
 );

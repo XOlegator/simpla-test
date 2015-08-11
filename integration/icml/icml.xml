@@ -1,8 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2015-08-06 10:39:49">
+<?xml version="1.0" encoding="utf-8"?>
+<yml_catalog date="2015-08-11 11:42:03">
   <shop>
-    <name/>
-    <company/>
+    <name>Великолепный интернет-магазин</name>
+    <company>ООО "Великолепный интернет-магазин"</company>
     <categories>
       <category id="1">Мобильные телефоны</category>
       <category id="2">Бытовая техника</category>
@@ -11,7 +11,7 @@
       <category id="4" parentId="2">Миксеры</category>
     </categories>
     <offers>
-      <offer id="var12" productId="8" quantity="50">
+      <offer id="var12" productId="8" quantity="6">
         <url>http://simpla-test.local/products/samsung-s5570-galaxy-mini</url>
         <price>7300.00</price>
         <categoryId>1</categoryId>
@@ -59,25 +59,23 @@
         <param name="Распознавание" code="47">улыбок</param>
         <param name="Тип экрана" code="9">цветной, сенсорный</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
-      <offer id="var5" productId="4" quantity="50">
+      <offer id="var5" productId="4" quantity="12">
         <url>http://simpla-test.local/products/htc-sensation</url>
         <price>20300.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/HTC-Sensation-4G-1.jpeg</picture>
         <name>HTC Sensation</name>
         <productName>HTC Sensation</productName>
-        <param name="Цвет" code="color"/>
         <vendor>HTC</vendor>
       </offer>
-      <offer id="var1" productId="1" quantity="50">
+      <offer id="var1" productId="1" quantity="5">
         <url>http://simpla-test.local/products/apple-iphone-4s-16gb</url>
         <price>44000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/iphone4s-white.jpeg</picture>
-        <name>Apple iPhone 4S 16Gb</name>
+        <name>Apple iPhone 4S 16Gb / Белый</name>
         <productName>Apple iPhone 4S 16Gb</productName>
         <param name="Диагональ" code="11">3.5 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -125,15 +123,14 @@
         <param name="Материал корпуса" code="6">сталь и стекло</param>
         <param name="Особенности" code="58">технология AirPlay, iCloud; 2 антенны; время разговора - 480 мин (3G), 840 мин (2G GSM); технология экрана - Retina Display; расцветка - черный, белый</param>
         <param name="Тип экрана" code="9">цветной, сенсорный</param>
-        <param name="Цвет" code="color">Белый</param>
         <vendor>Apple</vendor>
       </offer>
-      <offer id="var2" productId="1" quantity="50">
+      <offer id="var2" productId="1" quantity="0">
         <url>http://simpla-test.local/products/apple-iphone-4s-16gb</url>
         <price>42000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/iphone4s-white.jpeg</picture>
-        <name>Apple iPhone 4S 16Gb</name>
+        <name>Apple iPhone 4S 16Gb / Черный</name>
         <productName>Apple iPhone 4S 16Gb</productName>
         <param name="Диагональ" code="11">3.5 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -181,10 +178,9 @@
         <param name="Материал корпуса" code="6">сталь и стекло</param>
         <param name="Особенности" code="58">технология AirPlay, iCloud; 2 антенны; время разговора - 480 мин (3G), 840 мин (2G GSM); технология экрана - Retina Display; расцветка - черный, белый</param>
         <param name="Тип экрана" code="9">цветной, сенсорный</param>
-        <param name="Цвет" code="color">Черный</param>
         <vendor>Apple</vendor>
       </offer>
-      <offer id="var25" productId="17" quantity="50">
+      <offer id="var25" productId="17" quantity="5">
         <url>http://simpla-test.local/products/samsung-s7070-diva</url>
         <price>8500.00</price>
         <categoryId>1</categoryId>
@@ -232,10 +228,9 @@
         <param name="Комплектация" code="44">телефон, аккумулятор, зарядное устройство, чехол, проводная стереогарнитура, инструкция</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
-      <offer id="var3" productId="2" quantity="50">
+      <offer id="var3" productId="2" quantity="3">
         <url>http://simpla-test.local/products/samsung-galaxy-s-ii</url>
         <price>19200.00</price>
         <categoryId>1</categoryId>
@@ -297,25 +292,23 @@
         <param name="Тип экрана" code="9">цветной Super AMOLED Plus, 16.78 млн цветов, сенсорный</param>
         <param name="Размер изображения" code="12">число строк - 16, 480x800 пикс.</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
-      <offer id="var4" productId="3" quantity="50">
+      <offer id="var4" productId="3" quantity="1">
         <url>http://simpla-test.local/products/htc-incredible-s</url>
         <price>16000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/HTC-Incredible-S_D.jpeg</picture>
         <name>HTC Incredible S</name>
         <productName>HTC Incredible S</productName>
-        <param name="Цвет" code="color"/>
         <vendor>HTC</vendor>
       </offer>
-      <offer id="var6" productId="5" quantity="50">
+      <offer id="var6" productId="5" quantity="3">
         <url>http://simpla-test.local/products/nokia-c5-03</url>
         <price>6900.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/210_Nokia_C5_03.jpeg</picture>
-        <name>Nokia C5-03</name>
+        <name>Nokia C5-03 / Белый</name>
         <productName>Nokia C5-03</productName>
         <param name="Диагональ" code="11">3.2 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -362,15 +355,14 @@
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Комплектация" code="44">телефон, аккумулятор BL-4U, зарядное устройство AC-8/AC-15, стерео гарнитура WH-102, соединительный кабель CA-101D, карта памяти 2Gb microSD MU-37, инструкция</param>
         <param name="Тип экрана" code="9">цветной, 16.78 млн цветов, сенсорный</param>
-        <param name="Цвет" code="color">Белый</param>
         <vendor>Nokia</vendor>
       </offer>
-      <offer id="var7" productId="5" quantity="50">
+      <offer id="var7" productId="5" quantity="2">
         <url>http://simpla-test.local/products/nokia-c5-03</url>
         <price>7000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/210_Nokia_C5_03.jpeg</picture>
-        <name>Nokia C5-03</name>
+        <name>Nokia C5-03 / Черный</name>
         <productName>Nokia C5-03</productName>
         <param name="Диагональ" code="11">3.2 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -417,7 +409,6 @@
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Комплектация" code="44">телефон, аккумулятор BL-4U, зарядное устройство AC-8/AC-15, стерео гарнитура WH-102, соединительный кабель CA-101D, карта памяти 2Gb microSD MU-37, инструкция</param>
         <param name="Тип экрана" code="9">цветной, 16.78 млн цветов, сенсорный</param>
-        <param name="Цвет" code="color">Черный</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var8" productId="6" quantity="50">
@@ -425,7 +416,7 @@
         <price>12000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
-        <name>Nokia E72</name>
+        <name>Nokia E72 / Фиолетовый</name>
         <productName>Nokia E72</productName>
         <param name="Диагональ" code="11">2.36 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -452,19 +443,19 @@
         <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
         <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
         <param name="Управление" code="56">голосовое управление</param>
-        <param name="Виброзвонок" code="15">есть</param>
-        <param name="Запись видеороликов" code="17">есть</param>
-        <param name="Диктофон" code="21">есть</param>
-        <param name="Игры" code="22">есть</param>
-        <param name="Java-приложения" code="23">есть</param>
-        <param name="Встроенный GPS-приемник" code="27">есть</param>
-        <param name="Cистема A-GPS" code="28">есть</param>
-        <param name="Синхронизация с компьютером" code="30">есть</param>
-        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
-        <param name="MMS" code="33">есть</param>
-        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
-        <param name="Поиск по книжке" code="41">есть</param>
         <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
         <param name="Фронтальная камера" code="50">есть</param>
         <param name="Модем" code="52">есть</param>
         <param name="Автодозвон" code="57">есть</param>
@@ -475,12 +466,11 @@
         <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
         <param name="Тип корпуса" code="5">классический</param>
         <param name="Датчики" code="40">освещенности, компас</param>
-        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Материал корпуса" code="6">сталь и пластик</param>
         <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
-        <param name="Цвет" code="color">Фиолетовый</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var9" productId="6" quantity="50">
@@ -488,7 +478,7 @@
         <price>11000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
-        <name>Nokia E72</name>
+        <name>Nokia E72 / Бежевый</name>
         <productName>Nokia E72</productName>
         <param name="Диагональ" code="11">2.36 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -515,19 +505,19 @@
         <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
         <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
         <param name="Управление" code="56">голосовое управление</param>
-        <param name="Виброзвонок" code="15">есть</param>
-        <param name="Запись видеороликов" code="17">есть</param>
-        <param name="Диктофон" code="21">есть</param>
-        <param name="Игры" code="22">есть</param>
-        <param name="Java-приложения" code="23">есть</param>
-        <param name="Встроенный GPS-приемник" code="27">есть</param>
-        <param name="Cистема A-GPS" code="28">есть</param>
-        <param name="Синхронизация с компьютером" code="30">есть</param>
-        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
-        <param name="MMS" code="33">есть</param>
-        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
-        <param name="Поиск по книжке" code="41">есть</param>
         <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
         <param name="Фронтальная камера" code="50">есть</param>
         <param name="Модем" code="52">есть</param>
         <param name="Автодозвон" code="57">есть</param>
@@ -538,12 +528,11 @@
         <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
         <param name="Тип корпуса" code="5">классический</param>
         <param name="Датчики" code="40">освещенности, компас</param>
-        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Материал корпуса" code="6">сталь и пластик</param>
         <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
-        <param name="Цвет" code="color">Бежевый</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var10" productId="6" quantity="50">
@@ -551,7 +540,7 @@
         <price>10000.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
-        <name>Nokia E72</name>
+        <name>Nokia E72 / Черный</name>
         <productName>Nokia E72</productName>
         <param name="Диагональ" code="11">2.36 дюйма</param>
         <param name="Разъем для наушников" code="24">3.5 мм</param>
@@ -578,19 +567,19 @@
         <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
         <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
         <param name="Управление" code="56">голосовое управление</param>
-        <param name="Виброзвонок" code="15">есть</param>
-        <param name="Запись видеороликов" code="17">есть</param>
-        <param name="Диктофон" code="21">есть</param>
-        <param name="Игры" code="22">есть</param>
-        <param name="Java-приложения" code="23">есть</param>
-        <param name="Встроенный GPS-приемник" code="27">есть</param>
-        <param name="Cистема A-GPS" code="28">есть</param>
-        <param name="Синхронизация с компьютером" code="30">есть</param>
-        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
-        <param name="MMS" code="33">есть</param>
-        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
-        <param name="Поиск по книжке" code="41">есть</param>
         <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
         <param name="Фронтальная камера" code="50">есть</param>
         <param name="Модем" code="52">есть</param>
         <param name="Автодозвон" code="57">есть</param>
@@ -601,12 +590,11 @@
         <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
         <param name="Тип корпуса" code="5">классический</param>
         <param name="Датчики" code="40">освещенности, компас</param>
-        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Материал корпуса" code="6">сталь и пластик</param>
         <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
-        <param name="Цвет" code="color">Черный</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var11" productId="7" quantity="50">
@@ -668,7 +656,6 @@
         <param name="Особенности" code="58">фокусировка касанием</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Sony Ericsson</vendor>
       </offer>
       <offer id="var13" productId="9" quantity="50">
@@ -723,7 +710,6 @@
         <param name="Комплектация" code="44">телефон, батарея, стереогарнитура, карта памяти MicroSD 8Gb, кабель microUSB</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Sony Ericsson</vendor>
       </offer>
       <offer id="var14" productId="10" quantity="50">
@@ -731,9 +717,8 @@
         <price>5500.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
-        <name>Nokia X3-02</name>
+        <name>Nokia X3-02 / Малиновый</name>
         <productName>Nokia X3-02</productName>
-        <param name="Цвет" code="color">Малиновый</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var15" productId="10" quantity="50">
@@ -741,9 +726,8 @@
         <price>5600.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
-        <name>Nokia X3-02</name>
+        <name>Nokia X3-02 / Голубой</name>
         <productName>Nokia X3-02</productName>
-        <param name="Цвет" code="color">Голубой</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var16" productId="10" quantity="50">
@@ -751,9 +735,8 @@
         <price>5700.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
-        <name>Nokia X3-02</name>
+        <name>Nokia X3-02 / Черный</name>
         <productName>Nokia X3-02</productName>
-        <param name="Цвет" code="color">Черный</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var17" productId="10" quantity="50">
@@ -761,9 +744,8 @@
         <price>5200.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
-        <name>Nokia X3-02</name>
+        <name>Nokia X3-02 / Белый</name>
         <productName>Nokia X3-02</productName>
-        <param name="Цвет" code="color">Белый</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var18" productId="10" quantity="50">
@@ -771,9 +753,8 @@
         <price>5300.00</price>
         <categoryId>1</categoryId>
         <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
-        <name>Nokia X3-02</name>
+        <name>Nokia X3-02 / Фиолетовый</name>
         <productName>Nokia X3-02</productName>
-        <param name="Цвет" code="color">Фиолетовый</param>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var19" productId="11" quantity="50">
@@ -829,7 +810,6 @@
         <param name="Тип сенсорного экрана" code="10">телефон</param>
         <param name="Комплектация" code="44">телефон, батарея Nokia BL-4C, компактное зарядное устройство Nokia AC-3, стереогарнитура Nokia WH-205, кабель для подключения Nokia CA-101D, карта памяти microSDHC 2 Гб, руководство пользователя</param>
         <param name="Тип экрана" code="9">цветной TFT, 262.14 тыс цветов</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var20" productId="12" quantity="50">
@@ -839,7 +819,6 @@
         <picture>http://simpla-test.local/files/originals/nokia_e7_blue_front_1200x1200.png</picture>
         <name>Nokia E7</name>
         <productName>Nokia E7</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var21" productId="13" quantity="50">
@@ -849,7 +828,6 @@
         <picture>http://simpla-test.local/files/originals/nokiac600.jpg</picture>
         <name>Nokia C6-00</name>
         <productName>Nokia C6-00</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var22" productId="14" quantity="50">
@@ -894,7 +872,6 @@
         <param name="Тип мелодий" code="14">полифонические</param>
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип экрана" code="9">цветной, сенсорный</param>
-        <param name="Цвет" code="color"/>
         <vendor>HTC</vendor>
       </offer>
       <offer id="var23" productId="15" quantity="50">
@@ -944,7 +921,6 @@
         <param name="Тип корпуса" code="5">слайдер</param>
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип экрана" code="9">цветной, сенсорный</param>
-        <param name="Цвет" code="color"/>
         <vendor>BlackBerry</vendor>
       </offer>
       <offer id="var24" productId="16" quantity="50">
@@ -954,7 +930,6 @@
         <picture>http://simpla-test.local/files/originals/htc-legend.jpg</picture>
         <name>HTC Legend</name>
         <productName>HTC Legend</productName>
-        <param name="Цвет" code="color"/>
         <vendor>HTC</vendor>
       </offer>
       <offer id="var26" productId="18" quantity="50">
@@ -1011,7 +986,6 @@
         <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
-        <param name="Цвет" code="color"/>
         <vendor>BlackBerry</vendor>
       </offer>
       <offer id="var27" productId="19" quantity="50">
@@ -1021,7 +995,6 @@
         <picture>http://simpla-test.local/files/originals/xperia.jpg</picture>
         <name>Sony Ericsson Xperia X10</name>
         <productName>Sony Ericsson Xperia X10</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Sony Ericsson</vendor>
       </offer>
       <offer id="var28" productId="20" quantity="50">
@@ -1031,7 +1004,6 @@
         <picture>http://simpla-test.local/files/originals/a270-e1302938698758.jpg</picture>
         <name>Nokia X7</name>
         <productName>Nokia X7</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var29" productId="21" quantity="50">
@@ -1075,7 +1047,6 @@
         <param name="Комплектация" code="44">телефон, батарея, зарядное устройство, стерео гарнитура, карта памяти MicroSD 2 Гб, инструкция</param>
         <param name="Тип экрана" code="9">цветной, 65.54 тыс цветов, сенсорный</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var30" productId="22" quantity="50">
@@ -1118,7 +1089,6 @@
         <param name="Тип сенсорного экрана" code="10">телефон</param>
         <param name="Тип экрана" code="9">цветной TFT, 262.14 тыс цветов</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
       <offer id="var31" productId="23" quantity="50">
@@ -1128,7 +1098,6 @@
         <picture>http://simpla-test.local/files/originals/nokia-x6-16gb-pink-1.jpg</picture>
         <name>Nokia X6 16Gb</name>
         <productName>Nokia X6 16Gb</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var32" productId="24" quantity="50">
@@ -1138,7 +1107,6 @@
         <picture>http://simpla-test.local/files/originals/samsung_s3650_corby_29193d.jpg</picture>
         <name>Samsung S3650 Corby</name>
         <productName>Samsung S3650 Corby</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
       <offer id="var33" productId="25" quantity="50">
@@ -1148,7 +1116,6 @@
         <picture>http://simpla-test.local/files/originals/Samsung_La_Fleur_Wave_GT-E2530-2.jpg</picture>
         <name>Samsung La Fleur Wave</name>
         <productName>Samsung La Fleur Wave</productName>
-        <param name="Цвет" code="color"/>
         <vendor>Samsung</vendor>
       </offer>
       <offer id="var34" productId="26" quantity="50">
@@ -1201,7 +1168,6 @@
         <param name="Особенности" code="58">технология Content Adaptive Brightness Control (CABC), выделенная клавиша управления камерой</param>
         <param name="Тип экрана" code="9">цветной, 16.78 млн цветов</param>
         <param name="Дополнительные функции SMS" code="61">шаблоны сообщений, отправка SMS нескольким адресатам</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var35" productId="27" quantity="50">
@@ -1253,7 +1219,6 @@
         <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
         <param name="Тип" code="2">смартфон/коммуникатор</param>
         <param name="Тип экрана" code="9">цветной TFT, сенсорный</param>
-        <param name="Цвет" code="color"/>
         <vendor>BlackBerry</vendor>
       </offer>
       <offer id="var36" productId="28" quantity="50">
@@ -1310,7 +1275,6 @@
         <param name="Комплектация" code="44">телефон, батарея BL-5K, стерео гарнитура Nokia WH-207, дата кабель Nokia CA-179, зарядное устройство Nokia AC-15, инструкция</param>
         <param name="Тип экрана" code="9">цветной IPS, 16.78 млн цветов, сенсорный</param>
         <param name="Особенности" code="58">яркость дисплея - 1000 нит; технологии IPS и ClearBlack; дисплей защищен стеклом Corning Gorilla Glass</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nokia</vendor>
       </offer>
       <offer id="var37" productId="29" quantity="50">
@@ -1335,7 +1299,6 @@
         <param name="Уборка" code="73">сухая</param>
         <param name="Труба всасывания" code="84">телескопическая</param>
         <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
-        <param name="Цвет" code="color"/>
         <vendor>Dyson</vendor>
       </offer>
       <offer id="var38" productId="30" quantity="50">
@@ -1360,7 +1323,6 @@
         <param name="Труба всасывания" code="84">телескопическая</param>
         <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
         <param name="Дополнительные насадки в комплекте" code="86">щелевая; для полированных поверхностей; для мягкой мебели; щетка для твердых поверхностей; мини-турбо</param>
-        <param name="Цвет" code="color"/>
         <vendor>Dyson</vendor>
       </offer>
       <offer id="var39" productId="31" quantity="50">
@@ -1385,7 +1347,6 @@
         <param name="Уборка" code="73">сухая</param>
         <param name="Труба всасывания" code="84">телескопическая</param>
         <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
-        <param name="Цвет" code="color"/>
         <vendor>Electrolux</vendor>
       </offer>
       <offer id="var40" productId="32" quantity="50">
@@ -1412,7 +1373,6 @@
         <param name="Труба всасывания" code="84">телескопическая</param>
         <param name="Пылесборник" code="75">циклонный фильтр, емкостью 1.20 л</param>
         <param name="Дополнительные насадки в комплекте" code="86">щелевая; для мебели; щетка для твердых покрытий</param>
-        <param name="Цвет" code="color"/>
         <vendor>Dyson</vendor>
       </offer>
       <offer id="var41" productId="33" quantity="50">
@@ -1437,7 +1397,6 @@
         <param name="Уборка" code="73">сухая</param>
         <param name="Труба всасывания" code="84">телескопическая</param>
         <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
-        <param name="Цвет" code="color"/>
         <vendor>Dyson</vendor>
       </offer>
       <offer id="var42" productId="34" quantity="50">
@@ -1459,7 +1418,6 @@
         <param name="Материал корпуса" code="6">пластик</param>
         <param name="Тип" code="2">стационарный</param>
         <param name="Дополнительные режимы" code="93">турбо</param>
-        <param name="Цвет" code="color"/>
         <vendor>Zelmer</vendor>
       </offer>
       <offer id="var43" productId="35" quantity="50">
@@ -1479,7 +1437,6 @@
         <param name="Материал корпуса" code="6">пластик</param>
         <param name="Тип" code="2">стационарный</param>
         <param name="Дополнительные режимы" code="93">турбо</param>
-        <param name="Цвет" code="color"/>
         <vendor>Zelmer</vendor>
       </offer>
       <offer id="var44" productId="36" quantity="50">
@@ -1500,7 +1457,6 @@
         <param name="Материал корпуса" code="6">пластик</param>
         <param name="Тип" code="2">ручной</param>
         <param name="Дополнительные режимы" code="93">турбо</param>
-        <param name="Цвет" code="color"/>
         <vendor>Zelmer</vendor>
       </offer>
       <offer id="var45" productId="37" quantity="50">
@@ -1547,7 +1503,6 @@
         <param name="Видоискатель" code="115">отсутствует</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
         <param name="Тип ЖК-экрана" code="117">сенсорный</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nikon</vendor>
       </offer>
       <offer id="var46" productId="38" quantity="50">
@@ -1592,7 +1547,6 @@
         <param name="Видоискатель" code="115">отсутствует</param>
         <param name="Тип матрицы" code="104">СCD</param>
         <param name="Стабилизатор изображения (фотосъемка)" code="133">цифровой</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nikon</vendor>
       </offer>
       <offer id="var47" productId="39" quantity="50">
@@ -1647,7 +1601,6 @@
         <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
         <param name="Видоискатель" code="115">отсутствует</param>
         <param name="Тип матрицы" code="104">СCD</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nikon</vendor>
       </offer>
       <offer id="var48" productId="40" quantity="50">
@@ -1697,7 +1650,6 @@
         <param name="Видоискатель" code="115">отсутствует</param>
         <param name="Тип матрицы" code="104">СCD</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
-        <param name="Цвет" code="color"/>
         <vendor>Nikon</vendor>
       </offer>
       <offer id="var49" productId="41" quantity="50">
@@ -1705,7 +1657,7 @@
         <price>5500.00</price>
         <categoryId>5</categoryId>
         <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
-        <name>Фотоаппарат Canon PowerShot A3200 IS</name>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Оранжевый</name>
         <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
         <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
         <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
@@ -1752,7 +1704,6 @@
         <param name="Тип матрицы" code="104">СCD</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
         <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
-        <param name="Цвет" code="color">Оранжевый</param>
         <vendor>Canon</vendor>
       </offer>
       <offer id="var50" productId="41" quantity="50">
@@ -1760,7 +1711,7 @@
         <price>5500.00</price>
         <categoryId>5</categoryId>
         <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
-        <name>Фотоаппарат Canon PowerShot A3200 IS</name>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Серебристый</name>
         <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
         <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
         <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
@@ -1807,7 +1758,6 @@
         <param name="Тип матрицы" code="104">СCD</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
         <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
-        <param name="Цвет" code="color">Серебристый</param>
         <vendor>Canon</vendor>
       </offer>
       <offer id="var51" productId="41" quantity="50">
@@ -1815,7 +1765,7 @@
         <price>5500.00</price>
         <categoryId>5</categoryId>
         <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
-        <name>Фотоаппарат Canon PowerShot A3200 IS</name>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Розовый</name>
         <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
         <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
         <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
@@ -1862,7 +1812,6 @@
         <param name="Тип матрицы" code="104">СCD</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
         <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
-        <param name="Цвет" code="color">Розовый</param>
         <vendor>Canon</vendor>
       </offer>
       <offer id="var52" productId="42" quantity="50">
@@ -1920,7 +1869,6 @@
         <param name="Автоматическая обработка экспозиции" code="148">с приоритетом затвора, с приоритетом диафрагмы</param>
         <param name="Формат аккумуляторов" code="123">свой собственный</param>
         <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
-        <param name="Цвет" code="color"/>
         <vendor>Canon</vendor>
       </offer>
     </offers>
