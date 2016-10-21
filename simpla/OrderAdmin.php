@@ -12,6 +12,7 @@ class OrderAdmin extends Simpla
 		$order = new stdClass;
 		if($this->request->method('post'))
 		{
+            $isNewOrder = false;
 			$order->id = $this->request->post('id', 'integer');
 			$order->name = $this->request->post('name');
 			$order->email = $this->request->post('email');
@@ -34,6 +35,8 @@ class OrderAdmin extends Simpla
 			if(empty($order->id))
 			{
   				$order->id = $this->orders->add_order($order);
+                $isNewOrder = true;
+
 				$this->design->assign('message_success', 'added');
   			}
     		else
@@ -124,6 +127,13 @@ class OrderAdmin extends Simpla
 				// Отправляем письмо пользователю
 				if($this->request->post('notify_user'))
 					$this->notify->email_order_user($order->id);
+                
+                if ($isNewOrder) {
+                    // Отсылаем данные о новом заказе в RetailCRM
+                    if ($arOrderData = $this->retail->getNewOrderRetailData($order->id)) {
+                        $this->retail->request('ordersCreate', $arOrderData);
+                    }
+                }
 			}
 
 		}

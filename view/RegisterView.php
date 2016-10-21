@@ -35,6 +35,10 @@ class RegisterView extends View
 			}
 			elseif($user_id = $this->users->add_user(array('name'=>$name, 'email'=>$email, 'password'=>$password, 'enabled'=>$default_status, 'last_ip'=>$_SERVER['REMOTE_ADDR'])))
 			{
+                // Отсылаем данные о зарегистрировавшемся пользователе в RetailCRM
+                if ($arUserData = $this->retail->getNewUserRetailData($user_id)) {
+                    $this->retail->request('customersCreate', $arUserData);
+                }
 				$_SESSION['user_id'] = $user_id;
 				if(!empty($_SESSION['last_visited_page']))
 					header('Location: '.$_SESSION['last_visited_page']);				

@@ -36,7 +36,8 @@ class Simpla
 		'comments'   => 'Comments',
 		'feedbacks'  => 'Feedbacks',
 		'notify'     => 'Notify',
-		'managers'   => 'Managers'
+		'managers'   => 'Managers',
+		'retail'     => 'Retail'
 	);
 	
 	// Созданные объекты

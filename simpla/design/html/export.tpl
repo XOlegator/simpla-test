@@ -57,8 +57,46 @@ $(function() {
   				
 		});
 	
-	} 
+	}
 	
+	<!-- Начало вставки от Олега от 30.07.2015 -->
+	
+	$('#startExportOrders').on('click', function() {
+		do_export_orders_retailCRM();
+	});
+  
+	function do_export_orders_retailCRM() {
+		// Инициируем запрос на сервер для формирования выгрузки заказов в RetailCRM
+		$.ajax({
+ 		    url: "ajax/export_orders_retailCRM.php",
+  			success: function(data) {
+  			  $("#resultExportOrdersRetailCRM").append(data);
+  			},
+			error: function(xhr, status, errorThrown) {
+				alert(errorThrown + '\n' + xhr.responseText);
+        	}
+		});
+	}
+
+	$('#startExportGoods').on('click', function() {
+		do_export_goods_retailCRM();
+	});
+
+	function do_export_goods_retailCRM() {
+		// Инициируем запрос на сервер для формирования выгрузки товаров в файл ICML для RetailCRM
+		$.ajax({
+ 		    url: "ajax/export_to_ICML_retailCRM.php",
+  			success: function(data) {
+  			  $("#resultExportGoodsRetailCRM").append(data);
+  			},
+			error: function(xhr, status, errorThrown) {
+				alert(errorThrown + '\n' + xhr.responseText);
+        	}
+		});
+	}
+
+	<!-- Конец вставки Олега от 30.07.2015 -->
+
 });
 {/literal}
 </script>
@@ -90,4 +128,21 @@ $(function() {
 	<input class="button_green" id="start" type="button" name="" value="Экспортировать" />	
 	{/if}
 </div>
- 
+<hr>
+<div>
+	<h1>Экспорт заказов в RetailCRM</h1>
+	{if $message_error != 'no_permission'}
+	<div style="clear: both; height: 28px;"></div>
+	<input class="button_green" id="startExportOrders" type="button" name="" value="Экспортировать" />
+  <div id="resultExportOrdersRetailCRM"></div>
+	{/if}
+</div>
+<hr>
+<div>
+	<h1>Экспорт товаров в ICML для RetailCRM</h1>
+	{if $message_error != 'no_permission'}
+	<div style="clear: both; height: 28px;"></div>
+	<input class="button_green" id="startExportGoods" type="button" name="" value="Экспортировать" />
+  <div id="resultExportGoodsRetailCRM"></div>
+	{/if}
+</div>
