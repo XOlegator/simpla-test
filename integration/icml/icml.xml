@@ -1,0 +1,1876 @@
+<?xml version="1.0" encoding="utf-8"?>
+<yml_catalog date="2015-08-11 11:42:03">
+  <shop>
+    <name>Великолепный интернет-магазин</name>
+    <company>ООО "Великолепный интернет-магазин"</company>
+    <categories>
+      <category id="1">Мобильные телефоны</category>
+      <category id="2">Бытовая техника</category>
+      <category id="5">Фотоаппараты</category>
+      <category id="3" parentId="2">Пылесосы</category>
+      <category id="4" parentId="2">Миксеры</category>
+    </categories>
+    <offers>
+      <offer id="var12" productId="8" quantity="6">
+        <url>http://simpla-test.local/products/samsung-s5570-galaxy-mini</url>
+        <price>7300.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Samsung-Galaxy-Mini-S5570.jpg</picture>
+        <name>Samsung S5570 Galaxy Mini</name>
+        <productName>Samsung S5570 Galaxy Mini</productName>
+        <param name="Фотокамера" code="16">3 млн пикс.</param>
+        <param name="Диагональ" code="11">3.14 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Время разговора" code="36">9:30 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Размеры (ШxВxТ)" code="8">61x110x12 мм</param>
+        <param name="Размер изображения" code="12">240x320 пикс.</param>
+        <param name="Время ожидания" code="37">570 ч</param>
+        <param name="Емкость аккумулятора" code="35">1200 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-01-26</param>
+        <param name="Операционная система" code="4">Android 2.2</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, FM-радиоприемник</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, POP/SMTP-клиент, IMAP4</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Особенности" code="58">время работы в режиме разговора - до 570 мин. (2G), до 380 мин. (3G); время работы в режиме ожидания - до 570 ч (2G), до 440 ч (3G)</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Поддержка DLNA" code="59">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Датчики" code="40">приближения, компас</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Распознавание" code="47">улыбок</param>
+        <param name="Тип экрана" code="9">цветной, сенсорный</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var5" productId="4" quantity="12">
+        <url>http://simpla-test.local/products/htc-sensation</url>
+        <price>20300.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/HTC-Sensation-4G-1.jpeg</picture>
+        <name>HTC Sensation</name>
+        <productName>HTC Sensation</productName>
+        <vendor>HTC</vendor>
+      </offer>
+      <offer id="var1" productId="1" quantity="5">
+        <url>http://simpla-test.local/products/apple-iphone-4s-16gb</url>
+        <price>44000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/iphone4s-white.jpeg</picture>
+        <name>Apple iPhone 4S 16Gb / Белый</name>
+        <productName>Apple iPhone 4S 16Gb</productName>
+        <param name="Диагональ" code="11">3.5 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">8 млн пикс., 3264x2448, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">14:00 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">30 кадров/с</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">40 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">58.6x115.2x9.3 мм</param>
+        <param name="Вес" code="7">140 г</param>
+        <param name="Время ожидания" code="37">200 ч</param>
+        <param name="Размер изображения" code="12">640x960 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">1920x1080</param>
+        <param name="Объем постоянной памяти (ROM)" code="53">16384 Мб</param>
+        <param name="Процессор" code="54">Apple A5, двухъядерный</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, CDMA 800, CDMA 1900, 3G (UMTS), EV-DO Rev. A</param>
+        <param name="Операционная система" code="4">iOS 5</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WAV</param>
+        <param name="Видеовыход" code="51">TV-выход</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 4.0</param>
+        <param name="Доступ в интернет" code="29">WAP, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Управление" code="56">голосовой набор, голосовое управление</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Автодозвон" code="57">есть</param>
+        <param name="Фронтальная камера" code="50">есть, 0.3 млн пикс.</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения, гироскоп, компас</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Материал корпуса" code="6">сталь и стекло</param>
+        <param name="Особенности" code="58">технология AirPlay, iCloud; 2 антенны; время разговора - 480 мин (3G), 840 мин (2G GSM); технология экрана - Retina Display; расцветка - черный, белый</param>
+        <param name="Тип экрана" code="9">цветной, сенсорный</param>
+        <vendor>Apple</vendor>
+      </offer>
+      <offer id="var2" productId="1" quantity="0">
+        <url>http://simpla-test.local/products/apple-iphone-4s-16gb</url>
+        <price>42000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/iphone4s-white.jpeg</picture>
+        <name>Apple iPhone 4S 16Gb / Черный</name>
+        <productName>Apple iPhone 4S 16Gb</productName>
+        <param name="Диагональ" code="11">3.5 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">8 млн пикс., 3264x2448, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">14:00 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">30 кадров/с</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">40 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">58.6x115.2x9.3 мм</param>
+        <param name="Вес" code="7">140 г</param>
+        <param name="Время ожидания" code="37">200 ч</param>
+        <param name="Размер изображения" code="12">640x960 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">1920x1080</param>
+        <param name="Объем постоянной памяти (ROM)" code="53">16384 Мб</param>
+        <param name="Процессор" code="54">Apple A5, двухъядерный</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, CDMA 800, CDMA 1900, 3G (UMTS), EV-DO Rev. A</param>
+        <param name="Операционная система" code="4">iOS 5</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WAV</param>
+        <param name="Видеовыход" code="51">TV-выход</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 4.0</param>
+        <param name="Доступ в интернет" code="29">WAP, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Управление" code="56">голосовой набор, голосовое управление</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Автодозвон" code="57">есть</param>
+        <param name="Фронтальная камера" code="50">есть, 0.3 млн пикс.</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения, гироскоп, компас</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Материал корпуса" code="6">сталь и стекло</param>
+        <param name="Особенности" code="58">технология AirPlay, iCloud; 2 антенны; время разговора - 480 мин (3G), 840 мин (2G GSM); технология экрана - Retina Display; расцветка - черный, белый</param>
+        <param name="Тип экрана" code="9">цветной, сенсорный</param>
+        <vendor>Apple</vendor>
+      </offer>
+      <offer id="var25" productId="17" quantity="5">
+        <url>http://simpla-test.local/products/samsung-s7070-diva</url>
+        <price>8500.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Samsung-Diva-S7070.jpeg</picture>
+        <name>Samsung S7070 Diva</name>
+        <productName>Samsung S7070 Diva</productName>
+        <param name="Уровень SAR" code="69">0.993</param>
+        <param name="Диагональ" code="11">2.8 дюйма</param>
+        <param name="Фотокамера" code="16">3.20 млн пикс., 2048x1536</param>
+        <param name="Время разговора" code="36">8:00 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Объем встроенной памяти" code="32">50 Мб</param>
+        <param name="Размеры (ШxВxТ)" code="8">55x101x13 мм</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">94 г</param>
+        <param name="Размер изображения" code="12">240x320 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">320x240</param>
+        <param name="Время ожидания" code="37">660 ч</param>
+        <param name="Емкость аккумулятора" code="35">960 мАч</param>
+        <param name="Записная книжка в аппарате" code="68">1000 номеров</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Интерфейсы" code="25">USB, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP 2.0, GPRS, EDGE, POP/SMTP-клиент, IMAP4, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="Mobile Tracker" code="71">есть</param>
+        <param name="Запись видеороликов" code="17">есть (H.263, MPEG4)</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип сенсорного экрана" code="10">резистивный</param>
+        <param name="Тип" code="2">телефон</param>
+        <param name="Комплектация" code="44">телефон, аккумулятор, зарядное устройство, чехол, проводная стереогарнитура, инструкция</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var3" productId="2" quantity="3">
+        <url>http://simpla-test.local/products/samsung-galaxy-s-ii</url>
+        <price>19200.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Samsung-Galaxy-S-II.jpg</picture>
+        <name>Samsung Galaxy S II</name>
+        <productName>Samsung Galaxy S II</productName>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Диагональ" code="11">4.27 дюйма</param>
+        <param name="Время разговора" code="36">6:30 ч:мин</param>
+        <param name="Фотокамера" code="16">8 млн пикс., 3264x2448, светодиодная вспышка</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">30 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">66.1x125.3x8.49 мм</param>
+        <param name="Вес" code="7">116 г</param>
+        <param name="Время ожидания" code="37">350 ч</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">1024 Мб</param>
+        <param name="Емкость аккумулятора" code="35">1650 мАч</param>
+        <param name="Макс. разрешение видео" code="48">1920x1080</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-02-14</param>
+        <param name="Дата начала продаж (г-м-д)" code="63">2011-05-18</param>
+        <param name="Объем встроенной памяти" code="32">16384 Мб</param>
+        <param name="Операционная система" code="4">Android 2.3</param>
+        <param name="Процессор" code="54">ARM Cortex-A9, 1200 МГц, двухъядерный</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, FM-радиоприемник</param>
+        <param name="Видеовыход" code="51">TV-выход</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 3.0</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Управление" code="56">голосовой набор, голосовое управление</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Поддержка DLNA" code="59">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="Фронтальная камера" code="50">есть, 2 млн пикс.</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц</param>
+        <param name="Материал корпуса" code="6">металл и пластик</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения, гироскоп, компас</param>
+        <param name="Особенности" code="58">поддерживается функция USB on the Go (с помощью  переходника к microUSB-разъему можно подключать флешки или жесткие диски)</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, аккумулятор, проводная стереогарнитура, USB-кабель, зарядное устройство</param>
+        <param name="Тип экрана" code="9">цветной Super AMOLED Plus, 16.78 млн цветов, сенсорный</param>
+        <param name="Размер изображения" code="12">число строк - 16, 480x800 пикс.</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var4" productId="3" quantity="1">
+        <url>http://simpla-test.local/products/htc-incredible-s</url>
+        <price>16000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/HTC-Incredible-S_D.jpeg</picture>
+        <name>HTC Incredible S</name>
+        <productName>HTC Incredible S</productName>
+        <vendor>HTC</vendor>
+      </offer>
+      <offer id="var6" productId="5" quantity="3">
+        <url>http://simpla-test.local/products/nokia-c5-03</url>
+        <price>6900.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/210_Nokia_C5_03.jpeg</picture>
+        <name>Nokia C5-03 / Белый</name>
+        <productName>Nokia C5-03</productName>
+        <param name="Диагональ" code="11">3.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс.</param>
+        <param name="Время разговора" code="36">11:30 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Объем встроенной памяти" code="32">40 Мб</param>
+        <param name="Размеры (ШxВxТ)" code="8">51x106x14 мм</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">93 г</param>
+        <param name="Размер изображения" code="12">360x640 пикс.</param>
+        <param name="Время ожидания" code="37">600 ч</param>
+        <param name="Емкость аккумулятора" code="35">1000 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2010-10-14</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MPEG-4, 3GPP</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.4</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">компас</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип сенсорного экрана" code="10">резистивный</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, аккумулятор BL-4U, зарядное устройство AC-8/AC-15, стерео гарнитура WH-102, соединительный кабель CA-101D, карта памяти 2Gb microSD MU-37, инструкция</param>
+        <param name="Тип экрана" code="9">цветной, 16.78 млн цветов, сенсорный</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var7" productId="5" quantity="2">
+        <url>http://simpla-test.local/products/nokia-c5-03</url>
+        <price>7000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/210_Nokia_C5_03.jpeg</picture>
+        <name>Nokia C5-03 / Черный</name>
+        <productName>Nokia C5-03</productName>
+        <param name="Диагональ" code="11">3.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс.</param>
+        <param name="Время разговора" code="36">11:30 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Объем встроенной памяти" code="32">40 Мб</param>
+        <param name="Размеры (ШxВxТ)" code="8">51x106x14 мм</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">93 г</param>
+        <param name="Размер изображения" code="12">360x640 пикс.</param>
+        <param name="Время ожидания" code="37">600 ч</param>
+        <param name="Емкость аккумулятора" code="35">1000 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2010-10-14</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MPEG-4, 3GPP</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.4</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">компас</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип сенсорного экрана" code="10">резистивный</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, аккумулятор BL-4U, зарядное устройство AC-8/AC-15, стерео гарнитура WH-102, соединительный кабель CA-101D, карта памяти 2Gb microSD MU-37, инструкция</param>
+        <param name="Тип экрана" code="9">цветной, 16.78 млн цветов, сенсорный</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var8" productId="6" quantity="50">
+        <url>http://simpla-test.local/products/nokia-e72</url>
+        <price>12000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
+        <name>Nokia E72 / Фиолетовый</name>
+        <productName>Nokia E72</productName>
+        <param name="Диагональ" code="11">2.36 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">9:12 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Тип мелодий" code="14">25-голосная полифония, MP3-мелодии</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">41 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">60x114x10 мм</param>
+        <param name="Вес" code="7">128 г</param>
+        <param name="Размер изображения" code="12">320x240 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">640x480</param>
+        <param name="Время ожидания" code="37">868 ч</param>
+        <param name="Записная книжка в аппарате" code="68">1000 номеров</param>
+        <param name="Емкость аккумулятора" code="35">1500 мАч</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-polymer</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MP4, AVC/H.264, WMV, RV, Flash Video, H.263, 3GPP</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.3</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.0</param>
+        <param name="Доступ в интернет" code="29">WAP 2.0, GPRS, HSCSD, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
+        <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
+        <param name="Управление" code="56">голосовое управление</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Фронтальная камера" code="50">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Автодозвон" code="57">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="VoIP-клиент" code="65">есть</param>
+        <param name="Push-To-Talk" code="66">есть</param>
+        <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">освещенности, компас</param>
+        <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Материал корпуса" code="6">сталь и пластик</param>
+        <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var9" productId="6" quantity="50">
+        <url>http://simpla-test.local/products/nokia-e72</url>
+        <price>11000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
+        <name>Nokia E72 / Бежевый</name>
+        <productName>Nokia E72</productName>
+        <param name="Диагональ" code="11">2.36 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">9:12 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Тип мелодий" code="14">25-голосная полифония, MP3-мелодии</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">41 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">60x114x10 мм</param>
+        <param name="Вес" code="7">128 г</param>
+        <param name="Размер изображения" code="12">320x240 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">640x480</param>
+        <param name="Время ожидания" code="37">868 ч</param>
+        <param name="Записная книжка в аппарате" code="68">1000 номеров</param>
+        <param name="Емкость аккумулятора" code="35">1500 мАч</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-polymer</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MP4, AVC/H.264, WMV, RV, Flash Video, H.263, 3GPP</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.3</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.0</param>
+        <param name="Доступ в интернет" code="29">WAP 2.0, GPRS, HSCSD, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
+        <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
+        <param name="Управление" code="56">голосовое управление</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Фронтальная камера" code="50">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Автодозвон" code="57">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="VoIP-клиент" code="65">есть</param>
+        <param name="Push-To-Talk" code="66">есть</param>
+        <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">освещенности, компас</param>
+        <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Материал корпуса" code="6">сталь и пластик</param>
+        <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var10" productId="6" quantity="50">
+        <url>http://simpla-test.local/products/nokia-e72</url>
+        <price>10000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/E72_black_01-300-100.jpeg</picture>
+        <name>Nokia E72 / Черный</name>
+        <productName>Nokia E72</productName>
+        <param name="Диагональ" code="11">2.36 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">9:12 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Тип мелодий" code="14">25-голосная полифония, MP3-мелодии</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">41 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">60x114x10 мм</param>
+        <param name="Вес" code="7">128 г</param>
+        <param name="Размер изображения" code="12">320x240 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">640x480</param>
+        <param name="Время ожидания" code="37">868 ч</param>
+        <param name="Записная книжка в аппарате" code="68">1000 номеров</param>
+        <param name="Емкость аккумулятора" code="35">1500 мАч</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-polymer</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MP4, AVC/H.264, WMV, RV, Flash Video, H.263, 3GPP</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.3</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.0</param>
+        <param name="Доступ в интернет" code="29">WAP 2.0, GPRS, HSCSD, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
+        <param name="Дополнительные функции SMS" code="61">ввод текста со словарем, шаблоны сообщений, отправка SMS нескольким адресатам</param>
+        <param name="Управление" code="56">голосовое управление</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Фронтальная камера" code="50">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Автодозвон" code="57">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="VoIP-клиент" code="65">есть</param>
+        <param name="Push-To-Talk" code="66">есть</param>
+        <param name="Режимы кодирования звука HR, FR, EFR" code="67">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">освещенности, компас</param>
+        <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Материал корпуса" code="6">сталь и пластик</param>
+        <param name="Комплектация" code="44">телефон, зарядное устройство AC-8, MicroSD4GB MU-41, MicroUSB-кабель CA-101, стереогарнитура WH-601, аккумулятор BP-4L, чехол и ремешок, ткань для протирания, инструкция</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var11" productId="7" quantity="50">
+        <url>http://simpla-test.local/products/sony-ericsson-xperia-arc</url>
+        <price>20000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Sony-Ericsson-XPERIA-Arc.jpeg</picture>
+        <name>Sony Ericsson Xperia arc</name>
+        <productName>Sony Ericsson Xperia arc</productName>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Диагональ" code="11">4.2 дюйма</param>
+        <param name="Время разговора" code="36">7:00 ч:мин</param>
+        <param name="Фотокамера" code="16">8.10 млн пикс., светодиодная вспышка</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">31 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">63x125x9 мм</param>
+        <param name="Вес" code="7">117 г</param>
+        <param name="Время ожидания" code="37">430 ч</param>
+        <param name="Размер изображения" code="12">480x854 пикс.</param>
+        <param name="Объем постоянной памяти (ROM)" code="53">512 Мб</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">512 Мб</param>
+        <param name="Макс. разрешение видео" code="48">1280x720</param>
+        <param name="Емкость аккумулятора" code="35">1500 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-01-06</param>
+        <param name="Операционная система" code="4">Android 2.3</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Аудио" code="20">MP3, AAC, FM-радиоприемник</param>
+        <param name="Процессор" code="54">Qualcomm MSM 8255, 1000 МГц</param>
+        <param name="Видеовыход" code="51">TV-выход, HDMI</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач, поддержка файлов MS Office</param>
+        <param name="Управление" code="56">голосовой набор, голосовое управление</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц, улыбок</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип аккумулятора" code="34">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, батарея, стереогарнитура, кабель micro USB</param>
+        <param name="Особенности" code="58">фокусировка касанием</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Sony Ericsson</vendor>
+      </offer>
+      <offer id="var13" productId="9" quantity="50">
+        <url>http://simpla-test.local/products/sony-ericsson-vivaz</url>
+        <price>10300.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Vivaz_Front_MoonSilver.jpg</picture>
+        <name>Sony Ericsson Vivaz</name>
+        <productName>Sony Ericsson Vivaz</productName>
+        <param name="Диагональ" code="11">3.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5.10 млн пикс., светодиодная вспышка</param>
+        <param name="Время разговора" code="36">12:30 ч:мин</param>
+        <param name="Размеры (ШxВxТ)" code="8">52x109x15 мм</param>
+        <param name="Объем встроенной памяти" code="32">75 Мб</param>
+        <param name="Вес" code="7">117 г</param>
+        <param name="Размер изображения" code="12">360x640 пикс.</param>
+        <param name="Время ожидания" code="37">440 ч</param>
+        <param name="Макс. разрешение видео" code="48">1280x720</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2010-02-14</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Аудио" code="20">MP3, FM-радиоприемник</param>
+        <param name="Платформа" code="3">Series 60</param>
+        <param name="Операционная система" code="4">Symbian OS 9.4</param>
+        <param name="Видеовыход" code="51">TV-выход</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, POP/SMTP-клиент, HTML</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="Распознавание" code="47">лиц, улыбок</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип сенсорного экрана" code="10">резистивный</param>
+        <param name="Тип корпуса" code="5">слайдер</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип аккумулятора" code="34">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, батарея, стереогарнитура, карта памяти MicroSD 8Gb, кабель microUSB</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Sony Ericsson</vendor>
+      </offer>
+      <offer id="var14" productId="10" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x3-02</url>
+        <price>5500.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
+        <name>Nokia X3-02 / Малиновый</name>
+        <productName>Nokia X3-02</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var15" productId="10" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x3-02</url>
+        <price>5600.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
+        <name>Nokia X3-02 / Голубой</name>
+        <productName>Nokia X3-02</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var16" productId="10" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x3-02</url>
+        <price>5700.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
+        <name>Nokia X3-02 / Черный</name>
+        <productName>Nokia X3-02</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var17" productId="10" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x3-02</url>
+        <price>5200.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
+        <name>Nokia X3-02 / Белый</name>
+        <productName>Nokia X3-02</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var18" productId="10" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x3-02</url>
+        <price>5300.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1Nokia-X3-02-Touch-and-Type-1.jpg</picture>
+        <name>Nokia X3-02 / Фиолетовый</name>
+        <productName>Nokia X3-02</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var19" productId="11" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x2-00</url>
+        <price>5000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/nokia_X2_front_blue_604x604.png</picture>
+        <name>Nokia X2-00</name>
+        <productName>Nokia X2-00</productName>
+        <param name="Уровень SAR" code="69">0.82</param>
+        <param name="Диагональ" code="11">2.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">13:30 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">20 кадров/с</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">27 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">47x111x13 мм</param>
+        <param name="Объем встроенной памяти" code="32">48 Мб</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">82 г</param>
+        <param name="Размер изображения" code="12">240x320 пикс.</param>
+        <param name="Макс. разрешение видео" code="48">320x240</param>
+        <param name="Время ожидания" code="37">540 ч</param>
+        <param name="Емкость аккумулятора" code="35">860 мАч</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, стереодинамики, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MPEG-4, 3GPP</param>
+        <param name="Платформа" code="3">Series 40</param>
+        <param name="Интерфейсы" code="25">USB, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, POP/SMTP-клиент</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Запись видеороликов" code="17">есть (3GP)</param>
+        <param name="Органайзер" code="43">калькулятор, планировщик задач</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Материал корпуса" code="6">металл и пластик</param>
+        <param name="Управление" code="56">навигационная клавиша</param>
+        <param name="Особенности" code="58">полный фокус</param>
+        <param name="Тип" code="2">телефон</param>
+        <param name="Тип сенсорного экрана" code="10">телефон</param>
+        <param name="Комплектация" code="44">телефон, батарея Nokia BL-4C, компактное зарядное устройство Nokia AC-3, стереогарнитура Nokia WH-205, кабель для подключения Nokia CA-101D, карта памяти microSDHC 2 Гб, руководство пользователя</param>
+        <param name="Тип экрана" code="9">цветной TFT, 262.14 тыс цветов</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var20" productId="12" quantity="50">
+        <url>http://simpla-test.local/products/nokia-e7</url>
+        <price>25000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/nokia_e7_blue_front_1200x1200.png</picture>
+        <name>Nokia E7</name>
+        <productName>Nokia E7</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var21" productId="13" quantity="50">
+        <url>http://simpla-test.local/products/nokia-c6-00</url>
+        <price>10000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/nokiac600.jpg</picture>
+        <name>Nokia C6-00</name>
+        <productName>Nokia C6-00</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var22" productId="14" quantity="50">
+        <url>http://simpla-test.local/products/htc-salsa</url>
+        <price>12000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/htcsalsa_3.jpg</picture>
+        <name>HTC Salsa</name>
+        <productName>HTC Salsa</productName>
+        <param name="Воспроизведение видео" code="19">3GP, 3G2, MP4, WMV, AVI, XVID</param>
+        <param name="Диагональ" code="11">3.4 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., встроенная вспышка</param>
+        <param name="Время разговора" code="36">9:45 ч:мин</param>
+        <param name="Размеры (ШxВxТ)" code="8">59x109x12 мм</param>
+        <param name="Вес" code="7">120 г</param>
+        <param name="Размер изображения" code="12">320x480 пикс.</param>
+        <param name="Время ожидания" code="37">465 ч</param>
+        <param name="Объем встроенной памяти" code="32">512 Мб</param>
+        <param name="Объем постоянной памяти (ROM)" code="53">512 Мб</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">512 Мб</param>
+        <param name="Емкость аккумулятора" code="35">1520 мАч</param>
+        <param name="Операционная система" code="4">Android 2.3</param>
+        <param name="Доступ в интернет" code="29">GPRS, EDGE, HSDPA</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WAV, WMA</param>
+        <param name="Процессор" code="54">Qualcomm MSM7227, 600 МГц</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 3.0</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="Запись видеороликов" code="17">есть (3GP)</param>
+        <param name="Фронтальная камера" code="50">есть, 0.3 млн пикс.</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Официальная поставка в Россию" code="70">нет</param>
+        <param name="Датчики" code="40">освещенности, приближения, компас</param>
+        <param name="Тип мелодий" code="14">полифонические</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип экрана" code="9">цветной, сенсорный</param>
+        <vendor>HTC</vendor>
+      </offer>
+      <offer id="var23" productId="15" quantity="50">
+        <url>http://simpla-test.local/products/blackberry-torch-9800</url>
+        <price>27000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/White-Blackberry-Torch-98001.jpg</picture>
+        <name>BlackBerry Torch 9800</name>
+        <productName>BlackBerry Torch 9800</productName>
+        <param name="Диагональ" code="11">3.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., встроенная вспышка</param>
+        <param name="Время разговора" code="36">5:48 ч:мин</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">30 ч</param>
+        <param name="Тип мелодий" code="14">32-голосная полифония, MP3-мелодии</param>
+        <param name="Размеры (ШxВxТ)" code="8">62x148x15 мм</param>
+        <param name="Вес" code="7">161 г</param>
+        <param name="Размер изображения" code="12">360x480 пикс.</param>
+        <param name="Время ожидания" code="37">432 ч</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">512 Мб</param>
+        <param name="Макс. разрешение видео" code="48">640x480</param>
+        <param name="Емкость аккумулятора" code="35">1300 мАч</param>
+        <param name="Операционная система" code="4">BlackBerry OS</param>
+        <param name="Платформа" code="3">BlackBerry OS</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA</param>
+        <param name="Воспроизведение видео" code="19">MPEG4, H.263, H.264, WMV3</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Особенности" code="58">оптический трекпад</param>
+        <param name="Тип корпуса" code="5">слайдер</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип экрана" code="9">цветной, сенсорный</param>
+        <vendor>BlackBerry</vendor>
+      </offer>
+      <offer id="var24" productId="16" quantity="50">
+        <url>http://simpla-test.local/products/htc_legend</url>
+        <price>15700.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/htc-legend.jpg</picture>
+        <name>HTC Legend</name>
+        <productName>HTC Legend</productName>
+        <vendor>HTC</vendor>
+      </offer>
+      <offer id="var26" productId="18" quantity="50">
+        <url>http://simpla-test.local/products/blackberry_bold_9900</url>
+        <price>33000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/BlackBerry-Bold-9900-and-9930-Smartphone-2.jpg</picture>
+        <name>BlackBerry Bold 9900</name>
+        <productName>BlackBerry Bold 9900</productName>
+        <param name="Диагональ" code="11">2.8 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, встроенная вспышка</param>
+        <param name="Размеры (ШxВxТ)" code="8">66x115x11 мм</param>
+        <param name="Вес" code="7">130 г</param>
+        <param name="Размер изображения" code="12">640x480 пикс.</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">768 Мб</param>
+        <param name="Емкость аккумулятора" code="35">1230 мАч</param>
+        <param name="Макс. разрешение видео" code="48">1280x720</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-05-02</param>
+        <param name="Дата начала продаж (г-м-д)" code="63">2011-07-01</param>
+        <param name="Объем встроенной памяти" code="32">8192 Мб</param>
+        <param name="Операционная система" code="4">BlackBerry OS</param>
+        <param name="Платформа" code="3">BlackBerry OS</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA</param>
+        <param name="Воспроизведение видео" code="19">MPEG4, WMV</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Дополнительные функции SMS" code="61">ввод текста со словарем</param>
+        <param name="Управление" code="56">голосовой набор</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Игры" code="22">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц</param>
+        <param name="Материал корпуса" code="6">металл и пластик</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения, компас</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип экрана" code="9">цветной TFT, 16.78 млн цветов, сенсорный</param>
+        <vendor>BlackBerry</vendor>
+      </offer>
+      <offer id="var27" productId="19" quantity="50">
+        <url>http://simpla-test.local/products/sony-ericsson-xperia-x10</url>
+        <price>18000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/xperia.jpg</picture>
+        <name>Sony Ericsson Xperia X10</name>
+        <productName>Sony Ericsson Xperia X10</productName>
+        <vendor>Sony Ericsson</vendor>
+      </offer>
+      <offer id="var28" productId="20" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x7</url>
+        <price>20000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/a270-e1302938698758.jpg</picture>
+        <name>Nokia X7</name>
+        <productName>Nokia X7</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var29" productId="21" quantity="50">
+        <url>http://simpla-test.local/products/nokia-c2-03</url>
+        <price>4000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Nokia-C2-031.jpg</picture>
+        <name>Nokia C2-03</name>
+        <productName>Nokia C2-03</productName>
+        <param name="Фотокамера" code="16">2 млн пикс.</param>
+        <param name="Диагональ" code="11">2.6 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Время разговора" code="36">5:00 ч:мин</param>
+        <param name="Объем встроенной памяти" code="32">10 Мб</param>
+        <param name="Макс. частота кадров видео" code="18">15 кадров/с</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">35 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">51x103x17 мм</param>
+        <param name="Вес" code="7">118 г</param>
+        <param name="Макс. разрешение видео" code="48">176x144</param>
+        <param name="Размер изображения" code="12">240x320 пикс.</param>
+        <param name="Время ожидания" code="37">400 ч</param>
+        <param name="Емкость аккумулятора" code="35">1020 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-06-21</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WAV, FM-радиоприемник</param>
+        <param name="Интерфейсы" code="25">USB, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поддержка двух SIM-карт" code="72">есть</param>
+        <param name="Запись видеороликов" code="17">есть (3GP)</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип сенсорного экрана" code="10">резистивный</param>
+        <param name="Тип корпуса" code="5">слайдер</param>
+        <param name="Тип" code="2">телефон</param>
+        <param name="Комплектация" code="44">телефон, батарея, зарядное устройство, стерео гарнитура, карта памяти MicroSD 2 Гб, инструкция</param>
+        <param name="Тип экрана" code="9">цветной, 65.54 тыс цветов, сенсорный</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var30" productId="22" quantity="50">
+        <url>http://simpla-test.local/products/samsung-s3350</url>
+        <price>4500.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/fcb0349a.jpg</picture>
+        <name>Samsung S3350</name>
+        <productName>Samsung S3350</productName>
+        <param name="Фотокамера" code="16">2 млн пикс.</param>
+        <param name="Диагональ" code="11">2.4 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Время разговора" code="36">12:00 ч:мин</param>
+        <param name="Объем встроенной памяти" code="32">60 Мб</param>
+        <param name="Размеры (ШxВxТ)" code="8">61x111x12 мм</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">93 г</param>
+        <param name="Размер изображения" code="12">320x240 пикс.</param>
+        <param name="Время ожидания" code="37">520 ч</param>
+        <param name="Записная книжка в аппарате" code="68">1000 номеров</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, FM-радиоприемник</param>
+        <param name="Воспроизведение видео" code="19">MPEG4</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="Запись видеороликов" code="17">есть (MPEG4)</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Управление" code="56">навигационная клавиша</param>
+        <param name="Тип" code="2">телефон</param>
+        <param name="Тип сенсорного экрана" code="10">телефон</param>
+        <param name="Тип экрана" code="9">цветной TFT, 262.14 тыс цветов</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений</param>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var31" productId="23" quantity="50">
+        <url>http://simpla-test.local/products/nokia-x6-16gb</url>
+        <price>13000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/nokia-x6-16gb-pink-1.jpg</picture>
+        <name>Nokia X6 16Gb</name>
+        <productName>Nokia X6 16Gb</productName>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var32" productId="24" quantity="50">
+        <url>http://simpla-test.local/products/samsung-s3650-corby</url>
+        <price>4500.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/samsung_s3650_corby_29193d.jpg</picture>
+        <name>Samsung S3650 Corby</name>
+        <productName>Samsung S3650 Corby</productName>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var33" productId="25" quantity="50">
+        <url>http://simpla-test.local/products/samsung-la-fleur-wave</url>
+        <price>3000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Samsung_La_Fleur_Wave_GT-E2530-2.jpg</picture>
+        <name>Samsung La Fleur Wave</name>
+        <productName>Samsung La Fleur Wave</productName>
+        <vendor>Samsung</vendor>
+      </offer>
+      <offer id="var34" productId="26" quantity="50">
+        <url>http://simpla-test.local/products/nokia-6700-classic-illuvial</url>
+        <price>11000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/1008.jpg</picture>
+        <name>Nokia 6700 classic Illuvial</name>
+        <productName>Nokia 6700 classic Illuvial</productName>
+        <param name="Диагональ" code="11">2.2 дюйма</param>
+        <param name="Фотокамера" code="16">5 млн пикс., 2592x1944, светодиодная вспышка</param>
+        <param name="Время разговора" code="36">5:00 ч:мин</param>
+        <param name="Макс. частота кадров видео" code="18">30 кадров/с</param>
+        <param name="Размеры (ШxВxТ)" code="8">45x110x11 мм</param>
+        <param name="Тип мелодий" code="14">64-голосная полифония, MP3-мелодии</param>
+        <param name="Вес" code="7">113 г</param>
+        <param name="Объем встроенной памяти" code="32">170 Мб</param>
+        <param name="Размер изображения" code="12">240x320 пикс.</param>
+        <param name="Время ожидания" code="37">416 ч</param>
+        <param name="Макс. разрешение видео" code="48">640x480</param>
+        <param name="Емкость аккумулятора" code="35">960 мАч</param>
+        <param name="Записная книжка в аппарате" code="68">2000 номеров</param>
+        <param name="Воспроизведение видео" code="19">.mp4, .3gp</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник</param>
+        <param name="Интерфейсы" code="25">USB, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Управление" code="56">голосовой набор</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Режим полета" code="39">есть</param>
+        <param name="Поиск по книжке" code="41">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Запись видеороликов" code="17">есть (.mp4, .3gp)</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Датчики" code="40">освещенности</param>
+        <param name="Тип" code="2">телефон</param>
+        <param name="Тип сенсорного экрана" code="10">телефон</param>
+        <param name="Комплектация" code="44">телефон, батарея Nokia BL-6Q, карта памяти SD 1Гб, гарнитура µUSB Nokia WH-203, кабель для подключения к компьютеру Nokia CA-101, зарядное устройство Nokia AC-8E, чехол (коллекция Illuvial), ремешок (коллекция Illuvial), руководство</param>
+        <param name="Особенности" code="58">технология Content Adaptive Brightness Control (CABC), выделенная клавиша управления камерой</param>
+        <param name="Тип экрана" code="9">цветной, 16.78 млн цветов</param>
+        <param name="Дополнительные функции SMS" code="61">шаблоны сообщений, отправка SMS нескольким адресатам</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var35" productId="27" quantity="50">
+        <url>http://simpla-test.local/products/blackberry-torch-9810</url>
+        <price>29000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/Torch_9810_Front2.jpg</picture>
+        <name>BlackBerry Torch 9810</name>
+        <productName>BlackBerry Torch 9810</productName>
+        <param name="Диагональ" code="11">3.2 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">5 млн пикс., встроенная вспышка</param>
+        <param name="Время разговора" code="36">6:30 ч:мин</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">54 ч</param>
+        <param name="Размеры (ШxВxТ)" code="8">62x111x14.6 мм</param>
+        <param name="Вес" code="7">161 г</param>
+        <param name="Время ожидания" code="37">307 ч</param>
+        <param name="Размер изображения" code="12">480x640 пикс.</param>
+        <param name="Объем оперативной памяти (RAM)" code="60">768 Мб</param>
+        <param name="Емкость аккумулятора" code="35">1270 мАч</param>
+        <param name="Макс. разрешение видео" code="48">1280x720</param>
+        <param name="Объем встроенной памяти" code="32">8192 Мб</param>
+        <param name="Операционная система" code="4">BlackBerry OS</param>
+        <param name="Платформа" code="3">BlackBerry OS</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WAV, WMA</param>
+        <param name="Воспроизведение видео" code="19">MP4, M4A, 3GP, M4V, AVI, ASF, WMV</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 2.1</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Особенности" code="58">высота смартфона в открытом виде - 147.6 мм; трекпад</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Обмен между SIM-картой и внутренней памятью" code="42">есть</param>
+        <param name="Geo Tagging" code="49">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Профиль A2DP" code="62">есть</param>
+        <param name="QWERTY-клавиатура" code="64">есть</param>
+        <param name="Распознавание" code="47">лиц</param>
+        <param name="Датчики" code="40">освещенности, приближения, компас</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип корпуса" code="5">слайдер</param>
+        <param name="Тип сенсорного экрана" code="10">смартфон/коммуникатор</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Тип экрана" code="9">цветной TFT, сенсорный</param>
+        <vendor>BlackBerry</vendor>
+      </offer>
+      <offer id="var36" productId="28" quantity="50">
+        <url>http://simpla-test.local/products/nokia-701</url>
+        <price>17000.00</price>
+        <categoryId>1</categoryId>
+        <picture>http://simpla-test.local/files/originals/nokia701_5.jpg</picture>
+        <name>Nokia 701</name>
+        <productName>Nokia 701</productName>
+        <param name="Уровень SAR" code="69">0.69</param>
+        <param name="Диагональ" code="11">3.5 дюйма</param>
+        <param name="Разъем для наушников" code="24">3.5 мм</param>
+        <param name="Фотокамера" code="16">8 млн пикс., светодиодная вспышка</param>
+        <param name="Время разговора" code="36">17:00 ч:мин</param>
+        <param name="Размеры (ШxВxТ)" code="8">56.8x117.2x11 мм</param>
+        <param name="Время работы в режиме прослушивания музыки" code="55">71 ч</param>
+        <param name="Вес" code="7">131 г</param>
+        <param name="Размер изображения" code="12">360x640 пикс.</param>
+        <param name="Время ожидания" code="37">504 ч</param>
+        <param name="Макс. разрешение видео" code="48">1280x720</param>
+        <param name="Емкость аккумулятора" code="35">1300 мАч</param>
+        <param name="Дата анонсирования (г-м-д)" code="45">2011-08-25</param>
+        <param name="Объем встроенной памяти" code="32">8192 Мб</param>
+        <param name="Стандарт" code="1">GSM 900/1800/1900, 3G (UMTS)</param>
+        <param name="Тип аккумулятора" code="34">Li-Ion</param>
+        <param name="Аудио" code="20">MP3, AAC, WMA, FM-радиоприемник, FM-трансмиттер</param>
+        <param name="Воспроизведение видео" code="19">MPEG-4 , H.264/AVC, H.263/3GPP, RealVideo 8/9/10</param>
+        <param name="Платформа" code="3">Symbian</param>
+        <param name="Видеовыход" code="51">TV-выход</param>
+        <param name="Интерфейсы" code="25">USB, Wi-Fi, Bluetooth 3.0</param>
+        <param name="Доступ в интернет" code="29">WAP, GPRS, EDGE, HSDPA, HSUPA, POP/SMTP-клиент, IMAP4</param>
+        <param name="Органайзер" code="43">будильник, калькулятор, планировщик задач</param>
+        <param name="Дополнительные функции SMS" code="61">ввод текста со словарем</param>
+        <param name="Зарядка от USB" code="26">есть</param>
+        <param name="Встроенный GPS-приемник" code="27">есть</param>
+        <param name="Cистема A-GPS" code="28">есть</param>
+        <param name="Синхронизация с компьютером" code="30">есть</param>
+        <param name="Использование в качестве USB-накопителя" code="31">есть</param>
+        <param name="MMS" code="33">есть</param>
+        <param name="Громкая связь (встроенный динамик)" code="38">есть</param>
+        <param name="Русификация" code="46">есть</param>
+        <param name="Модем" code="52">есть</param>
+        <param name="Java-приложения" code="23">есть</param>
+        <param name="Диктофон" code="21">есть</param>
+        <param name="Запись видеороликов" code="17">есть</param>
+        <param name="Виброзвонок" code="15">есть</param>
+        <param name="Автоматический поворот экрана" code="13">есть</param>
+        <param name="Тип корпуса" code="5">классический</param>
+        <param name="Распознавание" code="47">лиц, улыбок</param>
+        <param name="Тип сенсорного экрана" code="10">мультитач, емкостный</param>
+        <param name="Датчики" code="40">освещенности, приближения, компас</param>
+        <param name="Тип мелодий" code="14">полифонические, MP3-мелодии</param>
+        <param name="Тип" code="2">смартфон/коммуникатор</param>
+        <param name="Комплектация" code="44">телефон, батарея BL-5K, стерео гарнитура Nokia WH-207, дата кабель Nokia CA-179, зарядное устройство Nokia AC-15, инструкция</param>
+        <param name="Тип экрана" code="9">цветной IPS, 16.78 млн цветов, сенсорный</param>
+        <param name="Особенности" code="58">яркость дисплея - 1000 нит; технологии IPS и ClearBlack; дисплей защищен стеклом Corning Gorilla Glass</param>
+        <vendor>Nokia</vendor>
+      </offer>
+      <offer id="var37" productId="29" quantity="50">
+        <url>http://simpla-test.local/products/pylesos-dyson-dc23-pink</url>
+        <price>25000.00</price>
+        <categoryId>3</categoryId>
+        <picture>http://simpla-test.local/files/originals/dc23_pink_weis_klein.jpeg</picture>
+        <name>Пылесос Dyson DC23 Pink</name>
+        <productName>Пылесос Dyson DC23 Pink</productName>
+        <param name="Длина сетевого шнура" code="80">6.5 м</param>
+        <param name="Вес" code="7">8.75 кг</param>
+        <param name="Размеры пылесоса (ШxГxВ)" code="82">35.2x46x28.9 cм</param>
+        <param name="Уровень шума" code="79">84 дБ</param>
+        <param name="Потребляемая мощность" code="74">1400 Вт</param>
+        <param name="Функции и возможности" code="81"> автосматывание сетевого шнура,  ножной переключатель вкл./выкл. на корпусе, место для хранения насадок</param>
+        <param name="Возможность подключения электрощетки" code="85">есть</param>
+        <param name="Фильтр тонкой очистки" code="77">есть</param>
+        <param name="Регулятор мощности" code="76">на корпусе</param>
+        <param name="Дополнительные насадки в комплекте" code="86">пол/ковер; щелевая; для чистки полированных поверхностей; для чистки мягкой мебели; гибкая щелевая; для чистки матрасов; щетка с жесткой щетиной</param>
+        <param name="Дополнительная информация" code="83">радиус действия 10м; прорезиненные колеса; убивает бактерии и аллергены</param>
+        <param name="Источник питания" code="78">сеть</param>
+        <param name="Уборка" code="73">сухая</param>
+        <param name="Труба всасывания" code="84">телескопическая</param>
+        <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
+        <vendor>Dyson</vendor>
+      </offer>
+      <offer id="var38" productId="30" quantity="50">
+        <url>http://simpla-test.local/products/pylesos-dyson-dc32-animalpro</url>
+        <price>28000.00</price>
+        <categoryId>3</categoryId>
+        <picture>http://simpla-test.local/files/originals/dyson_dc32_animal.jpg</picture>
+        <name>Пылесос Dyson DC32 AnimalPro</name>
+        <productName>Пылесос Dyson DC32 AnimalPro</productName>
+        <param name="Длина сетевого шнура" code="80">6.5 м</param>
+        <param name="Вес" code="7">8.78 кг</param>
+        <param name="Размеры пылесоса (ШxГxВ)" code="82">30.2x49.1x35.2 cм</param>
+        <param name="Уровень шума" code="79">84 дБ</param>
+        <param name="Потребляемая мощность" code="74">1400 Вт</param>
+        <param name="Функции и возможности" code="81"> автосматывание сетевого шнура,  ножной переключатель вкл./выкл. на корпусе, обеззараживающая УФ-лампа, место для хранения насадок</param>
+        <param name="Дополнительная информация" code="83">HEPA фильтр с антибактериальным экраном Bactisafe задерживает и убивает бактерии и аллергены; радиус действия 10 м; прорезиненные колеса</param>
+        <param name="Фильтр тонкой очистки" code="77">есть</param>
+        <param name="Турбощетка в комплекте" code="87">есть</param>
+        <param name="Регулятор мощности" code="76">нет</param>
+        <param name="Источник питания" code="78">сеть</param>
+        <param name="Уборка" code="73">сухая</param>
+        <param name="Труба всасывания" code="84">телескопическая</param>
+        <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
+        <param name="Дополнительные насадки в комплекте" code="86">щелевая; для полированных поверхностей; для мягкой мебели; щетка для твердых поверхностей; мини-турбо</param>
+        <vendor>Dyson</vendor>
+      </offer>
+      <offer id="var39" productId="31" quantity="50">
+        <url>http://simpla-test.local/products/pylesos-electrolux-zt-3510</url>
+        <price>3500.00</price>
+        <categoryId>3</categoryId>
+        <picture>http://simpla-test.local/files/originals/zt3510uk-lr.jpeg</picture>
+        <name>Пылесос Electrolux ZT 3510</name>
+        <productName>Пылесос Electrolux ZT 3510</productName>
+        <param name="Длина сетевого шнура" code="80">6 м</param>
+        <param name="Вес" code="7">6.75 кг</param>
+        <param name="Размеры пылесоса (ШxГxВ)" code="82">30.2x39x30 cм</param>
+        <param name="Уровень шума" code="79">85 дБ</param>
+        <param name="Мощность всасывания" code="88">250 Вт</param>
+        <param name="Потребляемая мощность" code="74">1500 Вт</param>
+        <param name="Функции и возможности" code="81"> автосматывание сетевого шнура,  ножной переключатель вкл./выкл. на корпусе,  вертикальная парковка трубы всасывания на корпусе пылесоса</param>
+        <param name="Фильтр тонкой очистки" code="77">есть</param>
+        <param name="Дополнительная информация" code="83">мягкие колеса; радиус действия 9м; индикатор загрязнения фильтра</param>
+        <param name="Регулятор мощности" code="76">на корпусе</param>
+        <param name="Дополнительные насадки в комплекте" code="86">пол/ковер; для мягкой мебели</param>
+        <param name="Источник питания" code="78">сеть</param>
+        <param name="Уборка" code="73">сухая</param>
+        <param name="Труба всасывания" code="84">телескопическая</param>
+        <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
+        <vendor>Electrolux</vendor>
+      </offer>
+      <offer id="var40" productId="32" quantity="50">
+        <url>http://simpla-test.local/products/pylesos-dyson-dc22-motorhead</url>
+        <price>35000.00</price>
+        <categoryId>3</categoryId>
+        <picture>http://simpla-test.local/files/originals/u_00362479.jpg</picture>
+        <name>Пылесос Dyson DC22 Motorhead</name>
+        <productName>Пылесос Dyson DC22 Motorhead</productName>
+        <param name="Длина сетевого шнура" code="80">5 м</param>
+        <param name="Вес" code="7">8.2 кг</param>
+        <param name="Размеры пылесоса (ШxГxВ)" code="82">26.3x40.2x29.1 cм</param>
+        <param name="Уровень шума" code="79">82 дБ</param>
+        <param name="Мощность всасывания" code="88">200 Вт</param>
+        <param name="Потребляемая мощность" code="74">1100 Вт</param>
+        <param name="Электрощетка в комплекте" code="89"> да</param>
+        <param name="Фильтр тонкой очистки" code="77">есть</param>
+        <param name="Возможность подключения электрощетки" code="85">есть</param>
+        <param name="Функции и возможности" code="81">индикатор заполнения пылесборника,  автосматывание сетевого шнура,  вертикальная парковка трубы всасывания на корпусе пылесоса</param>
+        <param name="Регулятор мощности" code="76">на корпусе</param>
+        <param name="Дополнительная информация" code="83">радиус действия 8.6м, гигиеничная очистка контейнера, колеса прорезиненные</param>
+        <param name="Источник питания" code="78">сеть</param>
+        <param name="Уборка" code="73">сухая</param>
+        <param name="Труба всасывания" code="84">телескопическая</param>
+        <param name="Пылесборник" code="75">циклонный фильтр, емкостью 1.20 л</param>
+        <param name="Дополнительные насадки в комплекте" code="86">щелевая; для мебели; щетка для твердых покрытий</param>
+        <vendor>Dyson</vendor>
+      </offer>
+      <offer id="var41" productId="33" quantity="50">
+        <url>http://simpla-test.local/products/dyson-dc32-exclusive</url>
+        <price>24000.00</price>
+        <categoryId>3</categoryId>
+        <picture>http://simpla-test.local/files/originals/231.jpg</picture>
+        <name>Dyson DC32 Exclusive</name>
+        <productName>Dyson DC32 Exclusive</productName>
+        <param name="Длина сетевого шнура" code="80">6.5 м</param>
+        <param name="Вес" code="7">8.66 кг</param>
+        <param name="Размеры пылесоса (ШxГxВ)" code="82">30.1x49x35.2 cм</param>
+        <param name="Уровень шума" code="79">85 дБ</param>
+        <param name="Мощность всасывания" code="88">280 Вт</param>
+        <param name="Потребляемая мощность" code="74">1400 Вт</param>
+        <param name="Функции и возможности" code="81"> автосматывание сетевого шнура,  ножной переключатель вкл./выкл. на корпусе, место для хранения насадок</param>
+        <param name="Фильтр тонкой очистки" code="77">есть</param>
+        <param name="Регулятор мощности" code="76">нет</param>
+        <param name="Дополнительные насадки в комплекте" code="86">пол/ковер; с жесткой щетиной; для мягкой мебели; щелевая; матрасная</param>
+        <param name="Дополнительная информация" code="83">радиус действия 10 м; прорезиненные колеса</param>
+        <param name="Источник питания" code="78">сеть</param>
+        <param name="Уборка" code="73">сухая</param>
+        <param name="Труба всасывания" code="84">телескопическая</param>
+        <param name="Пылесборник" code="75">циклонный фильтр, емкостью 2 л</param>
+        <vendor>Dyson</vendor>
+      </offer>
+      <offer id="var42" productId="34" quantity="50">
+        <url>http://simpla-test.local/products/mikser-zelmer-48167</url>
+        <price>3700.00</price>
+        <categoryId>4</categoryId>
+        <picture>http://simpla-test.local/files/originals/Zelmer-481-67-2.jpg</picture>
+        <name>Миксер Zelmer 481.67</name>
+        <productName>Миксер Zelmer 481.67</productName>
+        <param name="Вес" code="7">2.5 кг</param>
+        <param name="Количество насадок" code="94">4</param>
+        <param name="Число скоростей" code="92">5</param>
+        <param name="Мощность" code="91">400 Вт</param>
+        <param name="Насадки" code="95">венчик для взбивания, крюки для теста, блендер</param>
+        <param name="Дополнительная информация" code="83">весы с LCD дисплеем с подсветкой, насадка для протирания</param>
+        <param name="Чаша" code="90">вращающаяся, 3 л, пластик</param>
+        <param name="Кнопка отсоединения насадок" code="96">есть</param>
+        <param name="Защитная крышка на чашу" code="97">нет</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип" code="2">стационарный</param>
+        <param name="Дополнительные режимы" code="93">турбо</param>
+        <vendor>Zelmer</vendor>
+      </offer>
+      <offer id="var43" productId="35" quantity="50">
+        <url>http://simpla-test.local/products/mikser_zelmer_48164</url>
+        <price>3700.00</price>
+        <categoryId>4</categoryId>
+        <picture>http://simpla-test.local/files/originals/5900215513508F2.jpg</picture>
+        <name>Миксер Zelmer 481.64</name>
+        <productName>Миксер Zelmer 481.64</productName>
+        <param name="Вес" code="7">2.3 кг</param>
+        <param name="Число скоростей" code="92">5</param>
+        <param name="Мощность" code="91">400 Вт</param>
+        <param name="Насадки" code="95">венчик для взбивания, крюки для теста</param>
+        <param name="Чаша" code="90">вращающаяся, 3 л, пластик</param>
+        <param name="Кнопка отсоединения насадок" code="96">есть</param>
+        <param name="Прорезиненная ручка" code="98">есть</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип" code="2">стационарный</param>
+        <param name="Дополнительные режимы" code="93">турбо</param>
+        <vendor>Zelmer</vendor>
+      </offer>
+      <offer id="var44" productId="36" quantity="50">
+        <url>http://simpla-test.local/products/mikser_zelmer_4814</url>
+        <price>2900.00</price>
+        <categoryId>4</categoryId>
+        <picture>http://simpla-test.local/files/originals/c_big1142293.jpg</picture>
+        <name>Миксер Zelmer 481.4</name>
+        <productName>Миксер Zelmer 481.4</productName>
+        <param name="Вес" code="7">1 кг</param>
+        <param name="Количество насадок" code="94">2</param>
+        <param name="Число скоростей" code="92">5</param>
+        <param name="Мощность" code="91">400 Вт</param>
+        <param name="Насадки" code="95">венчик для взбивания, крюки для теста</param>
+        <param name="Кнопка отсоединения насадок" code="96">есть</param>
+        <param name="Защитная крышка на чашу" code="97">нет</param>
+        <param name="Приспособление для хранения насадок" code="99">нет</param>
+        <param name="Материал корпуса" code="6">пластик</param>
+        <param name="Тип" code="2">ручной</param>
+        <param name="Дополнительные режимы" code="93">турбо</param>
+        <vendor>Zelmer</vendor>
+      </offer>
+      <offer id="var45" productId="37" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-nikon-coolpix-s100</url>
+        <price>9000.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/Nikon-Coolpix-S6150-B-2.jpg</picture>
+        <name>Фотоаппарат Nikon Coolpix S100</name>
+        <productName>Фотоаппарат Nikon Coolpix S100</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.01 м</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Оптический Zoom" code="113">5x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число эффективных пикселов" code="101">16.1 млн</param>
+        <param name="Общее число пикселов" code="100">16.79 млн</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">28 - 140 мм</param>
+        <param name="Объем встроенной памяти" code="32">71 Мб</param>
+        <param name="Размер" code="132">99x65x18 мм</param>
+        <param name="Чувствительность" code="105">125 - 3200 ISO, Auto ISO</param>
+        <param name="Вес" code="7">132 г, с элементами питания</param>
+        <param name="Емкость аккумулятора" code="35">150 фотографий</param>
+        <param name="Максимальное разрешение роликов" code="127">1920x1080</param>
+        <param name="Дата анонсирования" code="130">2011-08-24</param>
+        <param name="Дата начала продаж" code="131">2011-09-15</param>
+        <param name="ЖК-экран" code="116">820000 пикселов, 3.50 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Тип матрицы" code="104">BSI CMOS</param>
+        <param name="Диафрагма" code="114">F3.9 - F4.8</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Формат записи видео" code="126">MOV</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, HDMI, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Вспышка" code="107">встроенная, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <param name="Тип ЖК-экрана" code="117">сенсорный</param>
+        <vendor>Nikon</vendor>
+      </offer>
+      <offer id="var46" productId="38" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-nikon-coolpix-l23</url>
+        <price>3500.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/nikon-l23-pink-1.jpg</picture>
+        <name>Фотоаппарат Nikon Coolpix L23</name>
+        <productName>Фотоаппарат Nikon Coolpix L23</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
+        <param name="Количество аккумуляторов" code="124">2</param>
+        <param name="Оптический Zoom" code="113">5x</param>
+        <param name="Число эффективных пикселов" code="101">10.1 млн</param>
+        <param name="Общее число пикселов" code="100">10.34 млн</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">28 - 140 мм</param>
+        <param name="Чувствительность" code="105">80 - 1600 ISO, Auto ISO</param>
+        <param name="Размер" code="132">93x60x30 мм</param>
+        <param name="Вес" code="7">170 г, с элементами питания</param>
+        <param name="Емкость аккумулятора" code="35">660 фотографий</param>
+        <param name="Максимальное разрешение роликов" code="127">3648 x 2736</param>
+        <param name="ЖК-экран" code="116">230000 пикселов, 2.70 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230000 пикселов, 2.70 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Формат аккумуляторов" code="123">AA-совмеcтимый</param>
+        <param name="Диафрагма" code="114">F2.7 - F6.8</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, из списка</param>
+        <param name="Вспышка" code="107">встроенная, подавление эффекта красных глаз</param>
+        <param name="Дополнительная информация" code="83">диагональ матрицы 1/2,9 дюйма</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Режим серийной съемки" code="134">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Разъем питания" code="137">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива, cъемка HDR</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">цифровой</param>
+        <vendor>Nikon</vendor>
+      </offer>
+      <offer id="var47" productId="39" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-nikon-coolpix-l120</url>
+        <price>11000.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/Nikon-Coolpix-L120_1.jpg</picture>
+        <name>Фотоаппарат Nikon Coolpix L120</name>
+        <productName>Фотоаппарат Nikon Coolpix L120</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.01 м</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Количество аккумуляторов" code="124">4</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число эффективных пикселов" code="101">14.1 млн</param>
+        <param name="Общее число пикселов" code="100">14.48 млн</param>
+        <param name="Оптический Zoom" code="113">21x</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">25 - 525 мм</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720</param>
+        <param name="Чувствительность" code="105">80 - 1600 ISO, Auto ISO, ISO6400</param>
+        <param name="Объем встроенной памяти" code="32">102 Мб</param>
+        <param name="Размер" code="132">110x77x78 мм</param>
+        <param name="Емкость аккумулятора" code="35">330 фотографий</param>
+        <param name="Вес" code="7">431 г, с элементами питания</param>
+        <param name="Максимальное разрешение роликов" code="127">1280x720</param>
+        <param name="Дата анонсирования" code="130">2011-02-08</param>
+        <param name="Дата начала продаж" code="131">2011-02-15</param>
+        <param name="ЖК-экран" code="116">921000 пикселов, 3 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">921000 пикселов, 3 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Формат аккумуляторов" code="123">AA-совмеcтимый</param>
+        <param name="Диафрагма" code="114">F3.1 - F5.8</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Название объектива" code="139">NIKKOR</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, HDMI, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Вспышка" code="107">встроенная, подавление эффекта красных глаз</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">двойной, сдвиг матрицы</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Режим серийной съемки" code="134">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Электронная стабилизация при видеосъемке" code="142">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <vendor>Nikon</vendor>
+      </offer>
+      <offer id="var48" productId="40" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-nikon-coolpix-s2500</url>
+        <price>3200.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/wpid-nikon_coolpix_s2500_4501297245529-mamini2.jpg</picture>
+        <name>Фотоаппарат Nikon Coolpix S2500</name>
+        <productName>Фотоаппарат Nikon Coolpix S2500</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.08 м</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Оптический Zoom" code="113">4x</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число эффективных пикселов" code="101">12 млн</param>
+        <param name="Общее число пикселов" code="100">12.39 млн</param>
+        <param name="Объем встроенной памяти" code="32">16 Мб</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">27 - 108 мм</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720</param>
+        <param name="Чувствительность" code="105">80 - 3200 ISO, Auto ISO</param>
+        <param name="Размер" code="132">93x57x20 мм</param>
+        <param name="Вес" code="7">117 г, с элементами питания</param>
+        <param name="Максимальное разрешение роликов" code="127">640x480</param>
+        <param name="Дата анонсирования" code="130">2011-02-08</param>
+        <param name="ЖК-экран" code="116">230000 пикселов, 2.70 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230000 пикселов, 2.70 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Диафрагма" code="114">F3.2 - F5.9</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, из списка</param>
+        <param name="Вспышка" code="107">встроенная, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Режим серийной съемки" code="134">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <vendor>Nikon</vendor>
+      </offer>
+      <offer id="var49" productId="41" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-canon-powershot-a3200-is</url>
+        <price>5500.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Оранжевый</name>
+        <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
+        <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Оптический Zoom" code="113">5x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число групп оптических элементов" code="145">6</param>
+        <param name="Число оптических элементов" code="144">7</param>
+        <param name="Число эффективных пикселов" code="101">14.1 млн</param>
+        <param name="Выдержка" code="146">15 - 1/1600 с</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">28 - 140 мм</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720</param>
+        <param name="Чувствительность" code="105">80 - 1600 ISO, Auto ISO</param>
+        <param name="Размер" code="132">95x57x24 мм</param>
+        <param name="Вес" code="7">149 г, с элементами питания</param>
+        <param name="Емкость аккумулятора" code="35">250 фотографий</param>
+        <param name="Максимальное разрешение роликов" code="127">1280x720</param>
+        <param name="ЖК-экран" code="116">230400 пикселов, 2.70 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230400 пикселов, 2.70 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Диафрагма" code="114">F2.8 - F5.9</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Формат записи видео" code="126">MOV</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC, MMCPlus, HC MMCPlus</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Особенности" code="58">асферические линзы</param>
+        <param name="Вспышка" code="107">встроенная, до 4 м, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива, датчик ориентации</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">оптический, подвижный элемент в объективе</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
+        <vendor>Canon</vendor>
+      </offer>
+      <offer id="var50" productId="41" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-canon-powershot-a3200-is</url>
+        <price>5500.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Серебристый</name>
+        <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
+        <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Оптический Zoom" code="113">5x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число групп оптических элементов" code="145">6</param>
+        <param name="Число оптических элементов" code="144">7</param>
+        <param name="Число эффективных пикселов" code="101">14.1 млн</param>
+        <param name="Выдержка" code="146">15 - 1/1600 с</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">28 - 140 мм</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720</param>
+        <param name="Чувствительность" code="105">80 - 1600 ISO, Auto ISO</param>
+        <param name="Размер" code="132">95x57x24 мм</param>
+        <param name="Вес" code="7">149 г, с элементами питания</param>
+        <param name="Емкость аккумулятора" code="35">250 фотографий</param>
+        <param name="Максимальное разрешение роликов" code="127">1280x720</param>
+        <param name="ЖК-экран" code="116">230400 пикселов, 2.70 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230400 пикселов, 2.70 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Диафрагма" code="114">F2.8 - F5.9</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Формат записи видео" code="126">MOV</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC, MMCPlus, HC MMCPlus</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Особенности" code="58">асферические линзы</param>
+        <param name="Вспышка" code="107">встроенная, до 4 м, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива, датчик ориентации</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">оптический, подвижный элемент в объективе</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
+        <vendor>Canon</vendor>
+      </offer>
+      <offer id="var51" productId="41" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-canon-powershot-a3200-is</url>
+        <price>5500.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/Canon-PowerShot-A3200-IS-Orange.jpg</picture>
+        <name>Фотоаппарат Canon PowerShot A3200 IS / Розовый</name>
+        <productName>Фотоаппарат Canon PowerShot A3200 IS</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.03 м</param>
+        <param name="Скорость съемки" code="143">0.9 кадр./сек</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Оптический Zoom" code="113">5x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Число групп оптических элементов" code="145">6</param>
+        <param name="Число оптических элементов" code="144">7</param>
+        <param name="Число эффективных пикселов" code="101">14.1 млн</param>
+        <param name="Выдержка" code="146">15 - 1/1600 с</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">28 - 140 мм</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720</param>
+        <param name="Чувствительность" code="105">80 - 1600 ISO, Auto ISO</param>
+        <param name="Размер" code="132">95x57x24 мм</param>
+        <param name="Вес" code="7">149 г, с элементами питания</param>
+        <param name="Емкость аккумулятора" code="35">250 фотографий</param>
+        <param name="Максимальное разрешение роликов" code="127">1280x720</param>
+        <param name="ЖК-экран" code="116">230400 пикселов, 2.70 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230400 пикселов, 2.70 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Диафрагма" code="114">F2.8 - F5.9</param>
+        <param name="Форматы изображения" code="122">JPEG</param>
+        <param name="Формат записи видео" code="126">MOV</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC, MMCPlus, HC MMCPlus</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Особенности" code="58">асферические линзы</param>
+        <param name="Вспышка" code="107">встроенная, до 4 м, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива, датчик ориентации</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">оптический, подвижный элемент в объективе</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Тип матрицы" code="104">СCD</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
+        <vendor>Canon</vendor>
+      </offer>
+      <offer id="var52" productId="42" quantity="50">
+        <url>http://simpla-test.local/products/fotoapparat-canon-digital-ixus-1000-hs</url>
+        <price>15000.00</price>
+        <categoryId>5</categoryId>
+        <picture>http://simpla-test.local/files/originals/IXUS-1000 HS BROWN.jpg</picture>
+        <name>Фотоаппарат Canon Digital IXUS 1000 HS</name>
+        <productName>Фотоаппарат Canon Digital IXUS 1000 HS</productName>
+        <param name="Минимальное расстояние съемки" code="120">0.01 м</param>
+        <param name="Количество аккумуляторов" code="124">1</param>
+        <param name="Физический размер" code="102">1/2.3"</param>
+        <param name="Форматы изображения" code="122">2 JPEG</param>
+        <param name="Время работы таймера" code="110">2, 10 c</param>
+        <param name="Формат кадра (фотосъемка)" code="111">4:3, 16:9</param>
+        <param name="Цифровой Zoom" code="128">4x</param>
+        <param name="Кроп-фактор" code="103">5.62</param>
+        <param name="Скорость съемки" code="143">8.8 кадр./сек</param>
+        <param name="Число эффективных пикселов" code="101">10 млн</param>
+        <param name="Оптический Zoom" code="113">10x</param>
+        <param name="Общее число пикселов" code="100">10.6 млн</param>
+        <param name="Число групп оптических элементов" code="145">12</param>
+        <param name="Число оптических элементов" code="144">14</param>
+        <param name="Выдержка" code="146">15 - 1/4000 с</param>
+        <param name="Максимальная частота кадров видеоролика" code="140">30 кадров/с</param>
+        <param name="Максимальная частота кадров при съемке HD-видео" code="141">30 кадров/с при разрешении 1280x720, 24 кадров/с при разрешении 1920x1080</param>
+        <param name="Фокусное расстояние (35 мм эквивалент)" code="112">36 - 360 мм</param>
+        <param name="Размер" code="132">101x59x22 мм</param>
+        <param name="Чувствительность" code="105">125 - 3200 ISO, Auto ISO</param>
+        <param name="Вес" code="7">190 г, без элементов питания</param>
+        <param name="Максимальное разрешение роликов" code="127">1920x1080</param>
+        <param name="Дата анонсирования" code="130">2010-08-19</param>
+        <param name="Дата начала продаж" code="131">2010-09-01</param>
+        <param name="ЖК-экран" code="116">230000 пикселов, 3 дюйма</param>
+        <param name="Тип ЖК-экрана" code="117">230000 пикселов, 3 дюйма</param>
+        <param name="Экспокоррекция " code="119">+/- 2 EV с шагом 1/3 ступени</param>
+        <param name="Тип матрицы" code="104">CMOS</param>
+        <param name="Диафрагма" code="114">F3.4 - F5.6</param>
+        <param name="Формат записи видео" code="126">MOV</param>
+        <param name="Тип карт памяти" code="121">SD, SDHC, SDXC, MMCPlus, HC MMCPlus</param>
+        <param name="Интерфейсы" code="25">USB 2.0, видео, HDMI, аудио</param>
+        <param name="Баланс белого" code="106">автоматический, ручная установка, из списка</param>
+        <param name="Особенности" code="58">асферические линзы</param>
+        <param name="Вспышка" code="107">встроенная, до 3.50 м, подавление эффекта красных глаз</param>
+        <param name="Макросъёмка" code="108">есть</param>
+        <param name="Таймер" code="109">есть</param>
+        <param name="Запись видео" code="125">есть</param>
+        <param name="Подсветка автофокуса" code="135">есть</param>
+        <param name="Фокусировка по лицу" code="136">есть</param>
+        <param name="Запись звука" code="138">есть</param>
+        <param name="Дополнительные возможности" code="129">крепление для штатива</param>
+        <param name="Ручная настройка выдержки и диафрагмы" code="118">нет</param>
+        <param name="Стабилизатор изображения (фотосъемка)" code="133">оптический, подвижный элемент в объективе</param>
+        <param name="Видоискатель" code="115">отсутствует</param>
+        <param name="Автоматическая обработка экспозиции" code="148">с приоритетом затвора, с приоритетом диафрагмы</param>
+        <param name="Формат аккумуляторов" code="123">свой собственный</param>
+        <param name="Замер экспозиции" code="147">центровзвешенный, общий (Evaluative), точечный</param>
+        <vendor>Canon</vendor>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
