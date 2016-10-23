@@ -47,7 +47,12 @@ class UserView extends View
 				$this->user = $this->users->get_user(intval($user_id));
 				$this->design->assign('name', $this->user->name);
 				$this->design->assign('user', $this->user);
-				$this->design->assign('email', $this->user->email);				
+				$this->design->assign('email', $this->user->email);
+
+                // Отсылаем данные о пользователе в RetailCRM
+                if ($arUserData = $this->retail->getUserRetailData($user_id)) {
+                    $this->retail->request('customersEdit', $arUserData);
+                }
 			}
 			else
 				$this->design->assign('error', 'unknown error');

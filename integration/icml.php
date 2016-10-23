@@ -109,7 +109,7 @@ class ExportICMLRetailCRM extends Simpla
 
                             // Отдельно добавим некоторые параметры со специальной обработкой в RetailCRM
                             // description
-                            $description = $this->getProductDescription($product);
+                            $description = html_entity_decode($this->getProductDescription($product));
                             if (!empty($description)) {
                                 $currentParam = $domObject->createElement('param', $description);
                                 $currentParam->setAttribute('name', 'Описание торгового предложения');

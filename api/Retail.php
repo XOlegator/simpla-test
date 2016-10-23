@@ -18,21 +18,26 @@ class Retail extends Simpla
     /**
      * Метод отправляет запрос в RetailCRM
      */
-    public function request($method, $arData)
+    public function request($method, $arData, $by = 'externalId')
     {
         $config = self::config($this->getIntegrationDir() . '/config.php');
+        //self::logger('$config: ' . print_r($config, true) . "\n", 'orders-error');
         //self::logger('$arData: ' . print_r($arData, true) . "\n", 'orders-error');
     	$clientRetailCRM = new \RetailCrm\ApiClient($config['urlRetail'], $config['keyRetail'], $config['siteCode']);
         try {
-            $response = $clientRetailCRM->$method($arData, $config['siteCode']);
+            if ($method == 'ordersCreate' || $method == 'customersCreate') {
+                $response = $clientRetailCRM->$method($arData, $config['siteCode']);
+            } else if ($method == 'ordersEdit' || $method == 'customersEdit') {
+                $response = $clientRetailCRM->$method($arData, $by, $config['siteCode']);
+            }
         } catch (\RetailCrm\Exception\CurlException $e) {
             self::logger('RetailCRM_Api::' . $method . ' ' . $e->getMessage() . PHP_EOL, 'connect');
         }
 
-        if ($response->isSuccessful() && 201 === $response->getStatusCode()) {
+        if ($response->isSuccessful() && (200 === $response->getStatusCode()) || (201 === $response->getStatusCode())) {
             self::logger('RetailCRM_Api::' . $method . ' - Success. Response Id = ' . $response->id . PHP_EOL, 'connect');
         } else {
-            self::logger('RetailCRM_Api::' . $method . ' - Error. Status code: ' . $response->getStatusCode() . '; message: ' . $response->getErrorMsg() . '; Details: ' . print_r($response['errors'], true) . PHP_EOL, 'connect');
+            self::logger('RetailCRM_Api::' . $method . ' - Error. Status code: ' . $response->getStatusCode() . PHP_EOL, 'connect');
         }
     }
 
@@ -42,7 +47,7 @@ class Retail extends Simpla
      * @param integer $order_id Идентификатор заказа
      * @return array Массив данных по заказу в формате API v4 RetailCRM (http://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-orders-upload)
      */
-	public function getNewOrderRetailData($order_id)
+	public function getOrderRetailData($order_id)
 	{
         $arOrderData = [];
         $order_id = (int) $order_id;
@@ -144,7 +149,7 @@ class Retail extends Simpla
      * @param integer $user_id Идентификатор пользователя
      * @return array Массив данных по пользователю в формате API v4 RetailCRM (http://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-customers-upload)
      */
-	public function getNewUserRetailData($user_id)
+	public function getUserRetailData($user_id)
 	{
         $arCustomerData = [];
         $user_id = (int) $user_id;
@@ -168,8 +173,142 @@ class Retail extends Simpla
         if (!empty($arCustomerName[1])) {
             $arCustomerData['lastName'] = $arCustomerName[1];
         }
+        if ($group_id = $user->group_id) {
+            if ($discount = $this->users->get_group($group_id)->discount) {
+                $arCustomerData['personalDiscount'] = (float) $discount;
+            }
+            if ($groupName = $this->users->get_group($group_id)->name) {
+                $arCustomerData['customFields']['group'] = $groupName;
+            }
+        }
 
         return $arCustomerData;
+	}
+
+
+    /**
+     * Метод принимает данные по заказу из RetailCRM для обновления или изменения в SimplaCMS
+     * @param string $orderId Идентификатор заказа в RetailCRM
+     * @return boolen Статус выполнения
+     */
+	public function setOrderRetailData($orderId)
+	{
+        $config = self::config($this->getIntegrationDir() . '/config.php');
+        //self::logger('Данные, принятые из RetailCRM: ' . $orderId . "\n", 'orders-error');
+        $clientRetailCRM = new \RetailCrm\ApiClient($config['urlRetail'], $config['keyRetail'], $config['siteCode']);
+        try {
+            $response = $clientRetailCRM->ordersGet($orderId, 'id', $config['siteCode']);
+        } catch (\RetailCrm\Exception\CurlException $e) {
+            self::logger('RetailCRM_Api::ordersGet ' . $e->getMessage() . PHP_EOL, 'connect');
+        }
+
+        if ($response->isSuccessful() && 200 === $response->getStatusCode()) {
+            //self::logger('RetailCRM_Api::ordersGet - Success. Receive data: ' . print_r($response->order, true) . PHP_EOL, 'connect');
+            $order = [];
+
+            $order = [
+                /*'separate_delivery' => '',*/
+                /*'payment_date' => '',*/
+                'discount' => $response->order['discountPercent'],
+                /*'coupon_code' => '',*/
+                'coupon_discount' => $response->order['discount'],
+                /*'date' => '',*/
+                'user_id' => $response->order['customer']['externalId'],
+                'name' => $response->order['customer']['contragent']['legalName'],
+                'phone' => $response->order['phone'],
+                'email' => $response->order['email'],
+                'comment' => $response->order['customerComment'],
+                /*'url' => '',*/
+                'total_price' => $response->order['totalSumm'],
+                'note' => $response->order['managerComment']
+            ];
+            // Определяем код доставки
+            if (isset($response->order['delivery']['code'])) {
+                $deliveryId = array_search($response->order['delivery']['code'], $config['deliveryType']);
+                if (false !== $deliveryId) {
+                     $order['delivery_id'] = $deliveryId;
+                }
+            }
+            // Определяем стоимость доставки
+            if (isset($response->order['delivery']['cost'])) {
+                $order['delivery_price'] = (float) $response->order['delivery']['cost'];
+            }
+            // Определяем код способа оплаты
+            if (isset($response->order['paymentType'])) {
+                $paymentId = array_search($response->order['paymentType'], $config['paymentType']);
+                if (false !== $paymentId) {
+                     $order['payment_method_id'] = $paymentId;
+                }
+            }
+            // Определяем статус оплаты
+            if (isset($response->order['paymentStatus'])) {
+                $paymentStatus = array_search($response->order['paymentStatus'], $config['paymentStatus']);
+                if (false !== $paymentId) {
+                     $order['paid'] = $paymentStatus;
+                }
+            }
+            // Определяем отменён ли заказ
+            if (isset($response->order['status'])) {
+                $order['closed'] = (int) ($response->order['status'] == 'cancel-other');
+            }
+            // Определяем адрес доставки
+            if (isset($response->order['customer']['address']['text']) && !empty($response->order['customer']['address']['text'])) {
+                $order['address'] = $response->order['customer']['address']['text'];
+            }
+            // Определяем статус заказа
+            if (isset($response->order['status'])) {
+                $statusId = array_search($response->order['status'], $config['orderStatus']);
+                if (false !== $statusId) {
+                     $order['status'] = $statusId;
+                }
+            }
+            if (isset($response->order['externalId']) && !empty($response->order['externalId'])) {
+                $order_id = (int) $response->order['externalId'];
+                self::logger('Данные, принятые из RetailCRM и подготовленные к вставке: ' . print_r($order, true) . "\n", 'orders-error');
+                // Обновляем товары заказа
+                // Сначала получим все текущие товары в заказе по данным SimplaCMS
+                $purchases = $this->orders->get_purchases(array('order_id' => $order_id));
+                $products_ids = array();
+                $variants_ids = array();
+                foreach ($purchases as $purchase) {
+                    $products_ids[] = $purchase->product_id;
+                    $variants_ids[] = $purchase->variant_id;
+                    $purchaseVariant[$purchase->variant_id] = $purchase->id;
+                }
+                // Получим все товары заказа по новым данным
+                foreach ($response->order['items'] as $itemData) {
+                    if (in_array($itemData['offer']['externalId'], $variants_ids)) {
+                        unset($variants_ids[$itemData['offer']['externalId']]);
+                    } else {
+                        // Это новый товар - добавляем
+                        $this->orders->add_purchase(array(
+                            'order_id' => $response->order['externalId'],
+                            'variant_id' => intval($itemData['offer']['externalId']),
+                            'amount' => intval($itemData['quantity'])
+                        ));
+                    }
+                }
+                if (!empty($variants_ids)) {
+                    // Какие-то товары остались, значит, нужно удалить эти товары, - теперь их в заказе нет
+                    foreach ($variants_ids as $variant_id) {
+                        $this->orders->delete_purchase($purchaseVariant[$variant_id]);
+                    }
+                }
+                $this->orders->update_order($order_id, $order);
+            } else {
+                $order_id = $this->orders->add_order($order);
+                // Добавляем товары к заказу
+                foreach ($response->order['items'] as $itemData) {
+                    $this->orders->add_purchase(array(
+                        'order_id' => $order_id,
+                        'variant_id' => intval($itemData['offer']['externalId']),
+                        'amount' => intval($itemData['quantity'])
+                    ));
+                }
+            }
+        } else {
+            self::logger('RetailCRM_Api::ordersGet - Error. Status code: ' . $response->getStatusCode() . PHP_EOL, 'connect');
+        }
 	}
 
 
@@ -194,7 +333,8 @@ class Retail extends Simpla
         } else {
             $message .= "\n";
         }
-        $logDir = self::getIntegrationDir() . '/log/'; 
+
+        $logDir = __DIR__ . self::INTEGRATION_DIR . '/log/';
         switch ($type) {
             case 'connect':
                 $path = $logDir. "connect-error.log";

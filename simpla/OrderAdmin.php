@@ -127,11 +127,14 @@ class OrderAdmin extends Simpla
 				// Отправляем письмо пользователю
 				if($this->request->post('notify_user'))
 					$this->notify->email_order_user($order->id);
-                
-                if ($isNewOrder) {
-                    // Отсылаем данные о новом заказе в RetailCRM
-                    if ($arOrderData = $this->retail->getNewOrderRetailData($order->id)) {
+
+                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                    if ($isNewOrder) {
+                        // Отсылаем данные о новом заказе в RetailCRM
                         $this->retail->request('ordersCreate', $arOrderData);
+                    } else {
+                        // Отсылаем данные о заказе в RetailCRM
+                        $this->retail->request('ordersEdit', $arOrderData);
                     }
                 }
 			}

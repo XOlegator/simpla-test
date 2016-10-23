@@ -61,6 +61,11 @@ class OrderView extends View
 			{
 				$this->orders->update_order($order->id, array('payment_method_id'=>$payment_method_id));
 				$order = $this->orders->get_order((integer)$order->id);
+
+                // Отсылаем данные о новом заказе в RetailCRM
+                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                    $this->retail->request('ordersEdit', $arOrderData);
+                }
 			}
 			elseif($this->request->post('reset_payment_method'))
 			{

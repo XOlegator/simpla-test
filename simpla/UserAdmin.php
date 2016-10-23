@@ -32,6 +32,11 @@ class UserAdmin extends Simpla
 				$user->id = $this->users->update_user($user->id, $user);
   				$this->design->assign('message_success', 'updated');
    	    		$user = $this->users->get_user(intval($user->id));
+
+                // Отсылаем данные о пользователе в RetailCRM
+                if ($arUserData = $this->retail->getUserRetailData($user->id)) {
+                    $this->retail->request('customersEdit', $arUserData);
+                }
 			}
 		}
 		elseif($this->request->post('check'))

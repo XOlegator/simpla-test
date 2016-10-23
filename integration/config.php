@@ -16,17 +16,17 @@ return array(
     //Соответствие кодов типов оплат из базы Simpla и RetailCRM: array(<Код типа оплаты Simpla> => <Код типа оплаты RetailCRM>)
     'paymentType' => array (
         '1'  => 'bank-transfer', // Банковский перевод (квитанция с реквизитами)
-        '2'  => 'web',           // WebMoney WMZ
-        '3'  => 'robokassa',     // Робокасса
-        '4'  => 'paypal',        // PayPal
-        '5'  => 'interkassa',    // Интеркасса
-        '6'  => 'liqpay',        // Liqpay
-        '7'  => 'pay2pay',       // Pay2Pay
-        '8'  => 'qiwi',          // QIWI
-        '9'  => 'yad',           // Яндекс.Деньги
+        '2'  => 'e-money',       // WebMoney WMZ
+        '3'  => 'e-money',       // Робокасса
+        '4'  => 'e-money',       // PayPal
+        '5'  => 'e-money',       // Интеркасса
+        '6'  => 'e-money',       // Liqpay
+        '7'  => 'e-money',       // Pay2Pay
+        '8'  => 'e-money',       // QIWI
+        '9'  => 'e-money',       // Яндекс.Деньги
         '10' => 'bank-card',     // Банковская карта
-        '11' => 'terminal',      // Терминал
-        '12' => 'mobile'         // Мобильный телефон
+        '11' => 'e-money',       // Терминал
+        '12' => 'e-money'        // Мобильный телефон
     ),
 
     // Соответствие кодов статусов оплат из базы Simpla и RetailCRM: array(<Код статуса оплаты Simpla> => <Код статуса оплаты RetailCRM>)

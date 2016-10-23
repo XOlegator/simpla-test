@@ -130,6 +130,7 @@ class Orders extends Simpla
 		$query = $this->db->placehold("UPDATE __orders SET ?%, modified=now() WHERE id=? LIMIT 1", $order, intval($id));
 		$this->db->query($query);
 		$this->update_total_price(intval($id));
+
 		return $id;
 	}
 
@@ -495,6 +496,12 @@ class Orders extends Simpla
 		}
 		$query = $this->db->placehold("UPDATE __orders SET payment_status=1, payment_date=NOW(), modified=NOW() WHERE id=? LIMIT 1", $order->id);
 		$this->db->query($query);
+
+        // Отсылаем данные об оплате заказа в RetailCRM
+        if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+            $this->retail->request('ordersEdit', $arOrderData);
+        }
+
 		return $order->id;
 	}
 	
