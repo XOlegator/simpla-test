@@ -118,7 +118,7 @@
                 $this->retail->request('ordersCreate', $arOrderData);
             }
 ```
-8) Для мгновенной отправки изменений по заказу со стороны клиентов - в файл /simpla/OrderView.php после строк
+8) Для мгновенной отправки изменений по заказу со стороны клиентов - в файл /view/OrderView.php после строк
 ```php
             if($payment_method_id = $this->request->post('payment_method_id', 'integer'))
             {

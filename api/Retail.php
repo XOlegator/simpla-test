@@ -103,13 +103,6 @@ class Retail extends Simpla
             self::logger('Нет соответствующего статуса оплаты для RetailCRM. Код статуса оплаты Simpla: ' . $order->paid . "\n", 'orders-error');
             $paymentStatus = '';
         }
-        // Конвертируем статусы заказов
-        if (isset($config['orderStatus'][$order->status])) {
-            $orderStatus = $config['orderStatus'][$order->status];
-        } else {
-            self::logger('Нет соответствующего статуса заказа для RetailCRM. Код статуса заказа Simpla: ' . $order->status . "\n", 'orders-error');
-            $orderStatus = '';
-        }
         $arOrderData = array(
             'externalId'      => $order->id,
             'createdAt'       => date("Y-m-d H:i:s", strtotime($order->date)),
@@ -129,16 +122,22 @@ class Retail extends Simpla
             ),
             'paymentType'     => $payment,
             'paymentStatus'   => $paymentStatus,
-            'status'          => $orderStatus,
             'orderType'       => 'eshop-individual', // Тип заказа - обязательное поле. В нашем случае тип всегдя один - заказ от физ. лица через ИМ
             'orderMethod'     => 'shopping-cart', // Только один способ заказа - через корзину
             'items'           => $items, // Массив товаров из заказа
             'delivery'        => array(
                 'code'    => $delivery,
                 'cost'    => $order->delivery_price,
-                'address' => $order->address          
+                'address' => $order->address
             )
         );
+        // Конвертируем статусы заказов
+        $retailOrderStatus = $this->convertOrderStatus($order->status, "simpla");
+        if (false !== $retailOrderStatus) {
+            $arOrderData['status'] = $retailOrderStatus;
+        } else {
+            self::logger('Нет соответствующего статуса заказа для RetailCRM. Код статуса заказа Simpla: ' . $order->status . "\n", 'orders-error');
+        }
         
         return $arOrderData;
 	}
@@ -194,7 +193,7 @@ class Retail extends Simpla
 	public function setOrderRetailData($orderId)
 	{
         $config = self::config($this->getIntegrationDir() . '/config.php');
-        //self::logger('Данные, принятые из RetailCRM: ' . $orderId . "\n", 'orders-error');
+        //self::logger('Данные, принятые из RetailCRM: ' . $orderId, 'orders-info');
         $clientRetailCRM = new \RetailCrm\ApiClient($config['urlRetail'], $config['keyRetail'], $config['siteCode']);
         try {
             $response = $clientRetailCRM->ordersGet($orderId, 'id', $config['siteCode']);
@@ -247,24 +246,28 @@ class Retail extends Simpla
                      $order['paid'] = $paymentStatus;
                 }
             }
-            // Определяем отменён ли заказ
+
             if (isset($response->order['status'])) {
-                $order['closed'] = (int) ($response->order['status'] == 'cancel-other');
+                $simplaOrderStatus = $this->convertOrderStatus($response->order['status'], "retail");
+                // Определяем отменён ли заказ
+                if ($simplaOrderStatus == '3') {
+                    $order['closed'] = 1;
+                } else {
+                    $order['closed'] = 0;
+                }
+                // Определяем статус заказа
+                if (false !== $simplaOrderStatus) {
+                    $order['status'] = $simplaOrderStatus;
+                }
             }
             // Определяем адрес доставки
             if (isset($response->order['customer']['address']['text']) && !empty($response->order['customer']['address']['text'])) {
                 $order['address'] = $response->order['customer']['address']['text'];
             }
-            // Определяем статус заказа
-            if (isset($response->order['status'])) {
-                $statusId = array_search($response->order['status'], $config['orderStatus']);
-                if (false !== $statusId) {
-                     $order['status'] = $statusId;
-                }
-            }
+
             if (isset($response->order['externalId']) && !empty($response->order['externalId'])) {
                 $order_id = (int) $response->order['externalId'];
-                self::logger('Данные, принятые из RetailCRM и подготовленные к вставке: ' . print_r($order, true) . "\n", 'orders-error');
+                //self::logger('Данные, принятые из RetailCRM и подготовленные к вставке: ' . print_r($order, true), 'orders-info');
                 // Обновляем товары заказа
                 // Сначала получим все текущие товары в заказе по данным SimplaCMS
                 $purchases = $this->orders->get_purchases(array('order_id' => $order_id));
@@ -274,11 +277,20 @@ class Retail extends Simpla
                     $products_ids[] = $purchase->product_id;
                     $variants_ids[] = $purchase->variant_id;
                     $purchaseVariant[$purchase->variant_id] = $purchase->id;
+                    $purchaseAmount[$purchase->variant_id] = $purchase->amount;
+                    $purchasePrice[$purchase->variant_id] = $purchase->price;
                 }
                 // Получим все товары заказа по новым данным
                 foreach ($response->order['items'] as $itemData) {
                     if (in_array($itemData['offer']['externalId'], $variants_ids)) {
-                        unset($variants_ids[$itemData['offer']['externalId']]);
+                        if ($purchaseAmount[$itemData['offer']['externalId']] != $itemData['quantity'] || $purchasePrice[$itemData['offer']['externalId']] != $itemData['initialPrice']) {
+                            // Товар повторяется, а количество изменилось
+                            $this->orders->update_purchase($purchaseVariant[$itemData['offer']['externalId']], array(
+                                'amount' => (int) $itemData['quantity'],
+                                'price'  => (float) $itemData['initialPrice']
+                            ));
+                        }
+                        unset($purchaseVariant[$itemData['offer']['externalId']]);
                     } else {
                         // Это новый товар - добавляем
                         $this->orders->add_purchase(array(
@@ -288,10 +300,10 @@ class Retail extends Simpla
                         ));
                     }
                 }
-                if (!empty($variants_ids)) {
+                if (!empty($purchaseVariant)) {
                     // Какие-то товары остались, значит, нужно удалить эти товары, - теперь их в заказе нет
-                    foreach ($variants_ids as $variant_id) {
-                        $this->orders->delete_purchase($purchaseVariant[$variant_id]);
+                    foreach ($purchaseVariant as $purchase_id) {
+                        $this->orders->delete_purchase($purchase_id);
                     }
                 }
                 $this->orders->update_order($order_id, $order);
@@ -310,6 +322,35 @@ class Retail extends Simpla
             self::logger('RetailCRM_Api::ordersGet - Error. Status code: ' . $response->getStatusCode() . PHP_EOL, 'connect');
         }
 	}
+
+
+    /**
+     * Метод конвертирует код статуса заказа из одной системы в соответствующий код из другой системы (SimplaCMS и RetailCRM)
+     * @param string $code Код статуса заказа
+     * @param string $fromSystem Название системы, код которой передан в предыдущем параметре.
+     *     Допустимы два значения: "simpla" и "retail". По-умолчанию, "simpla"
+     * @return mixed Код статуса заказа в другой системе. Либо ЛОЖЬ в случае невозможности определить статус
+     */
+    public function convertOrderStatus($code, $fromSystem = "simpla")
+    {
+        $fromSystem = trim(strval($fromSystem));
+        if (empty($fromSystem)) {
+            return false;
+        }
+        $config = self::config($this->getIntegrationDir() . '/config.php');
+
+        if ($fromSystem == "simpla") {
+            return array_search($code, $config['orderStatus']);
+        } else if ($fromSystem == "retail") {
+            if (isset($config['orderStatus'][$code])) {
+                return $config['orderStatus'][$code];
+            } else {
+                return false;
+            }
+        } else {
+            return false;
+        }
+    }
 
 
     public static function getDate($log)
