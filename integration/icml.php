@@ -38,6 +38,7 @@ class ExportICMLRetailCRM extends Simpla
     */
     private function makeOffers($domObject, $domElementOffers)
     {
+        $simpla = new Simpla();
         $products = $this->products->get_products();
         if (!empty($products)) {
             //$items = '';
@@ -68,7 +69,7 @@ class ExportICMLRetailCRM extends Simpla
                         // Получим путь к первой картинке товара
                         $images = $this->products->get_images(array('product_id' => $product->id));
                         if (!empty($images)) {
-                            $image = $this->config['urlSimpla'] . '/files/originals/' . $images[0]->filename;
+                            $image = $simpla->design->resize_modifier($images[0]->filename, 200, 200);
                             $currentOffer->appendChild($domObject->createElement('picture', $image));
                         }
                         
