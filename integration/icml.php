@@ -25,10 +25,10 @@ class ExportICMLRetailCRM extends Simpla
                     $categoryXml->setAttribute('parentId', $category->parent_id);
                 }
             }
-            Tools::logger('Сформирован список категорий товаров' . "\n", 'icml');
+            Tools::logger('Сформирован список категорий товаров', 'icml');
             return $categoryXml;
         } else { // Ниодной категории не зарегистрировано
-            Tools::logger('Нет ни одной категории товаров' . "\n", 'icml');
+            Tools::logger('Нет ни одной категории товаров', 'icml');
             return null;
         }
     }
@@ -133,10 +133,10 @@ class ExportICMLRetailCRM extends Simpla
                 }
             }
             
-            Tools::logger('Сформирован список товаров' . "\n", 'icml');
+            Tools::logger('Сформирован список товаров', 'icml');
             return $offerXml;
         } else { // Ниодного товара не зарегистрировано
-            Tools::logger('Нет ни одного товара' . "\n", 'icml');
+            Tools::logger('Нет ни одного товара', 'icml');
             return null;
         }
     }

@@ -21,8 +21,8 @@ $domObject->formatOutput = true;
 $domObject->saveXML();
 if ($domObject->save("../../integration/icml/icml.xml")) {
     echo "Создан файл /integration/icml/icml.xml";
-    Tools::logger('Сгенерирован новый ICML-файл: /integration/icml/icml.xml' . "\n", 'icml');
+    Tools::logger('Сгенерирован новый ICML-файл: /integration/icml/icml.xml', 'icml');
 } else {
     echo 'Файл XML не создан';
-    Tools::logger('Не удалось сохранить ICML-файл: /integration/icml/icml.xml' . "\n", 'icml');
+    Tools::logger('Не удалось сохранить ICML-файл: /integration/icml/icml.xml', 'icml');
 }

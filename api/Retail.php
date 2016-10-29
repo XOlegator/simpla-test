@@ -95,18 +95,18 @@ class Retail extends Simpla
             'email'           => $order->email,
             'customerComment' => $order->comment,
             'managerComment'  => $order->note,
-            'contragent'      => array(
+            'contragent'      => [
                 'contragentType' => 'individual' // Доступны только физ. лица
-            ),
+            ],
             'orderType'       => 'eshop-individual', // Тип заказа - обязательное поле. В нашем случае тип всегдя один - заказ от физ. лица через ИМ
             'orderMethod'     => 'shopping-cart', // Только один способ заказа - через корзину
             'items'           => $items, // Массив товаров из заказа
-            'delivery'        => array(
+            'delivery'        => [
                 'cost'    => $order->delivery_price,
                 'address' => [
                     'text' => $order->address
                 ]
-            )
+            ]
         );
 
         // Если есть код клиента, то создадим привязку, иначе в RetailCRM будет создан клинт по данным из Заказа
@@ -123,7 +123,7 @@ class Retail extends Simpla
         }
 
         // Конвертируем виды оплат
-        if (isset($order->payment_method_id) && $order->payment_method_id != '') {
+        if (isset($order->payment_method_id) && !empty($order->payment_method_id)) { // Код 0 в Simpla зарезервирован для невыбранного значения
             if (isset($config['paymentType'][$order->payment_method_id])) {
                 $arOrderData['paymentType'] = $config['paymentType'][$order->payment_method_id];
             } else {
@@ -132,7 +132,7 @@ class Retail extends Simpla
         }
 
         // Конвертируем виды доставок
-        if (isset($order->delivery_id) && $order->delivery_id != '') {
+        if (isset($order->delivery_id) && !empty($order->delivery_id)) { // Код 0 в Simpla зарезервирован для невыбранного значения
             if (isset($config['deliveryType'][$order->delivery_id])) {
                 $arOrderData['delivery']['code'] = $config['deliveryType'][$order->delivery_id];
             } else {
@@ -142,14 +142,14 @@ class Retail extends Simpla
         }
 
         // Конвертируем статусы оплат
-        if (isset($order->paid) && $order->paid != '') {
+        if (isset($order->paid) && ($order->paid != '' || !is_null($order->paid))) {
             if (isset($config['paymentStatus'][$order->paid])) {
                 $arOrderData['paymentStatus'] = $config['paymentStatus'][$order->paid];
             } else {
                 self::logger('Нет соответствующего статуса оплаты для RetailCRM. Код статуса оплаты Simpla: ' . print_r($order->paid, true), 'orders-error');
             }
         }
-        
+
         // Добавляем данные по имени и фамилии клинта заказа
         if (isset($order->name) && !empty($order->name)) {
             $arCustomerName = explode(' ', $order->name);
@@ -160,7 +160,7 @@ class Retail extends Simpla
                 $arOrderData['lastName'] = $arCustomerName[1];
             }
         }
-        
+
         return $arOrderData;
 	}
 
