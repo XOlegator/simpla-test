@@ -111,7 +111,7 @@ class Retail extends Simpla
 
         // Если есть код клиента, то создадим привязку, иначе в RetailCRM будет создан клинт по данным из Заказа
         if (intval($order->user_id) != 0) {
-            $arOrderData['contragent']['externalId'] = $order->user_id;
+            $arOrderData['customer']['externalId'] = $order->user_id;
         }
 
         // Конвертируем статусы заказов
@@ -214,16 +214,16 @@ class Retail extends Simpla
 	public function setOrderRetailData($orderId)
 	{
         $config = self::config($this->getIntegrationDir() . '/config.php');
-        //self::logger('Данные, принятые из RetailCRM: ' . $orderId, 'orders-info');
+        //self::logger('setOrderRetailData. Данные, принятые из RetailCRM: ' . $orderId, 'orders-info');
         $clientRetailCRM = new \RetailCrm\ApiClient($config['urlRetail'], $config['keyRetail'], $config['siteCode']);
         try {
             $response = $clientRetailCRM->ordersGet($orderId, 'id', $config['siteCode']);
         } catch (\RetailCrm\Exception\CurlException $e) {
-            self::logger('RetailCRM_Api::ordersGet ' . $e->getMessage() . PHP_EOL, 'connect');
+            self::logger('RetailCRM_Api::ordersGet ' . $e->getMessage(), 'connect');
         }
 
-        if ($response->isSuccessful() && 200 === $response->getStatusCode()) {
-            //self::logger('RetailCRM_Api::ordersGet - Success. Receive data: ' . print_r($response->order, true) . PHP_EOL, 'connect');
+        if (isset($response) && $response->isSuccessful() && 200 === $response->getStatusCode()) {
+            //self::logger('setOrderRetailData. RetailCRM_Api::ordersGet - Success. Receive data: ' . print_r($response->order, true), 'connect');
             $order = [];
 
             $order = [
@@ -233,7 +233,7 @@ class Retail extends Simpla
                 /*'coupon_code' => '',*/
                 'coupon_discount' => $response->order['discount'],
                 /*'date' => '',*/
-                'user_id' => $response->order['customer']['externalId'],
+                'user_id' => (int) $response->order['customer']['externalId'],
                 'name' => implode(' ', [$response->order['firstName'], $response->order['lastName']]),
                 'phone' => $response->order['phone'],
                 'email' => $response->order['email'],
@@ -340,7 +340,7 @@ class Retail extends Simpla
                 }
             }
         } else {
-            self::logger('RetailCRM_Api::ordersGet - Error. Status code: ' . $response->getStatusCode() . PHP_EOL, 'connect');
+            self::logger('RetailCRM_Api::ordersGet - Error. Status code: ' . $response->getStatusCode(), 'connect');
         }
 	}
 
