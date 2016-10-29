@@ -183,7 +183,7 @@
                 }
             }
 ```
-вставляем строки
+вставлить строки:
 ```php
             foreach ($ids as $id) {
                 if ($arOrderData = $this->retail->getOrderRetailData($id)) {
@@ -192,12 +192,28 @@
                 }
             }
 ```
-11) Для мгновенной отсылки информации об оплате - в файл /api/Orders.php в функцию pay() после строк
+11) Для мгновенной отсылки информации об оплате - в файл /api/Orders.php в методе update_order после строк
+```php
+        $this->db->query($query);
+        $this->update_total_price(intval($id));
+```
+вставить строки:
+```php
+        // Проверка, изменился ли статус оплаты. По какой-то причине оплата иногда проставляется не отдельным методом pay(), а этим методом update_order()
+        if (is_array($order) && isset($order['paid'])) {
+            // Вероятно изменился статус оплаты по заказау, отразим это в RetailCRM
+            // Отсылаем данные об оплате заказа в RetailCRM
+            if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+                $this->retail->request('ordersEdit', $arOrderData);
+            }
+        }
+```
+И в методе pay() после строк
 ```php
         $query = $this->db->placehold("UPDATE __orders SET payment_status=1, payment_date=NOW(), modified=NOW() WHERE id=? LIMIT 1", $order->id);
         $this->db->query($query);
 ```
- вставить строки
+вставить строки:
 ```php
          // Отсылаем данные об оплате заказа в RetailCRM
         if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {

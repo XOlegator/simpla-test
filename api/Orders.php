@@ -130,6 +130,15 @@ class Orders extends Simpla
 		$query = $this->db->placehold("UPDATE __orders SET ?%, modified=now() WHERE id=? LIMIT 1", $order, intval($id));
 		$this->db->query($query);
 		$this->update_total_price(intval($id));
+        
+        // Проверка, изменился ли статус оплаты. По какой-то причине оплата иногда проставляется не отдельным методом pay(), а этим методом update_order()
+        if (is_array($order) && isset($order['paid'])) {
+            // Вероятно изменился статус оплаты по заказау, отразим это в RetailCRM
+            // Отсылаем данные об оплате заказа в RetailCRM
+            if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+                $this->retail->request('ordersEdit', $arOrderData);
+            }
+        }
 
 		return $id;
 	}
