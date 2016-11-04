@@ -135,7 +135,7 @@ class Orders extends Simpla
         if (is_array($order) && isset($order['paid'])) {
             // Вероятно изменился статус оплаты по заказау, отразим это в RetailCRM
             // Отсылаем данные об оплате заказа в RetailCRM
-            if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+            if ($arOrderData = $this->retail->getOrderRetailData($id)) {
                 $this->retail->request('ordersEdit', $arOrderData);
             }
         }

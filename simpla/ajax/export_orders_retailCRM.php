@@ -63,7 +63,7 @@ if (!is_null($data) && is_array($data)) {
             } else {
                 Tools::logger('Ошибка при выгрузке клиентов: ' . print_r($response1, true), 'customers');
                 echo sprintf(
-                    "Ошибка при выгрузке клиентов: [Статус HTTP-ответа %s] %s", 
+                    "Ошибка при выгрузке клиентов: [Статус HTTP-ответа %s] %s",
                     $response1->getStatusCode(),
                     $response1->getErrorMsg()
                 ) . '<br>';
@@ -91,7 +91,7 @@ if (!is_null($data) && is_array($data)) {
                 Tools::logger('Ошибка при выгрузке некоторых заказов: ' . print_r($response2, true), 'customers');
                 echo 'Не все заказы успешно выгружены в RetaiCRM.' . '<br>';
                 echo sprintf(
-                    "Ошибка при выгрузке заказов: [Статус HTTP-ответа %s] %s", 
+                    "Ошибка при выгрузке заказов: [Статус HTTP-ответа %s] %s",
                     $response1->getStatusCode(),
                     $response1->getErrorMsg()
                 ) . '<br>';
@@ -103,7 +103,7 @@ if (!is_null($data) && is_array($data)) {
             else {
                 Tools::logger('Ошибка при выгрузке заказов: ' . print_r($response2, true), 'orders-error');
                 echo sprintf(
-                    "Ошибка при выгрузке заказов: [Статус HTTP-ответа %s] %s", 
+                    "Ошибка при выгрузке заказов: [Статус HTTP-ответа %s] %s",
                     $response2->getStatusCode(),
                     $response2->getErrorMsg()
                 ) . '<br>';
