@@ -9,12 +9,13 @@ class ExportICMLRetailCRM extends Simpla
         $this->config = $config;
     }
 
-    /*
-      Функция формирует XML вставку по каталогам товаров     
-    */
+    
+    /**
+      * Метод формирует XML вставку по каталогам товаров
+      */
     private function makeCategories($domObject, $domElementCategories)
     {
-        $categories = $this->categories->get_categories(); 
+        $categories = $this->categories->get_categories();
         if (!empty($categories)) {
             foreach ($categories as $index => $category) {
                 $categoryXml = $domElementCategories->appendChild($domObject->createElement('category', $category->name));
@@ -33,9 +34,10 @@ class ExportICMLRetailCRM extends Simpla
         }
     }
 
-    /*
-      Функция формирует XML вставку по товарам     
-    */
+
+    /**
+      * Метод формирует XML вставку по товарам
+      */
     private function makeOffers($domObject, $domElementOffers)
     {
         $simpla = new Simpla();
@@ -55,24 +57,28 @@ class ExportICMLRetailCRM extends Simpla
                         // Сформируем URL товара
                         $url = $this->config['urlSimpla'] . '/products/' . $product->url;
                         $currentOffer->appendChild($domObject->createElement('url', $url));
-                        
+
                         // Цена товара
                         $currentOffer->appendChild($domObject->createElement('price', $variant->price));
-                        
+
                         // Получим первый каталог товара
                         $currentCategory = $this->categories->get_product_categories(array('product_id' => $product->id));
                         if (!empty($currentCategory)) {
                             $categoryId = $currentCategory[0]->category_id;
-                            $currentOffer->appendChild($domObject->createElement('categoryId', $categoryId));          
+                            $currentOffer->appendChild($domObject->createElement('categoryId', $categoryId));
                         }
-                        
+
                         // Получим путь к первой картинке товара
                         $images = $this->products->get_images(array('product_id' => $product->id));
                         if (!empty($images)) {
                             $image = $simpla->design->resize_modifier($images[0]->filename, 200, 200);
+                            $is_console = PHP_SAPI == 'cli' || (!isset($_SERVER['DOCUMENT_ROOT']) && !isset($_SERVER['REQUEST_URI']));
+                            if ($is_console) {
+                                $image = str_replace('http://', $this->config['urlSimpla'], $image);
+                            }
                             $currentOffer->appendChild($domObject->createElement('picture', $image));
                         }
-                        
+
                         // Название торгового предложения. В Simpla это название товара + название варианта
                         if ($variant->name != '') {
                             $name = $product->name . ' / ' . $variant->name;
@@ -80,10 +86,10 @@ class ExportICMLRetailCRM extends Simpla
                             $name = $product->name;
                         }
                         $currentOffer->appendChild($domObject->createElement('name', $name));
-                        
+
                         // Выводим название товара
                         $currentOffer->appendChild($domObject->createElement('productName', $product->name));
-                        
+
                         // Определим, активен ли данный товар
                         if (!$product->visible) {
                             $currentOffer->appendChild($domObject->createElement('productActivity', 0));; // Если товар активен, то ничего указывать не надо   
@@ -126,13 +132,13 @@ class ExportICMLRetailCRM extends Simpla
                                 $currentOffer->appendChild($currentParam);
                             }
                         }
-                        
+
                         // Добавим производителя
                         $currentOffer->appendChild($domObject->createElement('vendor', $product->brand));
                     }
                 }
             }
-            
+
             Tools::logger('Сформирован список товаров', 'icml');
             return $offerXml;
         } else { // Ниодного товара не зарегистрировано
@@ -141,10 +147,12 @@ class ExportICMLRetailCRM extends Simpla
         }
     }
 
+
     private function getSitename()
     {
         return (!is_null($this->settings->site_name)) ? $this->settings->site_name : '';
     }
+
 
     private function getCompanyname()
     {
@@ -170,13 +178,13 @@ class ExportICMLRetailCRM extends Simpla
     }
 
 
-    /*
-    Функция генерирует и возвращает DOM-объект 
-    */
+    /**
+     * Метод генерирует и возвращает DOM-объект
+     */
     public function generate()
     {
         if (!$this->managers->access('export')) return false; // Проверка прав доступа при запуске скрипта из админки Simpla
-        
+
         // Создаём шаблон XML-документа
         $domObject = new DOMDocument('1.0', 'utf-8');
         $domElementCatalog = $domObject->createElement('yml_catalog');
@@ -198,13 +206,13 @@ class ExportICMLRetailCRM extends Simpla
         $domElementShop->appendChild($domElementCategories);
         $domElementOffers = $domObject->createElement('offers');
         $domElementShop->appendChild($domElementOffers);
-        
+
         // Формируем блок категорий товаров
         $this->makeCategories($domObject, $domElementCategories);
-        
+
         //Формируем блок товаров
         $this->makeOffers($domObject, $domElementOffers);
-        
+
         return $domObject;
     }
 }
