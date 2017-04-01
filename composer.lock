@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "2d79fe89ec134485d7d89143167a9398",
     "content-hash": "e6f54dd9717d072c3cfda352b7c3e423",
     "packages": [
         {
@@ -52,7 +53,7 @@
                 "rest",
                 "retailCRM"
             ],
-            "time": "2016-07-21T22:37:53+00:00"
+            "time": "2016-07-21 22:37:53"
         }
     ],
     "packages-dev": [],
