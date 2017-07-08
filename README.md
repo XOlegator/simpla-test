@@ -29,6 +29,10 @@
 ### Установка для пакетной выгрузки заказов и товаров ###
 1. Скопировать два скрипта *export_orders_retailCRM.php* и *export_to_ICML_retailCRM.php* в каталог web-сервера /simpla/ajax/
 2. ОПЦИОНАЛЬНО. Заменить родной файл Simpla /simpla/design/html/export.tpl на его модифицированный вариант - только если требуется запускать представленные скрипты экспорта вручную из административной панели сайта интернет-магазина. Новые кнопки появятся в админке: [Автоматизация / Экспорт].
+<details>
+  <summary>Пример</summary>
+   [[export_buttons.png]]
+</details>  
 3. В настройках RetaiCRM прописать путь к ICML-файлу - [Администрирование / Магазины / Магазины], выбрать нужный магазин и на вкладке Каталог указать URL (https://sitename/integration/icml/icml.xml).
 
 ### Установка для мгновенной выгрузки данных по заказам и клиентам в RetailCRM ###
@@ -65,7 +69,11 @@
         'retail'     => 'Retail'
     );
 ```  
-3) Для отправки в RetailCRM группы пользователей, в которую назначен пользователь в SimplaCMS, нужно создать пользовательское поле "Группа пользователей" (код group) для таблицы Клиенты в RetailCRM: Администрирование / Настройки / Пользовательские поля.  
+3) Для отправки в RetailCRM группы пользователей, в которую назначен пользователь в SimplaCMS, нужно создать пользовательское поле "Группа пользователей" (код group) для таблицы Клиенты в RetailCRM: Администрирование / Настройки / Пользовательские поля.
+<details>
+  <summary>Пример</summary>
+   [[user_group.png]]
+</details>  
 4) Для мгновенной отправки данных о регистрации клиента в SimplaCMS - в файл /view/RegisterView.php после строк
 ```php
             elseif($user_id = $this->users->add_user(array('name'=>$name, 'email'=>$email, 'password'=>$password, 'enabled'=>$default_status, 'last_ip'=>$_SERVER['REMOTE_ADDR'])))
@@ -225,6 +233,10 @@
 1. Скопировать в каталог /api файл Retail.php (см. п. 1 из предыдущего списка действий)
 2. Скопировать в каталог /integration файл import_order_retailCRM.php.
 3. Добавить триггер в RetailCRM для отправки запроса при изменении заказа: Администрирование / Коммуникации / Добавить. Условие применения триггера: not changeSet.hasChangesWithSource("api"). Действие: Выполнить HTTP-запрос. Адрес: https://sitename/integration/import_order_retailCRM.php (подставить вместо sitename название собственного сайта c SimplaCMS; тут протокол может быть HTTP, хотя рекомендуется HTTPS). Метод: POST. Передавать параметры: В теле запроса (urlencode). Параметры: Параметр - id; Значение - {{ order.id }}
+<details>
+  <summary>Пример</summary>
+   [[trigger_order_change.png]]
+</details>  
 
 ## Использование ##
 При настройке мгновенного обена данными по заказам и клиентам между SimplaCMS и RetailCRM - обмен будет происходить в режиме реального времени при изменении соответсвующих данных.
@@ -263,3 +275,4 @@ php /<путь к HTTP серверу>/simpla/ajax/export_to_ICML_retailCRM.php 
 * Simpla CMS - http://simplacms.ru/
 * Разработчик интеграции - Олег Ехлаков <subspam@mail.ru>
 * Проект интеграции реализован при поддержке студии Ультравзор — http://ultravzor.com
+* Комментарии к проекту можно оставять [тут](https://github.com/XOlegator/simpla-test/issues/2)
