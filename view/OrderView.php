@@ -63,7 +63,7 @@ class OrderView extends View
 				$order = $this->orders->get_order((integer)$order->id);
 
                 // Отсылаем данные о заказе в RetailCRM
-                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order->id)) {
                     $this->retail->request('ordersEdit', $arOrderData);
                 }
 			}

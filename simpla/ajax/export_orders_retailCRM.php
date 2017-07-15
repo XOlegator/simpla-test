@@ -21,7 +21,12 @@ $apiRetailCRM = 5;
 // API /api/orders/upload
 
 $retail          = new Retail($apiRetailCRM);
-$clientRetailCRM = new \RetailCrm\ApiClient($config['urlRetail'], $config['keyRetail'], $config['siteCode']);
+$clientRetailCRM = new \RetailCrm\ApiClient(
+    $config['urlRetail'],
+    $config['keyRetail'],
+    \RetailCrm\ApiClient::V5,
+    $config['siteCode']
+);
 // Если есть непустой файл history.log, то значит полная выгрузка уже производилась. Повторять полную выгрузку нельзя.
 $checkFile = $config['logDirectory'] . 'history.log';
 if (file_exists($checkFile)) {

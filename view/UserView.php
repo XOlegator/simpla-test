@@ -50,7 +50,7 @@ class UserView extends View
 				$this->design->assign('email', $this->user->email);
 
                 // Отсылаем данные о пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user_id)) {
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user_id)) {
                     $this->retail->request('customersEdit', $arUserData);
                 }
 			}

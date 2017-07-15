@@ -36,7 +36,7 @@ class RegisterView extends View
 			elseif($user_id = $this->users->add_user(array('name'=>$name, 'email'=>$email, 'password'=>$password, 'enabled'=>$default_status, 'last_ip'=>$_SERVER['REMOTE_ADDR'])))
 			{
                 // Отсылаем данные о зарегистрировавшемся пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user_id)) {
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user_id)) {
                     $this->retail->request('customersCreate', $arUserData);
                 }
 				$_SESSION['user_id'] = $user_id;

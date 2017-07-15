@@ -132,7 +132,7 @@ class Orders extends Simpla
 		$this->update_total_price(intval($id));
         
         // Проверка, изменился ли статус оплаты. По какой-то причине оплата иногда проставляется не отдельным методом pay(), а этим методом update_order()
-        if (is_array($order) && isset($order['paid']) && !isset($order['status'])) {
+        if ($this->retail->isOnlineIntegration() && is_array($order) && isset($order['paid']) && !isset($order['status'])) {
             $this->retail->logger('Изменился статус оплаты. Данные: ' . print_r($order, true), 'orders-info');
             // Вероятно изменился статус оплаты по заказау, отразим это в RetailCRM
             // Отсылаем данные об оплате заказа в RetailCRM
@@ -508,7 +508,7 @@ class Orders extends Simpla
 		$this->db->query($query);
 
         // Отсылаем данные об оплате заказа в RetailCRM
-        if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+        if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order_id)) {
             $this->retail->request('ordersEdit', $arOrderData);
         }
 

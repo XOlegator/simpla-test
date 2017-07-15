@@ -128,7 +128,7 @@ class OrderAdmin extends Simpla
 				if($this->request->post('notify_user'))
 					$this->notify->email_order_user($order->id);
 
-                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order->id)) {
                     if ($isNewOrder) {
                         // Отсылаем данные о новом заказе в RetailCRM
                         $this->retail->request('ordersCreate', $arOrderData);

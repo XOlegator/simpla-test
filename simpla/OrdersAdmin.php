@@ -105,10 +105,12 @@ class OrdersAdmin extends Simpla
 					break;
 				}
 			}
-            foreach ($ids as $id) {
-                if ($arOrderData = $this->retail->getOrderRetailData($id)) {
-                    // Отсылаем данные о заказе в RetailCRM
-                    $this->retail->request('ordersEdit', $arOrderData);
+            if ($this->retail->isOnlineIntegration()) {
+                foreach ($ids as $id) {
+                    if ($arOrderData = $this->retail->getOrderRetailData($id)) {
+                        // Отсылаем данные о заказе в RetailCRM
+                        $this->retail->request('ordersEdit', $arOrderData);
+                    }
                 }
             }
 		}		

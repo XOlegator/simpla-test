@@ -34,7 +34,7 @@ class UserAdmin extends Simpla
    	    		$user = $this->users->get_user(intval($user->id));
 
                 // Отсылаем данные о пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user->id)) {
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user->id)) {
                     $this->retail->request('customersEdit', $arUserData);
                 }
 			}

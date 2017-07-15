@@ -4,31 +4,35 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "2d79fe89ec134485d7d89143167a9398",
-    "content-hash": "e6f54dd9717d072c3cfda352b7c3e423",
+    "hash": "8b09c89971c601b324864fac8bf41851",
+    "content-hash": "301e4a58e44b8d3f761fd0037c3aa2b1",
     "packages": [
         {
             "name": "retailcrm/api-client-php",
-            "version": "4.0.0",
+            "version": "v5.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/retailcrm/api-client-php.git",
-                "reference": "49f253c228407774a9935383f9abafb1e715b745"
+                "reference": "4f57734e92c714547dad4382c35c08cb08097255"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/retailcrm/api-client-php/zipball/49f253c228407774a9935383f9abafb1e715b745",
-                "reference": "49f253c228407774a9935383f9abafb1e715b745",
+                "url": "https://api.github.com/repos/retailcrm/api-client-php/zipball/4f57734e92c714547dad4382c35c08cb08097255",
+                "reference": "4f57734e92c714547dad4382c35c08cb08097255",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": ">=5.3.0"
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "3.7.*",
+                "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "4.0.x-dev"
+                    "dev-master": "5.x-dev"
                 }
             },
             "autoload": {
@@ -43,17 +47,17 @@
             "authors": [
                 {
                     "name": "retailCRM",
-                    "email": "support@retailcrm.pro"
+                    "email": "support@retailcrm.ru"
                 }
             ],
             "description": "PHP client for retailCRM API",
-            "homepage": "http://www.retailcrm.pro/",
+            "homepage": "http://www.retailcrm.ru/",
             "keywords": [
                 "api",
                 "rest",
                 "retailCRM"
             ],
-            "time": "2016-07-21 22:37:53"
+            "time": "2017-06-22 13:42:42"
         }
     ],
     "packages-dev": [],

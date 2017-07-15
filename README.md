@@ -75,6 +75,7 @@
 ```
 вставить строки:
 ```php
+                // Отсылаем данные о зарегистрировавшемся пользователе в RetailCRM
                 if ($arUserData = $this->retail->getUserRetailData($user_id)) {
                     $this->retail->request('customersCreate', $arUserData);
                 }
