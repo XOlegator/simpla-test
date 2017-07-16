@@ -9,18 +9,13 @@ require_once '../../vendor/autoload.php';
 require_once '../../api/Retail.php';
 $config = Retail::config('../../integration/config.php');
 
-/**
- * @var integer Номер версии API RetailCRM
- */
-$apiRetailCRM = 5;
-
 // Требуется пройтись по всем заказам, собрать из них необходимые данные.
 // После формирования исчерпывающего набора данных подготовить к отправке список задействованных покупателей (пакетно по 50 штук)
 // API RetailCRM /api/customers/upload
 // Затем выгрузить данные по самим заказам (пакетно по 50 штук)
 // API /api/orders/upload
 
-$retail          = new Retail($apiRetailCRM);
+$retail          = new Retail(\RetailCrm\ApiClient::V5);
 $clientRetailCRM = new \RetailCrm\ApiClient(
     $config['urlRetail'],
     $config['keyRetail'],
@@ -39,13 +34,13 @@ if (file_exists($checkFile)) {
     Retail::logger('Готовимся к первоначальной выгрузке всех заказов', 'orders-info');
 }
 $data = $retail->fetch($lastDate);
-//Retail::logger('Все данные для выгрузки: ' . print_r($data, true), 'orders-info');
+Retail::logger('Все данные для выгрузки: ' . print_r($data, true), 'orders-info');
 // Массив данных разбит на пакеты - не более 50 записей в каждом пакете
 // Пройдём по всему массиву клиентов и отправим каждый пакет
 if (!is_null($data) && is_array($data)) {
     foreach ($data as $pack) {
         try {
-            $response1 = $clientRetailCRM->customersUpload($pack['customers'], $config['siteCode']);
+            $response1 = $clientRetailCRM->request->customersUpload($pack['customers'], $config['siteCode']);
             Retail::logger('RetailCRM_Api::customersUpload: Выгрузили следующих клиентов: ' . print_r($pack['customers'], true), 'orders-info');
         } catch (\RetailCrm\Exception\CurlException $e) {
             Retail::logger('RetailCRM_Api::customersUpload ' . $e->getMessage(), 'connect');
@@ -84,7 +79,7 @@ if (!is_null($data) && is_array($data)) {
 
         // Переходим к выгрузке заказов
         try {
-            $response2 = $clientRetailCRM->ordersUpload($pack['orders'], $config['siteCode']);
+            $response2 = $clientRetailCRM->request->ordersUpload($pack['orders'], $config['siteCode']);
             Retail::logger(date('Y-m-d H:i:s'), 'history-log'); // Помечаем время последней выгрузки заказов
             Retail::logger('RetailCRM_Api::ordersUpload: Выгрузили следующие заказы', 'orders-info');
         } catch (\RetailCrm\Exception\CurlException $e) {
@@ -120,12 +115,12 @@ if (!is_null($data) && is_array($data)) {
                 }
             }
         }
-
+/*
         // Переходим к выгрузке оплат
         if ($apiRetailCRM > 4) {
             foreach ($pack['payments'] as $payment) {
                 try {
-                    $response3 = $clientRetailCRM->ordersPaymentCreate($payment, $config['siteCode']);
+                    $response3 = $clientRetailCRM->request->ordersPaymentCreate($payment, $config['siteCode']);
                 } catch (\RetailCrm\Exception\CurlException $e) {
                     Retail::logger('RetailCRM_Api::ordersPaymentCreate ' . $e->getMessage(), 'connect');
                     echo 'Сетевые проблемы. Ошибка подключения к RetailCRM: ' . $e->getMessage();
@@ -148,7 +143,7 @@ if (!is_null($data) && is_array($data)) {
                     }
                 }
             }
-        }
+        }*/
     } // Конец цикла по пакетам
 } else {
     // Для выгрузки данных нет
