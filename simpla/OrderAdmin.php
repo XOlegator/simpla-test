@@ -134,40 +134,7 @@ class OrderAdmin extends Simpla
                         $this->retail->request('ordersCreate', $arOrderData);
                     } else {
                         // Отсылаем данные об изменённом заказе в RetailCRM
-                        if ($this->retail->request('ordersEdit', $arOrderData)) {
-                            // В заказе могли измениться данные оплаты - это нужно отправлять отдельным запросом
-                            // Данные оплаты
-                            $arPaymentData = [
-                                'externalId' => $order->id, // Идентификатор платежа у нас совпадает с идентификатором заказа
-                                'amount'     => $order->total_price, // Сумма оплаты у нас совпадает с суммой заказа
-                                'status'     => $arOrderData['payments'][0]['status']
-                            ];
-                            if (!empty($order->payment_date) && $order->payment_date != '0000-00-00 00:00:00') {
-                            	$arPaymentData['paidAt'] = date('Y-m-d H:i:s', strtotime($order->payment_date));
-                            }
-                            // Сначала определим, была ли назначена оплата по данным RetailCRM
-                            if ($arPayments = $this->retail->getRetailPayments($order->id)) {
-                                // Оплата уже есть в RetailCRM - обновим её данные
-                                $firstRetailPayment = current($arPayments);
-                                $this->retail->logger('По данным RetailCRM оплаты есть. $firstRetailPayment = ' . print_r($firstRetailPayment, true), 'debug');
-                                // Проверим, изменились ли данные оплаты
-                                if ($arOrderData['payments'][0]['type'] != $firstRetailPayment['type'] || $arOrderData['payments'][0]['status'] != $firstRetailPayment['status']) {
-                                    // Данные оплаты изменились, - изменим данные в RetailCRM
-                                    $arPaymentData['id'] = $firstRetailPayment['id'];
-                                	$this->retail->logger('Данные оплаты изменились, - изменим данные в RetailCRM. $arPaymentData = ' . print_r($arPaymentData, true), 'debug');
-                                    $this->retail->request('ordersPaymentEdit', $arPaymentData, 'id');
-                                    //$this->retail->request('ordersPaymentEdit', $arPaymentData);
-                                }
-                            } else {
-                                // Оплаты по данному заказу в RetailCRM нет - добавим оплату, если есть данные в Simpla CMS
-                            	$this->retail->logger('Оплаты по данному заказу в RetailCRM нет', 'debug');
-                                if (isset($arOrderData['payments'][0]['type'])) {
-                                    $arPaymentData['type'] = $arOrderData['payments'][0]['type'];
-                                    $arPaymentData['order']['externalId'] = $order->id;
-                                    $this->retail->request('ordersPaymentCreate', $arPaymentData);
-                                }
-                            }
-                        }
+                        $this->retail->request('ordersEdit', $arOrderData));
                     }
                 }
 			}

@@ -49,15 +49,56 @@ class Retail extends Simpla
                 $response = $clientRetailCRM->request->$method($arData, $config['siteCode']);
             } else if ($method == 'ordersPaymentCreate') {
                 $response = $clientRetailCRM->request->$method($arData);
-                self::logger('ordersPaymentCreate method $response = ' . print_r($response, true), 'debug');
+                //self::logger('ordersPaymentCreate method $response = ' . print_r($response, true), 'debug');
             } else if ($method == 'ordersEdit' || $method == 'customersEdit' || $method == 'ordersPaymentEdit') {
                 $response = $clientRetailCRM->request->$method($arData, $by, $config['siteCode']);
-                self::logger('Edit method $response = ' . print_r($response, true), 'debug');
+                //self::logger('Edit method $response = ' . print_r($response, true), 'debug');
             }
             //self::logger('$response = ' . print_r($response, true), 'debug');
 
             if ($response->isSuccessful() && (200 === $response->getStatusCode() || 201 === $response->getStatusCode())) {
                 self::logger('RetailCRM_Api::' . $method . ' - Success. Response Id = ' . $response->id, 'debug');
+                if ($method == 'ordersEdit') {
+                    self::logger('ordersEdit $arData = ' . print_r($arData, true), 'debug');
+                    // В заказе могли измениться данные оплаты - это нужно отправлять отдельным запросом
+                    // Данные оплаты
+                    $arPaymentData = [
+                        'amount' => $arData['amount'], // Сумма оплаты у нас совпадает с суммой заказа
+                        'status' => $arData['payments'][0]['status']
+                    ];
+                    if (isset($arData['payments'][0]['paidAt']) && !empty($arData['payments'][0]['paidAt']) && $arData['payments'][0]['paidAt'] != '0000-00-00 00:00:00') {
+                        $arPaymentData['paidAt'] = date('Y-m-d H:i:s', strtotime($arData['payments'][0]['paidAt']));
+                    }
+                    // Сначала определим, была ли назначена оплата по данным RetailCRM
+                    if ($arPayments = self::getRetailPayments($arData['externalId'])) {
+                        // Оплата уже есть в RetailCRM - обновим её данные
+                        $firstRetailPayment = current($arPayments);
+                        self::logger('По данным RetailCRM оплаты есть. $firstRetailPayment = ' . print_r($firstRetailPayment, true), 'debug');
+                        // Проверим, изменились ли данные оплаты
+                        if ($arData['payments'][0]['type'] != $firstRetailPayment['type']) {
+                            // Изменился тип оплаты, но тип оплаты нельзя менять в RetailCRM.
+                            // Можно было бы удалить старый платёж и создать новый, но метода удаления платежа нет в API
+                            // TODO Пока осталяю этот вопрос нерешённым
+                            self::logger('Изменился тип оплаты в Simpla CMS, но в RetailCRM это нет возможности отразить. Старые данные оплаты: ' . print_r($arPaymentData, true) . '; новые данные оплаты: ' . print_r($arData['payments'][0], true), 'orders-error');
+                        }
+                        if ($arData['payments'][0]['status'] != $firstRetailPayment['status']) {
+                            // Данные оплаты изменились, - изменим данные в RetailCRM
+                            $arPaymentData['id'] = $firstRetailPayment['id'];
+                            self::logger('Данные оплаты изменились, - изменим данные в RetailCRM. $arPaymentData = ' . print_r($arPaymentData, true), 'debug');
+                            $this->request('ordersPaymentEdit', $arPaymentData, 'id');
+                        }
+                    } else {
+                        // Оплаты по данному заказу в RetailCRM нет - добавим оплату, если есть данные в Simpla CMS
+                        self::logger('Оплаты по данному заказу в RetailCRM нет', 'debug');
+                        if (isset($arData['payments'][0]['type'])) {
+                            $arPaymentData['externalId'] = 'p' . $arData['externalId']; // Идентификатор платежа у нас совпадает с идентификатором заказа
+                            $arPaymentData['type'] = $arData['payments'][0]['type'];
+                            $arPaymentData['order']['externalId'] = $arData['externalId'];
+                            $this->request('ordersPaymentCreate', $arPaymentData);
+                        }
+                    }
+                }
+
                 return true;
             } else {
                 self::logger('RetailCRM_Api::' . $method . ' - Error. Status code: ' . $response->getStatusCode() . '. ' . print_r($response, true), 'connect');
@@ -131,6 +172,7 @@ class Retail extends Simpla
                     'text' => $order->address,
                 ],
             ],
+            'amount'          => $order->total_price
         ];
 
         // Если есть код клиента, то создадим привязку, иначе в RetailCRM будет создан клиент по данным из Заказа
@@ -215,7 +257,7 @@ class Retail extends Simpla
                 // Способ оплаты в заказе Simpla CMS был указан
                 $arOrderData['payments'][0] = $arPayment;
                 // Ставим внешним идентификатором платежа номер заказа из Simpla CMS
-                $arOrderData['payments'][0]['externalId'] = $order->id;
+                $arOrderData['payments'][0]['externalId'] = 'p' . $order->id;
             }
         }
 
