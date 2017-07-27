@@ -76,7 +76,7 @@
 вставить строки:
 ```php
                 // Отсылаем данные о зарегистрировавшемся пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user_id)) {
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user_id)) {
                     $this->retail->request('customersCreate', $arUserData);
                 }
 ```
@@ -92,7 +92,7 @@
 Вставить строки:
 ```php
                 // Отсылаем данные о пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user_id)) {
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user_id)) {
                     $this->retail->request('customersEdit', $arUserData);
                 }
 ```
@@ -104,8 +104,8 @@
 ```
  вставить строки:
 ```php
-                 // Отсылаем данные о пользователе в RetailCRM
-                if ($arUserData = $this->retail->getUserRetailData($user->id)) {
+                // Отсылаем данные о пользователе в RetailCRM
+                if ($this->retail->isOnlineIntegration() && $arUserData = $this->retail->getUserRetailData($user->id)) {
                     $this->retail->request('customersEdit', $arUserData);
                 }
 ```
@@ -131,7 +131,7 @@
 вставляем строки:
 ```php
                 // Отсылаем данные о заказе в RetailCRM
-                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order->id)) {
                     $this->retail->request('ordersEdit', $arOrderData);
                 }
 ```
@@ -162,13 +162,13 @@
 ```
 вставить строки:
 ```php
-                if ($arOrderData = $this->retail->getOrderRetailData($order->id)) {
+                if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order->id)) {
                     if ($isNewOrder) {
                         // Отсылаем данные о новом заказе в RetailCRM
                         $this->retail->request('ordersCreate', $arOrderData);
                     } else {
-                        // Отсылаем данные о заказе в RetailCRM
-                        $this->retail->request('ordersEdit', $arOrderData);
+                        // Отсылаем данные об изменённом заказе в RetailCRM
+                        $this->retail->request('ordersEdit', $arOrderData));
                     }
                 }
 ```
@@ -188,10 +188,12 @@
 ```
 вставлить строки:
 ```php
-            foreach ($ids as $id) {
-                if ($arOrderData = $this->retail->getOrderRetailData($id)) {
-                    // Отсылаем данные о заказе в RetailCRM
-                    $this->retail->request('ordersEdit', $arOrderData);
+            if ($this->retail->isOnlineIntegration()) {
+                foreach ($ids as $id) {
+                    if ($arOrderData = $this->retail->getOrderRetailData($id)) {
+                        // Отсылаем данные о заказе в RetailCRM
+                        $this->retail->request('ordersEdit', $arOrderData);
+                    }
                 }
             }
 ```
@@ -203,7 +205,7 @@
 вставить строки:
 ```php
         // Проверка, изменился ли статус оплаты. По какой-то причине оплата иногда проставляется не отдельным методом pay(), а этим методом update_order()
-        if (is_array($order) && isset($order['paid'])) {
+        if ($this->retail->isOnlineIntegration() && is_array($order) && isset($order['paid']) && !isset($order['status'])) {
             // Вероятно изменился статус оплаты по заказау, отразим это в RetailCRM
             // Отсылаем данные об оплате заказа в RetailCRM
             if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
@@ -218,8 +220,8 @@
 ```
 вставить строки:
 ```php
-         // Отсылаем данные об оплате заказа в RetailCRM
-        if ($arOrderData = $this->retail->getOrderRetailData($order_id)) {
+        // Отсылаем данные об оплате заказа в RetailCRM
+        if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order_id)) {
             $this->retail->request('ordersEdit', $arOrderData);
         }
 ```
