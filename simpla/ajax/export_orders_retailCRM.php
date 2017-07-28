@@ -1,6 +1,6 @@
 <?php
-$path_parts = pathinfo($_SERVER['SCRIPT_FILENAME']); // определяем директорию скрипта (полезно для запуска из cron'а)
-chdir($path_parts['dirname']); // задаем директорию выполнение скрипта
+$path_parts = pathinfo($_SERVER['SCRIPT_FILENAME']); // Определяем директорию скрипта (полезно для запуска из cron'а)
+chdir($path_parts['dirname']); // Задаём директорию выполнения скрипта
 // Подключаем API Simpla
 require_once '../../api/Simpla.php';
 // Подключим зависимые библиотеки (API RetailCRM)
@@ -115,35 +115,6 @@ if (!is_null($data) && is_array($data)) {
                 }
             }
         }
-/*
-        // Переходим к выгрузке оплат
-        if ($apiRetailCRM > 4) {
-            foreach ($pack['payments'] as $payment) {
-                try {
-                    $response3 = $clientRetailCRM->request->ordersPaymentCreate($payment, $config['siteCode']);
-                } catch (\RetailCrm\Exception\CurlException $e) {
-                    Retail::logger('RetailCRM_Api::ordersPaymentCreate ' . $e->getMessage(), 'connect');
-                    echo 'Сетевые проблемы. Ошибка подключения к RetailCRM: ' . $e->getMessage();
-                }
-                // Получаем подробности обработки заказов
-                if (isset($response3)) {
-                    if ($response3->isSuccessful() && 201 === $response3->getStatusCode()) {
-                        echo $status . 'Оплата успешно создана в RetaiCRM.' . '<br>';
-                    } else {
-                        Retail::logger('Ошибка при выгрузке оплаты: ' . print_r($response3, true), 'orders-error');
-                        echo sprintf(
-                            "Ошибка при выгрузке оплаты: [Статус HTTP-ответа %s] %s",
-                            $response3->getStatusCode(),
-                            $response3->getErrorMsg()
-                        ) . '<br>';
-                        $arErrorText = $response3->getErrors();
-                        foreach ($arErrorText as $errorText) {
-                            echo $errorText . '<br>';
-                        }
-                    }
-                }
-            }
-        }*/
     } // Конец цикла по пакетам
 } else {
     // Для выгрузки данных нет
