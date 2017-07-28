@@ -168,7 +168,7 @@
                         $this->retail->request('ordersCreate', $arOrderData);
                     } else {
                         // Отсылаем данные об изменённом заказе в RetailCRM
-                        $this->retail->request('ordersEdit', $arOrderData));
+                        $this->retail->request('ordersEdit', $arOrderData);
                     }
                 }
 ```
