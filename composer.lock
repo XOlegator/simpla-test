@@ -4,21 +4,21 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "8b09c89971c601b324864fac8bf41851",
-    "content-hash": "301e4a58e44b8d3f761fd0037c3aa2b1",
+    "hash": "54576e2812c95d194473340a8648acf6",
+    "content-hash": "4308d63266673f0449d5d1491620eda0",
     "packages": [
         {
             "name": "retailcrm/api-client-php",
-            "version": "v5.0.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/retailcrm/api-client-php.git",
-                "reference": "4f57734e92c714547dad4382c35c08cb08097255"
+                "reference": "3dd663e7a640281afcd77f7307fc907a19cb2e64"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/retailcrm/api-client-php/zipball/4f57734e92c714547dad4382c35c08cb08097255",
-                "reference": "4f57734e92c714547dad4382c35c08cb08097255",
+                "url": "https://api.github.com/repos/retailcrm/api-client-php/zipball/3dd663e7a640281afcd77f7307fc907a19cb2e64",
+                "reference": "3dd663e7a640281afcd77f7307fc907a19cb2e64",
                 "shasum": ""
             },
             "require": {
@@ -57,13 +57,15 @@
                 "rest",
                 "retailCRM"
             ],
-            "time": "2017-06-22 13:42:42"
+            "time": "2017-07-28 07:11:47"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "retailcrm/api-client-php": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

@@ -1,5 +1,5 @@
 {
     "require": {
-        "retailcrm/api-client-php": "~5.0.0"
+        "retailcrm/api-client-php": "dev-master"
     }
 }

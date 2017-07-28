@@ -60,8 +60,9 @@ class Retail extends Simpla
                 self::logger('RetailCRM_Api::' . $method . ' - Success. Response Id = ' . $response->id, 'debug');
                 if ($method == 'ordersEdit') {
                     self::logger('ordersEdit $arData = ' . print_r($arData, true), 'debug');
+
                     // В заказе могли измениться данные оплаты - это нужно отправлять отдельным запросом
-                    // Данные оплаты
+                    // Данные оплаты из Simpla CMS
                     $arPaymentData = [
                         'amount' => $arData['amount'], // Сумма оплаты у нас совпадает с суммой заказа
                         'status' => $arData['payments'][0]['status']
@@ -77,9 +78,22 @@ class Retail extends Simpla
                         // Проверим, изменились ли данные оплаты
                         if ($arData['payments'][0]['type'] != $firstRetailPayment['type']) {
                             // Изменился тип оплаты, но тип оплаты нельзя менять в RetailCRM.
-                            // Можно было бы удалить старый платёж и создать новый, но метода удаления платежа нет в API
-                            // TODO Пока осталяю этот вопрос нерешённым
-                            self::logger('Изменился тип оплаты в Simpla CMS, но в RetailCRM это нет возможности отразить. Старые данные оплаты: ' . print_r($arPaymentData, true) . '; новые данные оплаты: ' . print_r($arData['payments'][0], true), 'orders-error');
+                            // Удалим старый платёж и создадим новый
+                            self::logger('В Simpla CMS изменился тип оплаты', 'debug');
+                            $delPaymentResult = $clientRetailCRM->request->ordersPaymentDelete($firstRetailPayment['id']);
+                            if ($delPaymentResult->isSuccessful()) {
+                                // Удалили платёж в RetailCRM
+                                self::logger('Удалили платёж в RetailCRM: ' . print_r($arPaymentData, true), 'debug');
+                                // Добавим оплату, если есть данные в Simpla CMS
+                                if (isset($arData['payments'][0]['type'])) {
+                                    $arPaymentData['externalId'] = 'p' . $arData['externalId']; // Идентификатор платежа у нас совпадает с идентификатором заказа
+                                    $arPaymentData['type'] = $arData['payments'][0]['type'];
+                                    $arPaymentData['order']['externalId'] = $arData['externalId'];
+                                    $this->request('ordersPaymentCreate', $arPaymentData);
+                                }
+                            } else {
+                                self::logger('Не удалось удалить платёж в RetailCRM: ' . print_r($arPaymentData, true), 'orders-error');
+                            }
                         }
                         if ($arData['payments'][0]['status'] != $firstRetailPayment['status']) {
                             // Данные оплаты изменились, - изменим данные в RetailCRM
