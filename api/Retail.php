@@ -125,7 +125,7 @@ class Retail extends Simpla
     }
 
     /**
-     * Метод формирует данные по заказу из SimplaCMS для отправки в RetailCRM
+     * Метод формирует данные по заказу из SimplaCMS для отправки в RetailCRM.
      * @param integer $order_id Идентификатор заказа
      * @return array Массив данных по заказу. Может формировать массив в нескольких форматах:
      *    1) в формате API v4 RetailCRM (https://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-orders-upload)
@@ -209,7 +209,6 @@ class Retail extends Simpla
                 $arOrderData['delivery']['code'] = $config['deliveryType'][$order->delivery_id];
             } else {
                 self::logger('Нет соответствующего кода типа доставки для RetailCRM. Код типа доставки Simpla: ' . print_r($order->delivery_id, true), 'orders-error');
-                $delivery = '';
             }
         }
 
@@ -285,7 +284,6 @@ class Retail extends Simpla
                 $arOrderData['lastName'] = $arCustomerName[1];
             }
         }
-        //self::logger('$arOrderData = ' . print_r($arOrderData, true), 'orders-info');
 
         return $arOrderData;
     }
@@ -377,7 +375,7 @@ class Retail extends Simpla
      * @param string $whichId Строка, определяющая идентификатор заказа из какой системы передан. Допустимые значения:
      *    "retail" - RetailCRM
      *    "simpla" - Simpla CMS
-     * @return boolen Статус выполнения
+     * @return boolean Статус выполнения
      */
     public function setOrderRetailData($orderId, $whichId = 'retail')
     {
