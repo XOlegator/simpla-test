@@ -6,8 +6,8 @@ require_once ('../../api/Simpla.php');
 // Подключаем описание класса для формирования ICML-файла
 require_once ('../../integration/icml.php');
 // Подключаем общие инструменты
-require_once ('../../integration/Tools.php');
-$config = Tools::config('../../integration/config.php');
+require_once ('../../api/Retail.php');
+$config = Retail::config('../../integration/config.php');
 
 $simpla = new Simpla();
 print_r("Check access level");
@@ -21,8 +21,8 @@ $domObject->formatOutput = true;
 $domObject->saveXML();
 if ($domObject->save("../../integration/icml/icml.xml")) {
     echo "Создан файл /integration/icml/icml.xml";
-    Tools::logger('Сгенерирован новый ICML-файл: /integration/icml/icml.xml', 'icml');
+    Retail::logger('Сгенерирован новый ICML-файл: /integration/icml/icml.xml', 'icml');
 } else {
     echo 'Файл XML не создан';
-    Tools::logger('Не удалось сохранить ICML-файл: /integration/icml/icml.xml', 'icml');
+    Retail::logger('Не удалось сохранить ICML-файл: /integration/icml/icml.xml', 'icml');
 }
