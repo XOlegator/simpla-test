@@ -41,11 +41,25 @@ class ExportICMLRetailCRM extends Simpla
     private function makeOffers($domObject, $domElementOffers)
     {
         $simpla = new Simpla();
-        $products = $this->products->get_products();
+
+        /**
+         * @var mixed[] Массив данных товаров
+         */
+        $products = [];
+
+        // Формируем товары блоками по 100 штук
+        $i = 1;
+        do {
+            $arProds = $this->products->get_products(['page' => $i, 'limit' => 100]);
+            if (!empty($arProds)) {
+                $products = array_merge($products, $arProds);
+            }
+            $i++;
+        } while (!empty($arProds));
+
         if (!empty($products)) {
-            //$items = '';
             foreach ($products as $product) {
-                $variants = $this->variants->get_variants(array('product_id' => $product->id));
+                $variants = $this->variants->get_variants(['product_id' => $product->id]);
                 if (!empty($variants)) {
                     foreach ($variants as $variant) {
                         $currentOffer = $domObject->createElement('offer');
@@ -96,11 +110,11 @@ class ExportICMLRetailCRM extends Simpla
                         }
 
                         // Соберём все свойства товаров
-                        $options = $this->features->get_options(array('product_id' => $product->id));
+                        $options = $this->features->get_options(['product_id' => $product->id]);
                         if (!empty($options)) {
                             foreach ($options as $option) {
                                 $nameOption = ''; // В БД не задействован механизм контроля целостности данных по внешним ключам, поэтому название опции может быть удалено
-                                $features = $this->features->get_features(array('catalog_id' => $categoryId, 'id' => $option->feature_id));
+                                $features = $this->features->get_features(['catalog_id' => $categoryId, 'id' => $option->feature_id]);
                                 if (!empty($features)) {
                                     $nameOption = $features[0]->name;
                                 }
@@ -210,7 +224,7 @@ class ExportICMLRetailCRM extends Simpla
         // Формируем блок категорий товаров
         $this->makeCategories($domObject, $domElementCategories);
 
-        //Формируем блок товаров
+        // Формируем блок товаров
         $this->makeOffers($domObject, $domElementOffers);
 
         return $domObject;
