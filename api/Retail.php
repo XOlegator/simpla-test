@@ -168,7 +168,7 @@ class Retail extends Simpla
         }
 
         $arOrderData = [
-            'externalId'      => $order->id,
+            'number'          => $order->id,
             'createdAt'       => date('Y-m-d H:i:s', strtotime($order->date)),
             'phone'           => $order->phone,
             'email'           => $order->email,
@@ -276,13 +276,7 @@ class Retail extends Simpla
 
         // Добавляем данные по имени и фамилии клиента заказа
         if (isset($order->name) && !empty($order->name)) {
-            $arCustomerName = explode(' ', $order->name);
-            if (!empty($arCustomerName[0])) {
-                $arOrderData['firstName'] = $arCustomerName[0];
-            }
-            if (!empty($arCustomerName[1])) {
-                $arOrderData['lastName'] = $arCustomerName[1];
-            }
+            $arOrderData['firstName'] = $order->name;
         }
 
         return $arOrderData;
