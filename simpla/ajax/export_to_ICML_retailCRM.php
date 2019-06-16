@@ -11,7 +11,10 @@ $config = Retail::config('../../integration/config.php');
 
 $simpla = new Simpla();
 print_r("Check access level");
-if (!$simpla->managers->access('export')) return false; // Проверка прав доступа при запуске скрипта из админки Simpla
+// Проверка прав доступа при запуске скрипта из админки Simpla
+if (!$simpla->managers->access('export')) {
+	return false;
+}
 
 $export = new ExportICMLRetailCRM($config);
 $domObject = $export->generate();
