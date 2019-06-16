@@ -9,6 +9,8 @@ require_once '../../vendor/autoload.php';
 require_once '../../api/Retail.php';
 $config = Retail::config('../../integration/config.php');
 
+set_time_limit(7200);
+
 // Требуется пройтись по всем заказам, собрать из них необходимые данные.
 // После формирования исчерпывающего набора данных подготовить к отправке список задействованных покупателей (пакетно по 50 штук)
 // API RetailCRM /api/customers/upload
@@ -33,18 +35,23 @@ if (file_exists($checkFile)) {
     $lastDate = null;
     Retail::logger('Готовимся к первоначальной выгрузке всех заказов', 'orders-info');
 }
-$data = $retail->fetch($lastDate);
-Retail::logger('Все данные для выгрузки: ' . print_r($data, true), 'orders-info');
+$data = $retail->fetch($lastDate, 12);
+//Retail::logger('Все данные для выгрузки: ' . print_r($data, true), 'orders-info');
 // Массив данных разбит на пакеты - не более 50 записей в каждом пакете
 // Пройдём по всему массиву клиентов и отправим каждый пакет
 if (!is_null($data) && is_array($data)) {
     foreach ($data as $pack) {
-        try {
-            $response1 = $clientRetailCRM->request->customersUpload($pack['customers'], $config['siteCode']);
-            Retail::logger('RetailCRM_Api::customersUpload: Выгрузили следующих клиентов: ' . print_r($pack['customers'], true), 'orders-info');
-        } catch (\RetailCrm\Exception\CurlException $e) {
-            Retail::logger('RetailCRM_Api::customersUpload ' . $e->getMessage(), 'connect');
-            echo 'Сетевые проблемы. Ошибка подключения к retailCRM: ' . $e->getMessage();
+        if (!empty($pack['customers'])) {
+            try {
+                //Retail::logger('RetailCRM_Api::customersUpload: Сейчас будем выгружать клиентов: ' . print_r($pack['customers'], true), 'orders-info');
+                $response1 = $clientRetailCRM->request->customersUpload($pack['customers'], $config['siteCode']);
+                //Retail::logger('RetailCRM_Api::customersUpload: Выгрузили следующих клиентов: ' . print_r($pack['customers'], true), 'orders-info');
+            } catch (\RetailCrm\Exception\CurlException $e) {
+                Retail::logger('RetailCRM_Api::customersUpload ' . $e->getMessage(), 'connect');
+                echo 'Сетевые проблемы. Ошибка подключения к retailCRM: ' . $e->getMessage();
+            }
+        } else {
+            Retail::logger('Выгружать было нечего, так что считаем, что по клиентам всё нормально выгрузилось', 'customers');
         }
         // Получаем подробности обработки клиентов
         if (isset($response1)) {
@@ -64,7 +71,7 @@ if (!is_null($data) && is_array($data)) {
                 }
                 $status = 'Все клиенты успешно выгружены в RetaiCRM.' . '<br>';
             } else {
-                Retail::logger('Ошибка при выгрузке клиентов: ' . print_r($response1, true), 'customers');
+                Retail::logger('Ошибка при выгрузке клиентов: ' . print_r($response1, true) . '; $pack[\'customers\'] = ' . print_r($pack['customers'], true), 'customers');
                 echo sprintf(
                     "Ошибка при выгрузке клиентов: [Статус HTTP-ответа %s] %s",
                     $response1->getStatusCode(),
@@ -80,7 +87,14 @@ if (!is_null($data) && is_array($data)) {
         // Переходим к выгрузке заказов
         try {
             $response2 = $clientRetailCRM->request->ordersUpload($pack['orders'], $config['siteCode']);
-            Retail::logger(date('Y-m-d H:i:s'), 'history-log'); // Помечаем время последней выгрузки заказов
+
+            // Помечаем время последней выгрузки заказов
+            if (!empty($pack['lastDate'])) {
+                Retail::logger($pack['lastDate'], 'history-log');
+            } else {
+                Retail::logger(date('Y-m-d H:i:s'), 'history-log');
+            }
+
             Retail::logger('RetailCRM_Api::ordersUpload: Выгрузили следующие заказы', 'orders-info');
         } catch (\RetailCrm\Exception\CurlException $e) {
             Retail::logger('RetailCRM_Api::ordersUpload ' . $e->getMessage(), 'connect');
@@ -121,4 +135,10 @@ if (!is_null($data) && is_array($data)) {
     Retail::logger('Выгрузка прерывается - нечего выгружать.', 'orders-info');
     Retail::logger(date('Y-m-d H:i:s'), 'history-log'); // Помечаем время последней попытки выгрузки заказов
     echo 'Выгружать нечего';
+}
+
+if (file_exists($checkFile)) {
+    // Выгрузим все заказы, появившиеся после указанного в логе времени
+    $lastDate = Retail::getDate($checkFile);
+    echo 'Выгрузили заказы по ' . $lastDate;
 }
