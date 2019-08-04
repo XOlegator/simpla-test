@@ -187,7 +187,7 @@
                 }
             }
 ```
-вставлить строки:
+вставить строки:
 ```php
             if ($this->retail->isOnlineIntegration()) {
                 foreach ($ids as $id) {

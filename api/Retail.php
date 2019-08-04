@@ -32,6 +32,11 @@ class Retail extends Simpla
 
     /**
      * Метод отправляет запрос в RetailCRM
+     * @param string $method Метод из библиотеки API retailCRM
+     * @param mixed[] $arData Массив данных
+     * @param string $by Код номера, по которому нужно сзязать данные в retailCRM. Допустимые значения:
+     *    "externalId" - связь по внешнему номеру (по номеру из Simpla CMS)
+     *    "id"         - связь по номеру из retailCRM
      */
     public function request($method, $arData, $by = 'externalId')
     {
@@ -47,10 +52,10 @@ class Retail extends Simpla
         try {
             if ($method == 'ordersCreate' || $method == 'customersCreate') {
                 $response = $clientRetailCRM->request->$method($arData, $config['siteCode']);
-            } else if ($method == 'ordersPaymentCreate') {
+            } elseif ($method == 'ordersPaymentCreate') {
                 $response = $clientRetailCRM->request->$method($arData);
                 //self::logger('ordersPaymentCreate method $response = ' . print_r($response, true), 'debug');
-            } else if ($method == 'ordersEdit' || $method == 'customersEdit' || $method == 'ordersPaymentEdit') {
+            } elseif ($method == 'ordersEdit' || $method == 'customersEdit' || $method == 'ordersPaymentEdit') {
                 $response = $clientRetailCRM->request->$method($arData, $by, $config['siteCode']);
                 //self::logger('Edit method $response = ' . print_r($response, true), 'debug');
             }
@@ -67,7 +72,7 @@ class Retail extends Simpla
                         'amount' => $arData['amount'], // Сумма оплаты у нас совпадает с суммой заказа
                         'status' => $arData['payments'][0]['status']
                     ];
-                    if (isset($arData['payments'][0]['paidAt']) && !empty($arData['payments'][0]['paidAt']) && $arData['payments'][0]['paidAt'] != '0000-00-00 00:00:00') {
+                    if (!empty($arData['payments'][0]['paidAt']) && $arData['payments'][0]['paidAt'] != '0000-00-00 00:00:00') {
                         $arPaymentData['paidAt'] = date('Y-m-d H:i:s', strtotime($arData['payments'][0]['paidAt']));
                     }
                     // Сначала определим, была ли назначена оплата по данным RetailCRM
@@ -126,16 +131,18 @@ class Retail extends Simpla
 
     /**
      * Метод формирует данные по заказу из SimplaCMS для отправки в RetailCRM.
-     * @param integer $order_id Идентификатор заказа
+     * @param integer $simplaOrderId Идентификатор заказа в Simpla CMS
+     * @param integer $retailOrderId Идентификатор заказа в retailCRM. Если передано число больше нуля,
+     *    то будет добавлен к массиву данных по заказу
      * @return array Массив данных по заказу. Может формировать массив в нескольких форматах:
      *    1) в формате API v4 RetailCRM (https://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-orders-upload)
      *    2) в формате API v5 RetailCRM (https://www.retailcrm.ru/docs/Developers/ApiVersion5#post--api-v5-orders-upload)
      */
-    public function getOrderRetailData($order_id)
+    public function getOrderRetailData($simplaOrderId, $retailOrderId = 0)
     {
         $arOrderData = [];
-        $order_id    = (int) $order_id;
-        if (!($order = $this->orders->get_order($order_id))) {
+        $simplaOrderId = (int) $simplaOrderId;
+        if (!($order = $this->orders->get_order($simplaOrderId))) {
             return $arOrderData;
         }
 
@@ -195,6 +202,11 @@ class Retail extends Simpla
             ],
             'amount'          => $order->total_price
         ];
+
+        if ($retailOrderId > 0) {
+            // Добавляем в массив данных заказа - идентификатор заказа в retailCRM
+            $arOrderData['id'] = (int)$retailOrderId;
+        }
 
         // Если есть код клиента, то создадим привязку, иначе в RetailCRM будет создан клиент по данным из Заказа
         if (intval($order->user_id) != 0) {
@@ -377,7 +389,9 @@ class Retail extends Simpla
     }
 
     /**
-     * Метод принимает данные по заказу из RetailCRM для обновления или изменения в Simpla CMS
+     * Метод принимает данные по заказу из RetailCRM для обновления или изменения в Simpla CMS.
+     * Если пришли данные по заказу, который был создан в retailCRM, то обратно отправим внешний код заказа -
+     * номер заказа после создания в Simpla CMS
      * @param string $orderId Идентификатор заказа в RetailCRM
      * @param string $whichId Строка, определяющая идентификатор заказа из какой системы передан. Допустимые значения:
      *    "retail" - RetailCRM
@@ -390,7 +404,7 @@ class Retail extends Simpla
         //self::logger('setOrderRetailData. Данные, принятые из RetailCRM: ' . $orderId, 'orders-info');
 
         /**
-         * Параметр, управляющий в API RetailCRM по кокому идентификатору производить отбор (внешнему или внутреннему)
+         * Параметр, управляющий в API RetailCRM по какому идентификатору производить отбор (внешнему или внутреннему)
          * @var string
          */
         $paramSystem = 'id'; // По-умолчанию, ищем заказ по внутреннему идентификатору retailCRM
@@ -411,6 +425,7 @@ class Retail extends Simpla
         }
 
         if (isset($response) && $response->isSuccessful() && 200 === $response->getStatusCode()) {
+            // Получен ответ от retailCRM с данными заказа
             //self::logger('setOrderRetailData. RetailCRM_Api::ordersGet - Success. Receive data: ' . print_r($response->order, true), 'debug');
             $order = [];
 
@@ -426,13 +441,13 @@ class Retail extends Simpla
                 'comment'         => $response->order['customerComment'],
                 /*'url' => '',*/
                 'total_price'     => $response->order['totalSumm'],
-                'note'            => $response->order['managerComment'],
+                'note'            => $response->order['managerComment']
             ];
 
             if (self::$apiVersion == \RetailCrm\ApiClient::V4) {
                 $order['discount'] = $response->order['discountPercent'];
                 $order['coupon_discount'] = $response->order['discount'];
-            } else if (self::$apiVersion == \RetailCrm\ApiClient::V5) {
+            } elseif (self::$apiVersion == \RetailCrm\ApiClient::V5) {
                 $order['discount'] = $response->order['discountManualAmount'];
                 $order['coupon_discount'] = $response->order['discountManualPercent'];
             }
@@ -464,14 +479,14 @@ class Retail extends Simpla
                         $order['paid'] = $paymentStatus;
                     }
                 }
-            } else if (self::$apiVersion == \RetailCrm\ApiClient::V5) {
+            } elseif (self::$apiVersion == \RetailCrm\ApiClient::V5) {
                 // Определяем код способа оплаты.
                 // В RetailCRM может быть несколько оплат, а в SimplaCMS - только одна
                 // Учитываем только тип первой оплаты
-                if (isset($response->order['payments']) && !empty($response->order['payments'])) {
+                if (!empty($response->order['payments'])) {
                     foreach ($response->order['payments'] as $payment) {
                         // Определяем код способа оплаты
-                        if (isset($payment['type']) && !empty($payment['type'])) {
+                        if (!empty($payment['type'])) {
                             $paymentId = array_search($payment['type'], $config['paymentType']);
                             if (false !== $paymentId) {
                                 $order['payment_method_id'] = $paymentId;
@@ -502,16 +517,17 @@ class Retail extends Simpla
                 }
             }
             // Определяем адрес доставки
-            if (isset($response->order['customer']['address']['text']) && !empty($response->order['customer']['address']['text'])) {
+            if (!empty($response->order['customer']['address']['text'])) {
                 $order['address'] = $response->order['customer']['address']['text'];
             }
 
-            if (isset($response->order['externalId']) && !empty($response->order['externalId'])) {
-                $order_id = (int) $response->order['externalId'];
+            if (!empty($response->order['externalId'])) {
+                // Вместе с данными заказа пришёл внешний код заказа (т.е. в retailCRM изменили какой-то заказ, который уже есть в SimplaCMS)
+                $simplaOrderId = (int) $response->order['externalId'];
                 //self::logger('Данные, принятые из RetailCRM и подготовленные к вставке: ' . print_r($order, true), 'orders-info');
                 // Обновляем товары заказа
                 // Сначала получим все текущие товары в заказе по данным SimplaCMS
-                $purchases    = $this->orders->get_purchases(['order_id' => $order_id]);
+                $purchases    = $this->orders->get_purchases(['order_id' => $simplaOrderId]);
                 $products_ids = [];
                 $variants_ids = [];
                 foreach ($purchases as $purchase) {
@@ -524,12 +540,17 @@ class Retail extends Simpla
                 // Получим все товары заказа по новым данным
                 foreach ($response->order['items'] as $itemData) {
                     if (in_array($itemData['offer']['externalId'], $variants_ids)) {
-                        if ($purchaseAmount[$itemData['offer']['externalId']] != $itemData['quantity'] || $purchasePrice[$itemData['offer']['externalId']] != $itemData['initialPrice']) {
+                        if ($purchaseAmount[$itemData['offer']['externalId']] != $itemData['quantity']
+                            || $purchasePrice[$itemData['offer']['externalId']] != $itemData['initialPrice']
+                        ) {
                             // Товар повторяется, а количество изменилось
-                            $this->orders->update_purchase($purchaseVariant[$itemData['offer']['externalId']], array(
-                                'amount' => (int) $itemData['quantity'],
-                                'price'  => (float) $itemData['initialPrice'],
-                            ));
+                            $this->orders->update_purchase(
+                                $purchaseVariant[$itemData['offer']['externalId']],
+                                [
+                                    'amount' => (int) $itemData['quantity'],
+                                    'price'  => (float) $itemData['initialPrice']
+                                ]
+                            );
                         }
                         unset($purchaseVariant[$itemData['offer']['externalId']]);
                     } else {
@@ -537,7 +558,7 @@ class Retail extends Simpla
                         $this->orders->add_purchase([
                             'order_id'   => $response->order['externalId'],
                             'variant_id' => intval($itemData['offer']['externalId']),
-                            'amount'     => intval($itemData['quantity']),
+                            'amount'     => intval($itemData['quantity'])
                         ]);
                     }
                 }
@@ -548,16 +569,23 @@ class Retail extends Simpla
                     }
                 }
                 //self::logger('Перед обновлением заказа в Simpla CMS по данным из RetailCRM: ' . print_r($order, true), 'debug');
-                $this->orders->update_order($order_id, $order);
+                $this->orders->update_order($simplaOrderId, $order);
             } else {
-                $order_id = $this->orders->add_order($order);
+                // Внешний номер заказа не пришёл, значит заказ был создан в retailCRM
+                // Добавляем заказ в SimplaCMS
+                $simplaOrderId = $this->orders->add_order($order);
                 // Добавляем товары к заказу
                 foreach ($response->order['items'] as $itemData) {
                     $this->orders->add_purchase([
-                        'order_id'   => $order_id,
+                        'order_id'   => $simplaOrderId,
                         'variant_id' => intval($itemData['offer']['externalId']),
-                        'amount'     => intval($itemData['quantity']),
+                        'amount'     => intval($itemData['quantity'])
                     ]);
+                }
+
+                // Обновляем внешний код заказа в retailCRM (отсылаем данные о заказе в retailCRM)
+                if ($this->isOnlineIntegration() && ($arOrderData = $this->getOrderRetailData($simplaOrderId, $orderId))) {
+                    $this->request('ordersEdit', $arOrderData, $paramSystem);
                 }
             }
         } else {
@@ -582,7 +610,7 @@ class Retail extends Simpla
 
         if ($fromSystem == 'simpla') {
             return array_search($code, $config['orderStatus']);
-        } else if ($fromSystem == 'retail') {
+        } elseif ($fromSystem == 'retail') {
             if (isset($config['orderStatus'][$code])) {
                 return $config['orderStatus'][$code];
             } else {
@@ -911,7 +939,7 @@ class Retail extends Simpla
 
 
     /**
-     * Метод определяет, включение ли онлайн-интеграция с RetailCRM.
+     * Метод определяет, включена ли онлайн-интеграция с RetailCRM.
      * По-умолчанию, включена. Выключить можно, установив параметр конфигурации
      * $config['RETAIL_CRM']['IS_ONLINE_INTEGRATION'] = false
      * @return boolean Флаг, включена ли онлайн интеграция
