@@ -3,23 +3,28 @@
 // Подключим зависимые библиотеки (API RetailCRM)
 require_once __DIR__ . '/../vendor/autoload.php';
 
+// Подключим скрипт, где определяются уникальные для проекта методы
+require_once __DIR__ . '/RetailTrait.php';
+
 /**
  * Класс для работы с RetailCRM
  *
- * @copyright    2016 Oleg Ekhlakov
- * @author        Oleg Ekhlakov
+ * @copyright 2016 Oleg Ekhlakov
+ * @author    Oleg Ekhlakov <subspam@mail.ru>
  *
  */
 
 class Retail extends Simpla
 {
+    use RetailTrait;
+
     /**
      * @var integer Номер версии API RetailCRM
      */
     public static $apiVersion = \RetailCrm\ApiClient::V5;
 
     /**
-     * @param integer $apiVersion Номер версии API RetailCRM
+     * @param string $apiVersion Номер версии API RetailCRM
      */
     public function __construct($apiVersion = \RetailCrm\ApiClient::V5)
     {
@@ -37,6 +42,7 @@ class Retail extends Simpla
      * @param string $by Код номера, по которому нужно сзязать данные в retailCRM. Допустимые значения:
      *    "externalId" - связь по внешнему номеру (по номеру из Simpla CMS)
      *    "id"         - связь по номеру из retailCRM
+     * @return boolean Флаг результата операции
      */
     public function request($method, $arData, $by = 'externalId')
     {
@@ -182,7 +188,6 @@ class Retail extends Simpla
 
         $arOrderData = [
             'externalId'      => $order->id,
-            'createdAt'       => date('Y-m-d H:i:s', strtotime($order->date)),
             'phone'           => $order->phone,
             'email'           => $order->email,
             'customerComment' => $order->comment,
@@ -191,7 +196,6 @@ class Retail extends Simpla
                 'contragentType' => 'individual' // Доступны только физ. лица
             ],
             'orderType'       => 'eshop-individual', // Тип заказа - обязательное поле. В нашем случае тип всегдя один - заказ от физ. лица через ИМ
-            'orderMethod'     => 'shopping-cart', // Только один способ заказа - через корзину
             'items'           => $items, // Массив товаров из заказа
             'delivery'        => [
                 'code'    => $order->delivery_id,
@@ -204,8 +208,13 @@ class Retail extends Simpla
         ];
 
         if ($retailOrderId > 0) {
+            // Если передан номер заказа из retailCRM, - считаем, что заказ был создан там
             // Добавляем в массив данных заказа - идентификатор заказа в retailCRM
             $arOrderData['id'] = (int)$retailOrderId;
+        } else {
+            // Номер заказа из retailCRM не был передан, - считаем, что заказ был создан в Simpla CMS
+            $arOrderData['createdAt'] = date('Y-m-d H:i:s', strtotime($order->date));
+            $arOrderData['orderMethod'] = 'shopping-cart'; // Только один способ заказа - через корзину
         }
 
         // Если есть код клиента, то создадим привязку, иначе в RetailCRM будет создан клиент по данным из Заказа
@@ -291,6 +300,34 @@ class Retail extends Simpla
                 // Ставим внешним идентификатором платежа номер заказа из Simpla CMS
                 $arOrderData['payments'][0]['externalId'] = 'p' . $order->id;
             }
+
+            // Определяем значения пользовательских полей заказа
+            /**
+             * Вычисление данных пользовательских полей лежит за рамками типовой интеграции:
+             * требуется определить соответсувующий метод для пользовательского поля. Например,
+             * для поля "order_url" - должен быть метод с названием "getOrderUrl". Метод принимает один параметр -
+             * идентификатор заказа в Simpla CMS
+             */
+            if (!empty($config['orderCustomFields'])) {
+                foreach ($config['orderCustomFields'] as $orderCustomField) {
+                    $method = 'get' . str_replace('_', '', ucwords($orderCustomField, '_'));
+                    if (method_exists(__CLASS__, $method)) {
+                        $value = null;
+                        // Определён метод для получения данных пользовательского поля
+                        try {
+                            $value = self::$method($simplaOrderId);
+                        } catch (\Exception $exception) {
+                            self::logger(
+                                'Не удалось выполнить метод Retail::' . $method . ': ' . $exception->getMessage(),
+                                'orders-error'
+                            );
+                        }
+                        if (!is_null($value)) {
+                            $arOrderData['customFields'][$orderCustomField] = $value;
+                        }
+                    }
+                }
+            }
         }
 
         // Добавляем данные по имени и фамилии клиента заказа
@@ -310,7 +347,8 @@ class Retail extends Simpla
     /**
      * Метод формирует данные по зарегистрированному пользователю для отправки в RetailCRM
      * @param integer $user_id Идентификатор пользователя
-     * @return array Массив данных по пользователю в формате API v4 RetailCRM (http://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-customers-upload)
+     * @return array Массив данных по пользователю в формате API v4 RetailCRM
+     *    (http://www.retailcrm.ru/docs/Developers/ApiVersion4#post--api-v4-customers-upload)
      */
     public function getUserRetailData($user_id)
     {
@@ -350,7 +388,8 @@ class Retail extends Simpla
     /**
      * Метод формирует данные по оплате заказа для отправки в RetailCRM
      * @param integer $orderId Идентификатор заказа
-     * @return array Массив данных по оплате в формате API v5 RetailCRM (https://www.retailcrm.ru/docs/Developers/ApiVersion5#post--api-v5-orders-payments-create)
+     * @return array Массив данных по оплате в формате API v5 RetailCRM
+     *    (https://www.retailcrm.ru/docs/Developers/ApiVersion5#post--api-v5-orders-payments-create)
      */
     public static function getPaymentRetailData($orderId)
     {
@@ -361,6 +400,7 @@ class Retail extends Simpla
             $arPayment['order']['externalId'] = $order->id;
             // Конвертируем виды оплат
             if (isset($order->payment_method_id) && !empty($order->payment_method_id)) {
+                $config = self::config(__DIR__ . self::INTEGRATION_DIR . '/config.php');
                 // Код 0 в Simpla зарезервирован для невыбранного значения
                 if (isset($config['paymentType'][$order->payment_method_id])) {
                     $arPayment['type'] = $config['paymentType'][$order->payment_method_id];
@@ -396,7 +436,7 @@ class Retail extends Simpla
      * @param string $whichId Строка, определяющая идентификатор заказа из какой системы передан. Допустимые значения:
      *    "retail" - RetailCRM
      *    "simpla" - Simpla CMS
-     * @return boolean Статус выполнения
+     * @return void
      */
     public function setOrderRetailData($orderId, $whichId = 'retail')
     {
@@ -621,6 +661,10 @@ class Retail extends Simpla
         }
     }
 
+    /**
+     * @param string $log Путь к файлу-логу
+     * @return false|string
+     */
     public static function getDate($log)
     {
         if (file_exists($log)) {
@@ -708,8 +752,9 @@ class Retail extends Simpla
      */
     public function fetch($date, $maxCountPack = 2)
     {
+        $result = [];
         if (!$this->managers->access('export')) {
-            return false;
+            return $result;
         }
         // Проверка прав доступа при запуске скрипта из админки Simpla
 
@@ -737,7 +782,7 @@ class Retail extends Simpla
             if (!empty($ordersPack)) {
                 $lastDate = '';
                 foreach ($ordersPack as $order) {
-                    if ($currentOrder = $this->retail->getOrderRetailData($order->id)) {
+                    if ($currentOrder = $this->getOrderRetailData($order->id)) {
                         $payments = []; // Массив оплат по заказам
                         $orders[] = $currentOrder;
                         // Получим данные по клиенту заказа

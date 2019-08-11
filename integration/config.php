@@ -66,4 +66,8 @@ return [
     'propCodes'     => [
         7 => 'weight',
     ],
+    // Массив кодов пользовательских полей заказа в retailCRM
+    'orderCustomFields' => [
+        'order_url'
+    ]
 ];
