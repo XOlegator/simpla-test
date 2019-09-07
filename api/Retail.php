@@ -169,6 +169,12 @@ class Retail extends Simpla
                     //)
                 ];
 
+                // Если есть скидка на заказ, то нужно обнулить скидку по товарам в retailCRM
+                if (self::$apiVersion == \RetailCrm\ApiClient::V5) {
+                    $arItemData['discountManualAmount'] = 0.0;
+                    $arItemData['discountManualPercent'] = 0.0;
+                }
+
                 /**
                  * Иногда так бывает, что из Simpla CMS удаляют товары, при этом остаются старые заказы,
                  * где эти товары были использованы. В этой ситуации в заказе вместо идентификатороа товаров
@@ -476,20 +482,28 @@ class Retail extends Simpla
                 /*'date' => '',*/
                 'user_id'         => (int) $response->order['customer']['externalId'],
                 'name'            => implode(' ', [$response->order['firstName'], $response->order['lastName']]),
-                'phone'           => $response->order['phone'],
-                'email'           => $response->order['email'],
-                'comment'         => $response->order['customerComment'],
+                'phone'           => empty($response->order['phone']) ? '' : $response->order['phone'],
+                'email'           => empty($response->order['email']) ? '' : $response->order['email'],
+                'comment'         => empty($response->order['customerComment']) ? '' : $response->order['customerComment'],
                 /*'url' => '',*/
-                'total_price'     => $response->order['totalSumm'],
-                'note'            => $response->order['managerComment']
+                'total_price'     => (float)$response->order['totalSumm'],
+                'note'            => empty($response->order['managerComment']) ? '' : $response->order['managerComment']
             ];
 
             if (self::$apiVersion == \RetailCrm\ApiClient::V4) {
-                $order['discount'] = $response->order['discountPercent'];
-                $order['coupon_discount'] = $response->order['discount'];
+                if (isset($response->order['discountPercent'])) {
+                    $order['discount'] = (float)$response->order['discountPercent'];
+                }
+                if (isset($response->order['discount'])) {
+                    $order['coupon_discount'] = (float)$response->order['discount'];
+                }
             } elseif (self::$apiVersion == \RetailCrm\ApiClient::V5) {
-                $order['discount'] = $response->order['discountManualAmount'];
-                $order['coupon_discount'] = $response->order['discountManualPercent'];
+                if (isset($response->order['discountManualAmount'])) {
+                    $order['discount'] = (float)$response->order['discountManualAmount'];
+                }
+                if (isset($response->order['discountManualPercent'])) {
+                    $order['coupon_discount'] = (float)$response->order['discountManualPercent'];
+                }
             }
 
             // Определяем код доставки
@@ -577,18 +591,47 @@ class Retail extends Simpla
                     $purchaseAmount[$purchase->variant_id]  = $purchase->amount;
                     $purchasePrice[$purchase->variant_id]   = $purchase->price;
                 }
+
+                // Суммарная скидка всех товаров (если назначалась скидка на товары, а не на заказ)
+                $retailProductTotalDiscount = 0;
+
                 // Получим все товары заказа по новым данным
                 foreach ($response->order['items'] as $itemData) {
+                    // Определим цену товара по данным retailCRM
+                    $retailProductPrice = (float)$itemData['initialPrice'];
+                    if (!empty($itemData['discountTotal']) && $itemData['initialPrice'] >= $itemData['discountTotal']) {
+                        // Установлена скидка на товар, значит её нужно вычесть из начальной цены товара
+                        $retailProductPrice -= $itemData['discountTotal'];
+                        $retailProductTotalDiscount += $itemData['discountTotal'];
+
+                        // Если пришла скидка по товару, то обнуляем скидку по заказу (она сюда уже включена)
+                        if ($order['discount'] > 0) {
+                            $order['discount'] = 0;
+                        }
+                        if ($order['coupon_discount'] > 0) {
+                            $order['coupon_discount'] = 0;
+                        }
+                    }
+
                     if (in_array($itemData['offer']['externalId'], $variants_ids)) {
                         if ($purchaseAmount[$itemData['offer']['externalId']] != $itemData['quantity']
-                            || $purchasePrice[$itemData['offer']['externalId']] != $itemData['initialPrice']
+                            || $purchasePrice[$itemData['offer']['externalId']] != $retailProductPrice
                         ) {
-                            // Товар повторяется, а количество изменилось
+                            // Товар повторяется, а количество и/или цена изменились
                             $this->orders->update_purchase(
                                 $purchaseVariant[$itemData['offer']['externalId']],
                                 [
                                     'amount' => (int) $itemData['quantity'],
-                                    'price'  => (float) $itemData['initialPrice']
+                                    'price'  => $retailProductPrice
+                                ]
+                            );
+                        } else {
+                            // Вариант, когда изменилась не цена, а сам товар
+                            $this->orders->update_purchase(
+                                $purchaseVariant[$itemData['offer']['externalId']],
+                                [
+                                    'order_id'   => $response->order['externalId'],
+                                    'variant_id' => intval($itemData['offer']['externalId'])
                                 ]
                             );
                         }
@@ -598,10 +641,12 @@ class Retail extends Simpla
                         $this->orders->add_purchase([
                             'order_id'   => $response->order['externalId'],
                             'variant_id' => intval($itemData['offer']['externalId']),
-                            'amount'     => intval($itemData['quantity'])
+                            'amount'     => intval($itemData['quantity']),
+                            'price'      => $retailProductPrice
                         ]);
                     }
                 }
+
                 if (!empty($purchaseVariant)) {
                     // Какие-то товары остались, значит, нужно удалить эти товары, - теперь их в заказе нет
                     foreach ($purchaseVariant as $purchase_id) {
@@ -616,10 +661,25 @@ class Retail extends Simpla
                 $simplaOrderId = $this->orders->add_order($order);
                 // Добавляем товары к заказу
                 foreach ($response->order['items'] as $itemData) {
+                    // Определим цену товара по данным retailCRM
+                    $retailProductPrice = (float)$itemData['initialPrice'];
+                    if (!empty($itemData['discountTotal']) && $itemData['initialPrice'] >= $itemData['discountTotal']) {
+                        // Установлена скидка на товар, значит её нужно вычесть из начальной цены товара
+                        $retailProductPrice -= $itemData['discountTotal'];
+
+                        // Если пришла скидка по товару, то обнуляем скидку по заказу (она сюда уже включена)
+                        if ($order['discount'] > 0) {
+                            $order['discount'] = 0;
+                        }
+                        if ($order['coupon_discount'] > 0) {
+                            $order['coupon_discount'] = 0;
+                        }
+                    }
                     $this->orders->add_purchase([
                         'order_id'   => $simplaOrderId,
                         'variant_id' => intval($itemData['offer']['externalId']),
-                        'amount'     => intval($itemData['quantity'])
+                        'amount'     => intval($itemData['quantity']),
+                        'price'      => $retailProductPrice
                     ]);
                 }
 

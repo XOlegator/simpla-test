@@ -289,7 +289,7 @@ composer update
 ```
 2. Обновить скрипт /api/Retail.php
 3. Проверить и при необходимости обновить согласно пункту "Установка для мгновенной выгрузки данных по заказам и клиентам в RetailCRM" этой инструкции.
-4. Обновить скрипт /simpla/ajax/export_orders_retailCRM.php
+4. Обновить скрипты /simpla/ajax/export_orders_retailCRM.php, /simpla/ajax/export_to_ICML_retailCRM.php и /integration/icml.php
 5. Удалить файлы orders.php и Tools.php из каталога /integration (теперь код из них содержится в /api/Retail.php)
 
 ## Благодарности и ссылки ##
