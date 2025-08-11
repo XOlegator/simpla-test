@@ -1,5 +1,13 @@
 {
-    "require": {
-        "retailcrm/api-client-php": "dev-master"
-    }
+  "config": {
+    "platform": {
+      "php": "5.6"
+    },
+    "sort-packages": true
+  },
+  "require": {
+    "php": "5.6.*",
+    "ext-curl": "*",
+    "retailcrm/api-client-php": "5.*"
+  }
 }
