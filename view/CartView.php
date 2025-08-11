@@ -116,7 +116,10 @@ class CartView extends View
 			$this->notify->email_order_admin($order->id);
 
             // Отсылаем данные о новом заказе в RetailCRM
-            if ($this->retail->isOnlineIntegration() && $arOrderData = $this->retail->getOrderRetailData($order_id)) {
+            if (
+                $this->retail->isOnlineIntegration()
+                && ($arOrderData = $this->retail->getOrderRetailData($order_id))
+            ) {
                 $this->retail->request('ordersCreate', $arOrderData);
             }
 
