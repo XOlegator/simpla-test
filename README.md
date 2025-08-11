@@ -17,7 +17,27 @@
 ## Установка общих зависимостей ##
 1. Установить Simpla CMS (проверено на версии 2.3.7)
 2. Зарегистрировать собственный аккаунт RetailCRM (например, по кнопке "Получить демо-версию" по ссылке https://www.retailcrm.ru/).
-3. Установить официальный клиент для работы с API RetailCRM (https://github.com/retailcrm/api-client-php) по рекомендуемой процедуре через composer. Скрипты в результате будут расположены в каталоге */vendor/retailcrm/api-client-php/lib/RetailCrm/*
+3. Установить официальный клиент для работы с API RetailCRM (https://github.com/retailcrm/api-client-php) по рекомендуемой процедуре через composer. Скрипты в результате будут расположены в каталоге */vendor/retailcrm/api-client-php/lib/RetailCrm/*. Или взять из релиза этого проекта готовый архив с каталогом vendor.
+Пример, как можно установить composer и библиотеку API RetailCRM в консоли сервера Ubuntu:
+
+a) Установка минимального набора необходимых пакетов PHP:
+```shell
+sudo apt-get install php5.6-cli php5.6-curl
+```
+
+b) Установка утилиты composer:
+```shell
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php -r "if (hash_file('sha384', 'composer-setup.php') === 'dac665fdc30fdd8ec78b38b9800061b4150413ff2e3b6f88543c636f7cd84f6db9189d43a81e5503cda447da73c7e5b6') { echo 'Installer verified'.PHP_EOL; } else { echo 'Installer corrupt'.PHP_EOL; unlink('composer-setup.php'); exit(1); }"
+php composer-setup.php --2.2
+mv ./composer.phar ./composer
+```
+
+c) Установка библиотеки API RetailCRM:
+```shell
+/usr/bin/php5.6 ./composer update
+```
+
 4. Создать в корне web-сервера иерархию каталогов:  
 /integration  
 |----/log  
