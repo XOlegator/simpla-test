@@ -1,4 +1,17 @@
-# Интеграция Simpla CMS <-> RetailCRM #
+# Simpla CMS <-> RetailCRM Integration
+
+- **Batch export** of customers and orders from Simpla CMS to RetailCRM (via Simpla CMS admin panel or server console, e.g., via cron).
+- **ICML generation** ([RetailCRM ICML documentation](https://www.retailcrm.ru/docs/Developers/ICML)) — an XML file containing all products and their properties in a specific structure. Generated via Simpla CMS admin panel or server console.
+- **Real-time syncing** of new user registrations from Simpla CMS to RetailCRM.
+- **Instant updates** to user data when modified by the customer (via account dashboard) or by an admin in Simpla CMS.
+- **Automatic sending** of new orders from Simpla CMS to RetailCRM.
+- **Instant updates** to order data when modified by the customer (via account dashboard) or by an admin in Simpla CMS.
+- **Retrieving updated order data** from RetailCRM to Simpla CMS (via RetailCRM triggers), including orders added directly in RetailCRM.
+
+---  
+
+# Интеграция Simpla CMS <-> RetailCRM
+
 * Пакетная выгрузка клиентов и заказов из интернет-магазина Simpla CMS в RetailCRM (через админку Simpla CMS или консоль сервера - например по cron).
 * Формирование ICML (https://www.retailcrm.ru/docs/Developers/ICML) документа для RetailCRM (все товары и их свойства в XML виде определённой структуры) - также через админку Simpla CMS либо через консоль сервера.
 * Мгновенная отправка данных из Simpla CMS в RetailCRM о регистрации нового пользователя.
